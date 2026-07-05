@@ -1,0 +1,121 @@
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 26px 6px;
+  text-decoration: none;
+  color: var(--ink);
+  border-top: 1px solid var(--trace);
+  position: relative;
+  transition: border-color var(--dur-fast) ease;
+}
+
+.row:last-child {
+  border-bottom: 1px solid var(--trace);
+}
+
+.row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -1px;
+  height: 1px;
+  width: 0;
+  background: var(--red);
+  transition: width 0.34s var(--ease-out);
+}
+
+.row:hover::before {
+  width: 100%;
+}
+
+.number {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--red);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.label {
+  font-family: var(--display);
+  font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+.shortTitle {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--forest);
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.description {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--mid);
+  max-width: 460px;
+}
+
+.audience {
+  font-size: 0.6875rem;
+  text-transform: none;
+  letter-spacing: 0.04em;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-start;
+}
+
+.destination {
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.16em;
+  color: var(--mid);
+  transition: color var(--dur-fast) ease;
+}
+
+.arrow {
+  font-family: var(--mono);
+  font-size: 1.125rem;
+  color: var(--ink);
+  transition: transform var(--dur-fast) var(--ease-out), color var(--dur-fast) ease;
+}
+
+.row:hover .arrow {
+  transform: translateX(6px);
+  color: var(--red);
+}
+
+.row:hover .destination {
+  color: var(--forest);
+}
+
+@media (min-width: 900px) {
+  .row {
+    grid-template-columns: 64px minmax(220px, 1fr) minmax(0, 1.4fr) 150px;
+    align-items: center;
+    gap: 28px;
+    padding: 30px 6px;
+  }
+
+  .action {
+    justify-content: flex-end;
+  }
+}

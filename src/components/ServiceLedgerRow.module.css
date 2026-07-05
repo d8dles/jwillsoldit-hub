@@ -1,0 +1,130 @@
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 30px 4px;
+  border-top: 1px solid var(--trace);
+}
+
+.row:last-child {
+  border-bottom: 1px solid var(--trace);
+}
+
+.onDark {
+  border-color: var(--trace-dark);
+}
+
+.onDark:last-child {
+  border-bottom-color: var(--trace-dark);
+}
+
+.index {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--red);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.name {
+  font-family: var(--display);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.audience {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  color: var(--mid);
+}
+
+.onDark .audience {
+  color: var(--mid-on-dark);
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 560px;
+}
+
+.problem {
+  font-size: 0.9375rem;
+  font-style: italic;
+  color: var(--mid);
+}
+
+.onDark .problem {
+  color: var(--mid-on-dark);
+}
+
+.deliverable {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.outcome {
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.outcomeMark {
+  color: var(--red);
+  font-size: 0.75rem;
+}
+
+.ctaWrap {
+  display: flex;
+  align-items: center;
+}
+
+.cta {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--forest);
+  border-bottom: 1px solid var(--trace);
+  padding-bottom: 3px;
+  transition: color var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+
+.onDark .cta {
+  color: var(--off-white);
+  border-color: var(--trace-dark);
+}
+
+.cta:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.onDark .cta:hover {
+  color: var(--red);
+}
+
+@media (min-width: 900px) {
+  .row {
+    grid-template-columns: 56px minmax(240px, 0.9fr) minmax(0, 1.5fr) 220px;
+    gap: 28px;
+    padding: 34px 4px;
+  }
+
+  .ctaWrap {
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 6px;
+  }
+}

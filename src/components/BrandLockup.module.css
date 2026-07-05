@@ -1,0 +1,41 @@
+.lockup {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.wordmark {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.0625rem;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+.dot {
+  color: var(--red);
+}
+
+.sub {
+  font-family: var(--mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.22em;
+  color: var(--mid);
+}
+
+.onDark {
+  color: var(--off-white);
+}
+
+.onDark .sub {
+  color: var(--mid-on-dark);
+}
+
+/* Compact lockup on small screens — sub-line wraps below 600px otherwise */
+@media (max-width: 599px) {
+  .sub {
+    display: none;
+  }
+}

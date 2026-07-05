@@ -1,0 +1,157 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--trace);
+  border-radius: var(--radius);
+  background: var(--pure);
+  transition: border-color var(--dur-fast) ease;
+}
+
+.card:hover {
+  border-color: var(--forest);
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-bottom: 1px solid var(--trace);
+}
+
+/* Typographic plate — the no-photo state. Intentional, not apologetic. */
+.plate {
+  aspect-ratio: 16 / 7;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 16px 18px;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent 11px,
+      var(--trace) 11px,
+      var(--trace) 12px
+    );
+  border-bottom: 1px solid var(--trace);
+}
+
+.plateIndex {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  color: var(--forest);
+  background: var(--pure);
+  padding: 4px 8px;
+}
+
+.plateMark {
+  color: var(--red);
+  font-size: 0.625rem;
+  background: var(--pure);
+  padding: 4px 6px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 18px 22px;
+  flex: 1;
+}
+
+.topRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.name {
+  font-family: var(--display);
+  font-size: 1.1875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.status {
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--forest);
+  border: 1px solid var(--trace);
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+
+.meta {
+  font-size: 0.6875rem;
+}
+
+.notes {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--mid);
+  flex: 1;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mid);
+  background: var(--off-white);
+  border: 1px solid var(--trace);
+  padding: 3px 8px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.actionPrimary {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--off-white);
+  background: var(--forest);
+  padding: 11px 16px;
+  border-radius: var(--radius);
+  transition: background var(--dur-fast) ease;
+}
+
+.actionPrimary:hover {
+  background: var(--red);
+}
+
+.actionSecondary {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--forest);
+  text-decoration: none;
+  border-bottom: 1px solid var(--trace);
+  padding-bottom: 2px;
+}
+
+.actionSecondary:hover {
+  color: var(--red);
+  border-color: var(--red);
+}

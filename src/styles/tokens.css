@@ -1,0 +1,45 @@
+/* ── JWILLSOLDIT design tokens ─────────────────────────────────────────────
+   Continuity with Smart Move (move.jwillsoldit.com). Change here, not inline. */
+
+:root {
+  /* Color */
+  --off-white: #FAFAFA;
+  --pure: #FFFFFF;
+  --forest: #1C3B2E;
+  --forest-deep: #142B21;
+  --red: #E03A1F;
+  --ink: #0D0D0D;
+  --mid: #6B6B6B;
+  --trace: #E5E7E6;
+  --trace-dark: rgba(250, 250, 250, 0.16);
+  --mid-on-dark: rgba(250, 250, 250, 0.62);
+
+  /* Type */
+  --display: 'Instrument Sans', system-ui, sans-serif;
+  --body: 'Libre Franklin', system-ui, sans-serif;
+  --mono: 'Space Mono', monospace;
+
+  /* Type scale (fluid) */
+  --fs-hero: clamp(2.75rem, 8.5vw, 6.5rem);
+  --fs-h2: clamp(2rem, 4.5vw, 3.25rem);
+  --fs-h3: clamp(1.25rem, 2.2vw, 1.625rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-micro: 0.75rem;
+
+  /* Space */
+  --space-section: clamp(84px, 12vw, 160px);
+  --space-block: clamp(40px, 6vw, 72px);
+  --gutter: clamp(20px, 4.5vw, 56px);
+  --content-max: 1280px;
+
+  /* Motion — restrained. ≤600ms everywhere. */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 0.22s;
+  --dur-reveal: 0.55s;
+
+  /* Chrome */
+  --masthead-h: 60px;
+  --actionbar-h: 62px;
+  --radius: 2px;
+}

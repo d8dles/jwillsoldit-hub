@@ -1,0 +1,34 @@
+.header {
+  max-width: 760px;
+  margin-bottom: var(--space-block);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.rule {
+  display: inline-block;
+  width: 44px;
+  height: 1px;
+  background: var(--trace);
+}
+
+.onDark .rule {
+  background: var(--trace-dark);
+}
+
+.lede {
+  margin-top: 18px;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--mid);
+  max-width: 620px;
+}
+
+.onDark .lede {
+  color: var(--mid-on-dark);
+}

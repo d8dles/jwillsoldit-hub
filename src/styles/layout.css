@@ -1,0 +1,39 @@
+/* ── Layout primitives ── */
+
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.section {
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
+}
+
+.section--hairline-top {
+  border-top: 1px solid var(--trace);
+}
+
+/* Dark command panel — used ONCE (Own & Manage). Dark is an accent, not a theme. */
+.section--panel {
+  background: var(--forest);
+  color: var(--off-white);
+}
+
+.section--panel .mono-label {
+  color: var(--mid-on-dark);
+}
+
+.section--panel .mono-label--red {
+  color: var(--red);
+}
+
+/* Room for the fixed mobile action bar */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: calc(var(--actionbar-h) + env(safe-area-inset-bottom));
+  }
+}
