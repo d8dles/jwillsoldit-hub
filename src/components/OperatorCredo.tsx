@@ -14,8 +14,7 @@ export function OperatorCredo() {
         and I help owners take better care of their properties once the moving
         is done. Rentals, purchases, sales, furnished stays, managed homes: one
         clear place to start, one standard, coordinated with trusted service
-        partners and backed by Christin Rachelle Group. If it touches a Houston
-        address, I&rsquo;ll either take it on or tell you straight who should.
+        partners.
       </blockquote>
 
       <div className={styles.idRow}>
