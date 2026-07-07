@@ -2,15 +2,17 @@
    Continuity with Smart Move (move.jwillsoldit.com). Change here, not inline. */
 
 :root {
-  /* Color */
-  --off-white: #FAFAFA;
+  /* Color — warm off-white paper base ("Texas, handled." editorial pass) */
+  --off-white: #FAF7F2;
   --pure: #FFFFFF;
   --forest: #1C3B2E;
   --forest-deep: #142B21;
   --red: #E03A1F;
+  --ember: #E85D2A;
+  --copper: #B05C2E;
   --ink: #0D0D0D;
   --mid: #6B6B6B;
-  --trace: #E5E7E6;
+  --trace: #E7E1D8;
   --trace-dark: rgba(250, 250, 250, 0.16);
   --mid-on-dark: rgba(250, 250, 250, 0.62);
 

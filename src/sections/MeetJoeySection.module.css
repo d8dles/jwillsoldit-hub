@@ -1,0 +1,147 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(40px, 6vw, 64px);
+  align-items: start;
+}
+
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: minmax(240px, 0.8fr) 1.2fr;
+  }
+  .pillars {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1100px) {
+  .grid {
+    grid-template-columns: minmax(260px, 0.85fr) 1.15fr minmax(300px, 0.95fr);
+  }
+  .pillars {
+    grid-column: auto;
+    border-left: 1px solid var(--trace);
+    padding-left: clamp(28px, 3vw, 44px);
+  }
+}
+
+/* ── Portrait: blended into the paper — no hard gray rectangle, no circle ── */
+
+.portraitWrap {
+  position: relative;
+  max-width: 420px;
+}
+
+.portrait {
+  width: 100%;
+  /* multiply + warm lift lets the studio background sink into the page tone */
+  mix-blend-mode: multiply;
+  filter: saturate(0.95) contrast(0.97) brightness(1.12) sepia(0.14);
+  -webkit-mask-image: radial-gradient(
+    100% 94% at 50% 40%,
+    #000 40%,
+    rgba(0, 0, 0, 0.6) 64%,
+    transparent 92%
+  );
+  mask-image: radial-gradient(
+    100% 94% at 50% 40%,
+    #000 40%,
+    rgba(0, 0, 0, 0.6) 64%,
+    transparent 92%
+  );
+}
+
+/* ── Copy ── */
+
+.copy {
+  max-width: 560px;
+}
+
+.name {
+  font-family: var(--display);
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 14px 0 18px;
+}
+
+.period {
+  color: var(--red);
+}
+
+.lede {
+  font-family: var(--display);
+  font-size: clamp(1.125rem, 1.8vw, 1.3125rem);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+}
+
+.body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--mid);
+  margin-bottom: 16px;
+}
+
+.links {
+  display: flex;
+  gap: 22px;
+  margin-top: 10px;
+}
+
+/* ── Four brand pillars — reassurance, not another menu ── */
+
+.pillarsHead {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.pillarList {
+  list-style: none;
+}
+
+.pillar {
+  border-top: 1px solid var(--trace);
+  padding: 18px 0 20px;
+}
+
+.pillarList .pillar:first-child {
+  border-top: none;
+  padding-top: 14px;
+}
+
+.pillarNum {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  color: var(--red);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.pillarTitle {
+  font-family: var(--display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+.pillarLine {
+  font-size: 0.6875rem;
+}
+
+@media (min-width: 700px) and (max-width: 1099px) {
+  .pillarList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 clamp(28px, 4vw, 48px);
+  }
+  .pillarList .pillar:nth-child(2) {
+    border-top: none;
+    padding-top: 14px;
+  }
+}

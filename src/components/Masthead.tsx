@@ -4,10 +4,13 @@ import styles from './Masthead.module.css';
 
 const NAV = [
   { label: 'Move', href: smartMoveLink(), external: true },
-  { label: 'Stays', href: '#stays', external: false },
-  { label: 'Rentals', href: '#rentals', external: false },
-  { label: 'Manage', href: '#manage', external: false },
+  { label: 'Stay', href: '#stays', external: false },
+  { label: 'Rent', href: '#rentals', external: false },
+  { label: 'Sell', href: smartMoveLink('sell'), external: true },
+  { label: 'Own', href: '#manage', external: false },
   { label: 'Invest', href: '#invest', external: false },
+  { label: 'Guides', href: '#guides', external: false },
+  { label: 'Joey', href: '#joey', external: false },
   { label: 'Contact', href: '#contact', external: false },
 ];
 
@@ -40,7 +43,7 @@ export function Masthead() {
             Text
           </a>
           <a href={smartMoveLink()} className={styles.cta} rel="noopener">
-            Smart Move
+            Start Move
           </a>
         </div>
       </div>

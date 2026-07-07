@@ -101,14 +101,14 @@ button {
 }
 
 .btn--primary {
-  background: var(--forest);
-  border-color: var(--forest);
+  background: var(--red);
+  border-color: var(--red);
   color: var(--off-white);
 }
 
 .btn--primary:hover {
-  background: var(--red);
-  border-color: var(--red);
+  background: var(--copper);
+  border-color: var(--copper);
 }
 
 .btn--ghost {

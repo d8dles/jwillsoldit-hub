@@ -34,9 +34,7 @@ export function IntentRouteCard({ route }: IntentRouteCardProps) {
       </span>
 
       <span className={styles.action} aria-hidden="true">
-        <span className={styles.destination}>
-          {external ? 'SMART MOVE' : 'THIS PAGE'}
-        </span>
+        <span className={styles.destination}>{external ? 'START' : 'EXPLORE'}</span>
         <span className={styles.arrow}>→</span>
       </span>
     </a>

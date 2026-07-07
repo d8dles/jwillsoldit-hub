@@ -31,7 +31,7 @@ export const CONTACT_ACTIONS: ContactAction[] = [
   {
     id: 'smart-move',
     label: 'Start a Smart Move',
-    detail: 'A guided way to plan renting, buying, selling, or relocating',
+    detail: 'The fastest way to start renting, buying, selling, or relocating',
     kind: 'smart_move',
   },
   {
