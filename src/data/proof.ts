@@ -10,7 +10,7 @@ export const PROOF: ProofTile[] = [
     id: 'market',
     label: 'HOME MARKET',
     value: 'Houston, TX',
-    detail: 'Greater Houston coverage',
+    detail: 'Rooted here · serving Texas',
   },
   {
     id: 'stays',

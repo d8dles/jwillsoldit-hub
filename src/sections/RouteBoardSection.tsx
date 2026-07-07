@@ -13,7 +13,7 @@ export function RouteBoardSection() {
               What are you <em>trying to do?</em>
             </>
           }
-          lede="Seven ways to start, depending on where you are. Each one ends with a clear plan and a real conversation — not a form that goes nowhere."
+          lede="Eight ways to start, depending on where you are. Each one ends with a clear plan and a real conversation — not a form that goes nowhere."
         />
         <RouteBoard />
       </div>

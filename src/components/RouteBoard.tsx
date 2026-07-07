@@ -10,11 +10,6 @@ export function RouteBoard() {
           <IntentRouteCard key={route.id} route={route} />
         ))}
       </div>
-      <p className={`mono-label ${styles.note}`}>
-        Renting, buying, selling, and relocating start with Smart Move — a short
-        guided planning experience at move.jwillsoldit.com. Stays and owner
-        services are arranged directly on this page.
-      </p>
     </div>
   );
 }
