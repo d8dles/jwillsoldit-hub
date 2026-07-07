@@ -1,9 +1,8 @@
 import styles from './EditorialCollage.module.css';
 
-// Texas editorial collage — the hero's atmospheric layer.
-// Selected real assets only (public/assets/editorial/), treated like a
-// magazine spread: warm desaturation, hairline borders, ghosted landscape,
-// faint Texas route motif. Decorative — the headline carries the message.
+// Texas editorial atmosphere — intentionally minimal.
+// Keep Memorial Park as the only real-photo layer so the hero feels
+// Houston-rooted without the cluttered photo-tile collage.
 
 const EDITORIAL = '/assets/editorial';
 
@@ -50,49 +49,15 @@ function TexasRouteMap() {
 
 export function EditorialCollage() {
   return (
-    <div className={styles.collage} aria-label="Texas editorial collage" role="img">
-      {/* Ghosted Houston-scale anchor — Memorial Park routes toward downtown */}
+    <div className={styles.collage} aria-hidden="true">
       <img
         className={styles.ghost}
         src={`${EDITORIAL}/memorial-park-routes.jpg`}
         alt=""
         loading="eager"
-        aria-hidden="true"
       />
 
       <TexasRouteMap />
-
-      <figure className={`${styles.tile} ${styles.tileCity}`}>
-        <img
-          src={`${EDITORIAL}/houston-architecture.jpg`}
-          alt="Downtown Houston architecture along the bayou"
-          loading="eager"
-        />
-      </figure>
-
-      <figure className={`${styles.tile} ${styles.tileLand}`}>
-        <img
-          src={`${EDITORIAL}/texas-land-acreage.jpg`}
-          alt="Texas farm and acreage from above"
-          loading="lazy"
-        />
-      </figure>
-
-      <figure className={`${styles.tile} ${styles.tileInterior}`}>
-        <img
-          src={`${EDITORIAL}/interior-editorial.jpg`}
-          alt="Light architectural interior with a curved staircase"
-          loading="lazy"
-        />
-      </figure>
-
-      <figure className={`${styles.tile} ${styles.tileHome}`}>
-        <img
-          src={`${EDITORIAL}/warm-residential.jpg`}
-          alt="Warm modern living room"
-          loading="lazy"
-        />
-      </figure>
     </div>
   );
 }
