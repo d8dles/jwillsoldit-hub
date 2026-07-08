@@ -1,6 +1,5 @@
-/* Meet Joey — editorial spread. Transparent PNG portrait rises from the page,
-   copy sits beside it, and the pillars stay integrated instead of becoming a
-   generic feature band. */
+/* Meet Joey — editorial spread. Portrait now uses a deliberate cinematic
+   Ken Burns window instead of fighting the transparent cutout edges. */
 
 .grid {
   display: grid;
@@ -35,91 +34,69 @@
   }
 }
 
-/* ── Portrait: actual transparent PNG, not a card ── */
+/* ── Portrait: cinematic editorial window ── */
 
 .portraitWrap {
   position: relative;
   width: 100%;
-  max-width: 680px;
+  max-width: 620px;
+  min-height: clamp(560px, 58vw, 760px);
   justify-self: center;
-  overflow: visible;
+  overflow: hidden;
   isolation: isolate;
+  border-radius: clamp(28px, 3.4vw, 42px);
+  background:
+    linear-gradient(180deg, rgba(250, 247, 242, 0.28) 0%, rgba(250, 247, 242, 0.08) 100%),
+    radial-gradient(ellipse at 50% 72%, rgba(176, 92, 46, 0.08), transparent 62%);
+  box-shadow:
+    0 30px 54px rgba(13, 13, 13, 0.11),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.26);
 }
 
 @media (min-width: 760px) {
   .portraitWrap {
     justify-self: start;
-    max-width: 700px;
   }
 }
 
 .portraitWrap::before {
   content: '';
   position: absolute;
-  left: 10%;
-  right: 9%;
-  bottom: 1%;
-  height: 42%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(13, 13, 13, 0.17) 0%,
-    rgba(13, 13, 13, 0.075) 38%,
-    rgba(13, 13, 13, 0.025) 58%,
-    transparent 79%
-  );
-  filter: blur(24px);
-  transform: translateY(24px) scaleX(0.94);
-  z-index: 0;
+  inset: 0;
+  z-index: 2;
   pointer-events: none;
+  border-radius: inherit;
+  background:
+    radial-gradient(ellipse at 50% 46%, rgba(250, 247, 242, 0) 44%, rgba(250, 247, 242, 0.08) 70%, rgba(250, 247, 242, 0.32) 100%),
+    linear-gradient(180deg, rgba(250, 247, 242, 0.26) 0%, rgba(250, 247, 242, 0) 18%, rgba(250, 247, 242, 0) 72%, rgba(250, 247, 242, 0.22) 100%);
 }
 
-/* Rounded cloud blend — no rectangular fill. Each layer fades OUT to
-   transparent, so only the rounded lower arm/torso area gets softened. */
 .portraitWrap::after {
   content: '';
   position: absolute;
-  left: -12%;
-  right: -12%;
-  bottom: -5%;
-  height: 50%;
-  z-index: 2;
+  left: 10%;
+  right: 10%;
+  bottom: -4%;
+  height: 34%;
+  z-index: 0;
   pointer-events: none;
-  background:
-    radial-gradient(
-      ellipse 76% 48% at 50% 100%,
-      var(--off-white) 0%,
-      rgba(250, 247, 242, 0.96) 28%,
-      rgba(250, 247, 242, 0.66) 50%,
-      rgba(250, 247, 242, 0.22) 70%,
-      rgba(250, 247, 242, 0) 84%
-    ),
-    radial-gradient(
-      ellipse 26% 34% at 15% 86%,
-      rgba(250, 247, 242, 0.9) 0%,
-      rgba(250, 247, 242, 0.58) 42%,
-      rgba(250, 247, 242, 0.18) 66%,
-      rgba(250, 247, 242, 0) 82%
-    ),
-    radial-gradient(
-      ellipse 26% 34% at 85% 86%,
-      rgba(250, 247, 242, 0.9) 0%,
-      rgba(250, 247, 242, 0.58) 42%,
-      rgba(250, 247, 242, 0.18) 66%,
-      rgba(250, 247, 242, 0) 82%
-    );
+  background: radial-gradient(ellipse at center, rgba(13, 13, 13, 0.16), rgba(13, 13, 13, 0.05) 48%, transparent 74%);
+  filter: blur(20px);
 }
 
 .portrait {
-  position: relative;
+  position: absolute;
   z-index: 1;
-  width: min(120%, 740px);
+  left: 50%;
+  bottom: -2%;
+  width: 122%;
+  max-width: none;
   height: auto;
   display: block;
-  margin-left: -9%;
-  transform: translateY(3%);
-  filter: drop-shadow(0 24px 28px rgba(13, 13, 13, 0.13));
-  animation: portraitLift 1.45s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
-  will-change: transform, opacity;
+  filter: drop-shadow(0 24px 30px rgba(13, 13, 13, 0.13));
+  transform: translateX(-50%) translateY(18px) scale(1.03);
+  animation: kenBurnsPortrait 16s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 .copy {
@@ -203,24 +180,22 @@
   font-size: 0.6875rem;
 }
 
-@keyframes portraitLift {
+@keyframes kenBurnsPortrait {
   0% {
-    opacity: 0;
-    transform: translateY(72px) scale(1.06);
+    transform: translateX(-52%) translateY(28px) scale(1.03);
   }
-  58% {
-    opacity: 1;
-    transform: translateY(-10px) scale(1.015);
+  38% {
+    transform: translateX(-50%) translateY(8px) scale(1.07);
   }
   100% {
-    opacity: 1;
-    transform: translateY(3%) scale(1);
+    transform: translateX(-47%) translateY(-18px) scale(1.13);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .portrait {
     animation: none;
+    transform: translateX(-50%) translateY(8px) scale(1.06);
   }
 }
 
@@ -237,18 +212,13 @@
 
 @media (max-width: 699px) {
   .portraitWrap {
+    min-height: 560px;
     max-width: 100%;
-  }
-
-  .portraitWrap::after {
-    left: -10%;
-    right: -10%;
-    height: 46%;
+    border-radius: 28px;
   }
 
   .portrait {
-    width: 114%;
-    margin-left: -7%;
-    transform: translateY(2%);
+    width: 132%;
+    bottom: -1%;
   }
 }
