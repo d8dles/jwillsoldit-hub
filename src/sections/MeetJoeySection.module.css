@@ -40,7 +40,7 @@
 .portraitWrap {
   position: relative;
   width: 100%;
-  max-width: 640px;
+  max-width: 680px;
   justify-self: center;
   overflow: visible;
   isolation: isolate;
@@ -49,7 +49,7 @@
 @media (min-width: 760px) {
   .portraitWrap {
     justify-self: start;
-    max-width: 660px;
+    max-width: 700px;
   }
 }
 
@@ -57,58 +57,70 @@
   content: '';
   position: absolute;
   left: 10%;
-  right: 8%;
-  bottom: 3%;
-  height: 44%;
-  background: radial-gradient(ellipse at center, rgba(13, 13, 13, 0.15), rgba(13, 13, 13, 0.045) 46%, transparent 74%);
-  filter: blur(20px);
-  transform: translateY(18px) scaleX(0.92);
+  right: 9%;
+  bottom: 1%;
+  height: 42%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(13, 13, 13, 0.17) 0%,
+    rgba(13, 13, 13, 0.075) 38%,
+    rgba(13, 13, 13, 0.025) 58%,
+    transparent 79%
+  );
+  filter: blur(24px);
+  transform: translateY(24px) scaleX(0.94);
   z-index: 0;
   pointer-events: none;
 }
 
-/* Stronger page-colored dissolve. This covers the lower arm/torso cut lines
-   instead of masking the image itself, so the PNG stays intact while the hard
-   crop disappears into the paper. */
+/* Rounded cloud blend — not a flat slab. This sits over the lower arm area
+   and uses oval gradients so the cut edges disappear into the page shape. */
 .portraitWrap::after {
   content: '';
   position: absolute;
-  left: -14%;
-  right: -14%;
-  bottom: -1px;
-  height: 42%;
+  left: -12%;
+  right: -12%;
+  bottom: -4%;
+  height: 54%;
+  z-index: 2;
+  pointer-events: none;
   background:
-    linear-gradient(
-      90deg,
-      var(--off-white) 0%,
-      rgba(250, 247, 242, 0.92) 6%,
-      rgba(250, 247, 242, 0) 20%,
-      rgba(250, 247, 242, 0) 80%,
-      rgba(250, 247, 242, 0.92) 94%,
+    radial-gradient(
+      ellipse 78% 62% at 50% 88%,
+      rgba(250, 247, 242, 0) 0%,
+      rgba(250, 247, 242, 0.08) 28%,
+      rgba(250, 247, 242, 0.32) 49%,
+      rgba(250, 247, 242, 0.74) 72%,
+      rgba(250, 247, 242, 0.96) 88%,
       var(--off-white) 100%
     ),
-    radial-gradient(ellipse 88% 74% at 52% 85%, rgba(250, 247, 242, 0) 0%, rgba(250, 247, 242, 0.24) 43%, rgba(250, 247, 242, 0.78) 74%, var(--off-white) 100%),
-    linear-gradient(
-      180deg,
+    radial-gradient(
+      ellipse 28% 42% at 14% 78%,
       rgba(250, 247, 242, 0) 0%,
-      rgba(250, 247, 242, 0.2) 30%,
-      rgba(250, 247, 242, 0.72) 66%,
+      rgba(250, 247, 242, 0.18) 36%,
+      rgba(250, 247, 242, 0.64) 68%,
+      var(--off-white) 100%
+    ),
+    radial-gradient(
+      ellipse 28% 42% at 86% 78%,
+      rgba(250, 247, 242, 0) 0%,
+      rgba(250, 247, 242, 0.18) 36%,
+      rgba(250, 247, 242, 0.64) 68%,
       var(--off-white) 100%
     );
-  pointer-events: none;
-  z-index: 2;
 }
 
 .portrait {
   position: relative;
   z-index: 1;
-  width: min(116%, 700px);
+  width: min(120%, 740px);
   height: auto;
   display: block;
-  margin-left: -8%;
-  transform: translateY(1%);
-  filter: drop-shadow(0 20px 24px rgba(13, 13, 13, 0.11));
-  animation: portraitRise 900ms var(--ease-out) 0.08s both;
+  margin-left: -9%;
+  transform: translateY(3%);
+  filter: drop-shadow(0 24px 28px rgba(13, 13, 13, 0.13));
+  animation: portraitLift 1.45s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+  will-change: transform, opacity;
 }
 
 .copy {
@@ -192,14 +204,18 @@
   font-size: 0.6875rem;
 }
 
-@keyframes portraitRise {
-  from {
-    opacity: 0.82;
-    transform: translateY(24px) scale(1.018);
+@keyframes portraitLift {
+  0% {
+    opacity: 0;
+    transform: translateY(72px) scale(1.06);
   }
-  to {
+  58% {
     opacity: 1;
-    transform: translateY(1%) scale(1);
+    transform: translateY(-10px) scale(1.015);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(3%) scale(1);
   }
 }
 
@@ -221,8 +237,19 @@
 }
 
 @media (max-width: 699px) {
+  .portraitWrap {
+    max-width: 100%;
+  }
+
+  .portraitWrap::after {
+    left: -10%;
+    right: -10%;
+    height: 48%;
+  }
+
   .portrait {
-    width: 112%;
-    margin-left: -6%;
+    width: 114%;
+    margin-left: -7%;
+    transform: translateY(2%);
   }
 }
