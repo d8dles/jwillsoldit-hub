@@ -50,7 +50,7 @@ export function GuidesSection() {
               What I&rsquo;d tell <em>a friend.</em>
             </>
           }
-          lede="Quick, plain-English guidance on common move questions. Open the topic that fits, then start Smart Move when you are ready for a real plan."
+          lede="Quick, plain-English guidance on common move questions. Open the topic that fits, then use the intake when you are ready for a real plan."
         />
 
         <div ref={ref} className={`${styles.list} reveal`}>
@@ -74,7 +74,7 @@ export function GuidesSection() {
             Have a situation that does not fit neatly into a guide? Start with the intake and I will point it the right way.
           </p>
           <a href={smartMoveLink()} className="btn btn--ghost" rel="noopener">
-            Start Smart Move
+            Get a plan
           </a>
         </div>
       </div>
