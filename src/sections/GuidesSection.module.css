@@ -17,6 +17,11 @@
   gap: 18px;
   padding: 20px 4px;
   cursor: pointer;
+  list-style: none;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
 }
 
 .num {
@@ -70,4 +75,18 @@
   font-size: 0.9375rem;
   color: var(--mid);
   max-width: 420px;
+}
+
+@media (max-width: 599px) {
+  .summary {
+    grid-template-columns: 34px 1fr;
+  }
+
+  .status {
+    grid-column: 2;
+  }
+
+  .detail {
+    padding-left: 38px;
+  }
 }
