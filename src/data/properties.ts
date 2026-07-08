@@ -154,10 +154,15 @@ export const PROPERTIES: Property[] = [
 ];
 
 // Derived views — components consume these, never the raw array shape.
+
+// Every publicly visible stay, in data order. The Stays carousel renders
+// this, so adding or removing a stay is a data edit — no component change.
+export const PUBLIC_STAYS = PROPERTIES.filter(
+  (p) => p.category === 'stay' && p.publicVisible
+);
+
 export const FEATURED_STAYS = PROPERTIES.filter(
   (p) => p.category === 'stay' && p.publicVisible && p.featured
 );
 
-export const STAY_COUNT = PROPERTIES.filter(
-  (p) => p.category === 'stay' && p.publicVisible
-).length;
+export const STAY_COUNT = PUBLIC_STAYS.length;

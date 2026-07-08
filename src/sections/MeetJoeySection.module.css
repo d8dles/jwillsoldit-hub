@@ -1,53 +1,59 @@
+/* Meet Joey — large transparent cutout on the left, copy on the right,
+   four "why Joey" pillars as a band below. The portrait is a pre-cut PNG,
+   so no background to fight: no gray rectangle, no radial mask, no muddy
+   color filters. Just a subtle lift shadow and a soft bottom fade so the
+   figure appears to rise off the warm page. */
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(40px, 6vw, 64px);
-  align-items: start;
+  gap: clamp(28px, 6vw, 52px);
+  align-items: end;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   .grid {
-    grid-template-columns: minmax(240px, 0.8fr) 1.2fr;
+    grid-template-columns: minmax(300px, 0.92fr) 1.08fr;
+    column-gap: clamp(40px, 5vw, 76px);
   }
   .pillars {
     grid-column: 1 / -1;
   }
 }
 
-@media (min-width: 1100px) {
-  .grid {
-    grid-template-columns: minmax(260px, 0.85fr) 1.15fr minmax(300px, 0.95fr);
-  }
-  .pillars {
-    grid-column: auto;
-    border-left: 1px solid var(--trace);
-    padding-left: clamp(28px, 3vw, 44px);
-  }
-}
-
-/* ── Portrait: blended into the paper — no hard gray rectangle, no circle ── */
+/* ── Portrait: cutout PNG, lift + soft bottom fade ── */
 
 .portraitWrap {
   position: relative;
-  max-width: 420px;
+  width: 100%;
+  max-width: 460px;
+  justify-self: center;
+}
+
+@media (min-width: 900px) {
+  .portraitWrap {
+    justify-self: start;
+    max-width: 480px;
+  }
 }
 
 .portrait {
   width: 100%;
-  /* multiply + warm lift lets the studio background sink into the page tone */
-  mix-blend-mode: multiply;
-  filter: saturate(0.95) contrast(0.97) brightness(1.12) sepia(0.14);
-  -webkit-mask-image: radial-gradient(
-    100% 94% at 50% 40%,
-    #000 40%,
-    rgba(0, 0, 0, 0.6) 64%,
-    transparent 92%
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 32px rgba(13, 13, 13, 0.16));
+  /* Fade only the bottom edge into the page — head and shoulders stay crisp. */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 76%,
+    rgba(0, 0, 0, 0.55) 90%,
+    transparent 100%
   );
-  mask-image: radial-gradient(
-    100% 94% at 50% 40%,
-    #000 40%,
-    rgba(0, 0, 0, 0.6) 64%,
-    transparent 92%
+  mask-image: linear-gradient(
+    to bottom,
+    #000 76%,
+    rgba(0, 0, 0, 0.55) 90%,
+    transparent 100%
   );
 }
 
@@ -92,25 +98,41 @@
   margin-top: 10px;
 }
 
-/* ── Four brand pillars — reassurance, not another menu ── */
+/* ── Four brand pillars — a reassurance band, not another menu ── */
+
+.pillars {
+  margin-top: clamp(32px, 5vw, 52px);
+  padding-top: 28px;
+  border-top: 1px solid var(--trace);
+}
 
 .pillarsHead {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 }
 
 .pillarList {
   list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px 34px;
+}
+
+@media (min-width: 560px) {
+  .pillarList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .pillarList {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .pillar {
-  border-top: 1px solid var(--trace);
-  padding: 18px 0 20px;
-}
-
-.pillarList .pillar:first-child {
-  border-top: none;
-  padding-top: 14px;
+  border-top: 2px solid var(--red);
+  padding-top: 12px;
 }
 
 .pillarNum {
@@ -123,7 +145,7 @@
 
 .pillarTitle {
   font-family: var(--display);
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.2;
@@ -132,16 +154,4 @@
 
 .pillarLine {
   font-size: 0.6875rem;
-}
-
-@media (min-width: 700px) and (max-width: 1099px) {
-  .pillarList {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0 clamp(28px, 4vw, 48px);
-  }
-  .pillarList .pillar:nth-child(2) {
-    border-top: none;
-    padding-top: 14px;
-  }
 }

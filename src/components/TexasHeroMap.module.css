@@ -1,0 +1,82 @@
+/* Texas hero map — quiet, editorial. One SVG coordinate system for the
+   outline and every label. Houston is the only loud element. */
+
+.wrap {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: mapFade var(--dur-reveal) ease 0.28s forwards;
+}
+
+.map {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.outline {
+  fill: rgba(176, 92, 46, 0.05);
+  stroke: var(--copper);
+  stroke-width: 0.8;
+  stroke-linejoin: round;
+  opacity: 0.55;
+}
+
+/* ── Minor cities: subtle and small ── */
+.dot {
+  fill: var(--copper);
+  opacity: 0.65;
+}
+
+.label {
+  font-family: var(--mono);
+  font-size: 2.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  fill: var(--mid);
+  opacity: 0.85;
+}
+
+/* ── Houston: the emphasis ── */
+.houstonGlow {
+  fill: var(--red);
+  opacity: 0.14;
+}
+
+.houstonDot {
+  fill: var(--red);
+}
+
+.houstonLabel {
+  font-family: var(--mono);
+  font-size: 3.6px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  fill: var(--red);
+}
+
+@keyframes mapFade {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrap {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* On smaller screens the label set gets crowded — keep Houston only. */
+@media (max-width: 700px) {
+  .city {
+    display: none;
+  }
+  .wrap {
+    max-width: 460px;
+  }
+}
