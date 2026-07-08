@@ -1,77 +1,73 @@
 .collage {
   position: relative;
-  width: min(100%, 720px);
+  width: min(100%, 940px);
   aspect-ratio: 16 / 8;
-  min-height: 310px;
+  min-height: 360px;
   opacity: 0;
   animation: collageFade var(--dur-reveal) ease 0.28s forwards;
 }
 
-.map {
+.mapWrap {
   position: absolute;
-  inset: 2% 0 0 0;
+  inset: -6% -6% -2% 0;
+  transform: translateX(2%);
+}
+
+.texasMap {
+  display: block;
   width: 100%;
   height: 100%;
-  color: var(--copper);
-  overflow: visible;
+  object-fit: contain;
+  opacity: 0.72;
+  filter: sepia(0.16) saturate(0.42) contrast(0.78) brightness(1.34) drop-shadow(0 26px 22px rgba(13, 13, 13, 0.12));
 }
 
-.mapLift {
-  fill: rgba(13, 13, 13, 0.08);
-  transform: translate(7px, 11px);
-  opacity: 0.55;
+.houstonMarker {
+  position: absolute;
+  left: 77.6%;
+  top: 58.4%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  transform: translate(-50%, -50%);
 }
 
-.mapPaper {
-  fill: rgba(250, 247, 242, 0.9);
+.houstonMarker::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(224, 58, 31, 0.24), rgba(224, 58, 31, 0.08) 44%, transparent 72%);
+  transform: translate(-42%, -50%);
+  pointer-events: none;
 }
 
-.mapOutline {
-  fill: none;
-  stroke: rgba(176, 92, 46, 0.42);
-  stroke-width: 1.05;
-  vector-effect: non-scaling-stroke;
+.houstonDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--red);
+  box-shadow: 0 0 0 5px rgba(224, 58, 31, 0.12), 0 0 24px rgba(224, 58, 31, 0.32);
+  z-index: 1;
 }
 
-.majorCity {
+.houstonLabel {
   font-family: var(--display);
-  font-size: 7.4px;
+  font-size: clamp(0.95rem, 1.35vw, 1.25rem);
+  font-weight: 600;
   letter-spacing: -0.02em;
-  fill: var(--ink);
-  opacity: 0.76;
-}
-
-.smallCity {
-  font-family: var(--display);
-  font-size: 4.5px;
-  letter-spacing: -0.01em;
-  fill: var(--ink);
-  opacity: 0.46;
-}
-
-.houstonGlow circle:first-child {
-  fill: var(--red);
-  opacity: 0.16;
-}
-
-.houstonGlow circle:nth-child(2) {
-  fill: var(--red);
-  opacity: 0.88;
-}
-
-.houstonGlow text {
-  font-family: var(--display);
-  font-size: 10px;
-  letter-spacing: -0.02em;
-  fill: var(--ink);
-  opacity: 0.94;
+  color: var(--ink);
+  z-index: 1;
 }
 
 .collage::after {
   content: '';
   position: absolute;
-  inset: -6%;
-  background: linear-gradient(90deg, rgba(250, 247, 242, 0.9), rgba(250, 247, 242, 0.18) 48%, transparent 100%);
+  inset: -7%;
+  background: linear-gradient(90deg, rgba(250, 247, 242, 0.96), rgba(250, 247, 242, 0.14) 34%, transparent 72%);
   pointer-events: none;
 }
 
@@ -91,9 +87,14 @@
 @media (max-width: 1099px) {
   .collage {
     width: 100%;
-    max-width: 640px;
+    max-width: 680px;
     aspect-ratio: 16 / 9;
-    min-height: 260px;
+    min-height: 270px;
+  }
+
+  .mapWrap {
+    inset: -2% 0 0 0;
+    transform: none;
   }
 }
 
@@ -102,11 +103,16 @@
     min-height: 230px;
   }
 
-  .smallCity {
-    opacity: 0.34;
+  .texasMap {
+    opacity: 0.5;
   }
 
-  .majorCity {
-    font-size: 6.7px;
+  .houstonMarker {
+    left: 77%;
+    top: 58%;
+  }
+
+  .houstonLabel {
+    font-size: 0.95rem;
   }
 }
