@@ -1,5 +1,4 @@
 import { Masthead } from './components/Masthead';
-import { MobileActionBar } from './components/MobileActionBar';
 import { CursorTrail } from './components/CursorTrail';
 import { HeroSection } from './sections/HeroSection';
 import { MeetJoeySection } from './sections/MeetJoeySection';
@@ -26,7 +25,6 @@ export default function App() {
         <GuidesSection />
       </main>
       <ContactSection />
-      <MobileActionBar />
       <CursorTrail />
     </>
   );
