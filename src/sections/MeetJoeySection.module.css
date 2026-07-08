@@ -1,5 +1,5 @@
-/* Meet Joey — editorial spread. The portrait stays full and unboxed,
-   with a blurred warm aura behind it instead of geometry or cover-up blobs. */
+/* Meet Joey — editorial spread. The portrait is now sourced from a JPG,
+   so the white studio field is visually blended into the ivory page. */
 
 .grid {
   display: grid;
@@ -35,7 +35,7 @@
   }
 }
 
-/* ── Portrait: full cutout, soft blurred art behind ── */
+/* ── Portrait: JPG field blended into page, soft editorial art behind ── */
 
 .portraitWrap {
   position: relative;
@@ -54,40 +54,38 @@
 }
 
 /* Blurry atmospheric aura behind the portrait. It is intentionally soft and
-   pushed behind the PNG, so it reads editorial instead of geometric. */
+   pushed behind the JPG, so it reads editorial instead of a pasted box. */
 .portraitWrap::before {
   content: '';
   position: absolute;
   z-index: 0;
-  left: -7%;
-  right: -8%;
-  top: 12%;
-  bottom: -4%;
+  left: -8%;
+  right: -10%;
+  top: 9%;
+  bottom: -6%;
   pointer-events: none;
   border-radius: 999px;
-  transform: rotate(-4deg) scale(1.02);
+  transform: rotate(-4deg) scale(1.04);
   background:
-    radial-gradient(ellipse at 50% 44%, rgba(176, 92, 46, 0.22) 0%, rgba(176, 92, 46, 0.12) 36%, rgba(176, 92, 46, 0) 70%),
-    radial-gradient(ellipse at 25% 72%, rgba(128, 55, 35, 0.16) 0%, rgba(128, 55, 35, 0.07) 42%, rgba(128, 55, 35, 0) 76%),
-    radial-gradient(ellipse at 76% 74%, rgba(250, 247, 242, 0.82) 0%, rgba(250, 247, 242, 0.26) 44%, rgba(250, 247, 242, 0) 72%);
-  filter: blur(46px);
-  opacity: 0.94;
+    radial-gradient(ellipse at 48% 42%, rgba(176, 92, 46, 0.20) 0%, rgba(176, 92, 46, 0.10) 34%, rgba(176, 92, 46, 0) 72%),
+    radial-gradient(ellipse at 22% 72%, rgba(128, 55, 35, 0.14) 0%, rgba(128, 55, 35, 0.055) 42%, rgba(128, 55, 35, 0) 78%),
+    radial-gradient(ellipse at 78% 70%, rgba(250, 247, 242, 0.78) 0%, rgba(250, 247, 242, 0.22) 46%, rgba(250, 247, 242, 0) 74%);
+  filter: blur(48px);
+  opacity: 0.9;
 }
 
-/* Ground shadow only — no visible type, no geometry, no clouds on the image. */
+/* Soft page-colored wash that dissolves the JPG's studio background. */
 .portraitWrap::after {
   content: '';
   position: absolute;
-  z-index: 0;
-  left: 8%;
-  right: 4%;
-  bottom: -2%;
-  height: 32%;
+  z-index: 2;
+  inset: -1% -4% -4% -7%;
   pointer-events: none;
-  border-radius: 999px;
-  background: radial-gradient(ellipse at center, rgba(13, 13, 13, 0.15) 0%, rgba(13, 13, 13, 0.06) 44%, rgba(13, 13, 13, 0) 78%);
-  filter: blur(28px);
-  transform: translateY(22px) scaleX(0.98);
+  background:
+    linear-gradient(90deg, var(--paper) 0%, rgba(250, 247, 242, 0) 18%, rgba(250, 247, 242, 0) 82%, var(--paper) 100%),
+    linear-gradient(180deg, rgba(250, 247, 242, 0) 54%, rgba(250, 247, 242, 0.45) 78%, var(--paper) 100%);
+  mix-blend-mode: lighten;
+  opacity: 0.72;
 }
 
 .portrait {
@@ -98,60 +96,36 @@
   display: block;
   margin-left: -12%;
   transform: translateY(3%);
+  mix-blend-mode: multiply;
   filter:
-    drop-shadow(0 28px 34px rgba(13, 13, 13, 0.15))
-    saturate(0.96)
-    contrast(0.99);
+    drop-shadow(0 28px 34px rgba(13, 13, 13, 0.12))
+    saturate(0.98)
+    contrast(1.02)
+    brightness(1.015);
   -webkit-mask-image:
+    radial-gradient(120% 112% at 48% 46%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 58%, rgba(0, 0, 0, 0.92) 74%, rgba(0, 0, 0, 0.50) 90%, rgba(0, 0, 0, 0) 100%),
     linear-gradient(
       to bottom,
       rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 89.5%,
-      rgba(0, 0, 0, 0.995) 91%,
-      rgba(0, 0, 0, 0.98) 92.5%,
-      rgba(0, 0, 0, 0.94) 94%,
-      rgba(0, 0, 0, 0.84) 95.5%,
-      rgba(0, 0, 0, 0.66) 97%,
-      rgba(0, 0, 0, 0.42) 98.2%,
-      rgba(0, 0, 0, 0.18) 99.2%,
+      rgba(0, 0, 0, 1) 88.5%,
+      rgba(0, 0, 0, 0.995) 90.5%,
+      rgba(0, 0, 0, 0.96) 93%,
+      rgba(0, 0, 0, 0.82) 95.5%,
+      rgba(0, 0, 0, 0.54) 98%,
       rgba(0, 0, 0, 0) 100%
-    ),
-    linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.24) 0%,
-      rgba(0, 0, 0, 0.60) 1.2%,
-      rgba(0, 0, 0, 0.90) 2.8%,
-      rgba(0, 0, 0, 1) 4.8%,
-      rgba(0, 0, 0, 1) 95.2%,
-      rgba(0, 0, 0, 0.90) 97.2%,
-      rgba(0, 0, 0, 0.60) 98.8%,
-      rgba(0, 0, 0, 0.24) 100%
     );
   -webkit-mask-composite: source-in;
   mask-image:
+    radial-gradient(120% 112% at 48% 46%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 58%, rgba(0, 0, 0, 0.92) 74%, rgba(0, 0, 0, 0.50) 90%, rgba(0, 0, 0, 0) 100%),
     linear-gradient(
       to bottom,
       rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 89.5%,
-      rgba(0, 0, 0, 0.995) 91%,
-      rgba(0, 0, 0, 0.98) 92.5%,
-      rgba(0, 0, 0, 0.94) 94%,
-      rgba(0, 0, 0, 0.84) 95.5%,
-      rgba(0, 0, 0, 0.66) 97%,
-      rgba(0, 0, 0, 0.42) 98.2%,
-      rgba(0, 0, 0, 0.18) 99.2%,
+      rgba(0, 0, 0, 1) 88.5%,
+      rgba(0, 0, 0, 0.995) 90.5%,
+      rgba(0, 0, 0, 0.96) 93%,
+      rgba(0, 0, 0, 0.82) 95.5%,
+      rgba(0, 0, 0, 0.54) 98%,
       rgba(0, 0, 0, 0) 100%
-    ),
-    linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.24) 0%,
-      rgba(0, 0, 0, 0.60) 1.2%,
-      rgba(0, 0, 0, 0.90) 2.8%,
-      rgba(0, 0, 0, 1) 4.8%,
-      rgba(0, 0, 0, 1) 95.2%,
-      rgba(0, 0, 0, 0.90) 97.2%,
-      rgba(0, 0, 0, 0.60) 98.8%,
-      rgba(0, 0, 0, 0.24) 100%
     );
   mask-composite: intersect;
 }
