@@ -22,9 +22,13 @@ interface City {
 
 const CITIES: City[] = [
   { id: 'elpaso', name: 'El Paso', x: 12, y: 44.6, anchor: 'start' },
+  { id: 'lubbock', name: 'Lubbock', x: 45.5, y: 27.8, anchor: 'middle' },
   { id: 'dfw', name: 'Dallas / Fort Worth', x: 71.4, y: 32.4, anchor: 'middle' },
+  { id: 'waco', name: 'Waco', x: 67.1, y: 43.7, anchor: 'middle' },
+  { id: 'college-station', name: 'College Station', x: 72.8, y: 50.4, anchor: 'middle' },
   { id: 'austin', name: 'Austin', x: 64.4, y: 54.9, anchor: 'end' },
   { id: 'sanantonio', name: 'San Antonio', x: 61.1, y: 66.1, anchor: 'middle' },
+  { id: 'corpus-christi', name: 'Corpus Christi', x: 70.1, y: 75.4, anchor: 'middle' },
 ];
 
 export function TexasHeroMap() {
@@ -34,7 +38,7 @@ export function TexasHeroMap() {
         className={styles.map}
         viewBox="0 0 116 96"
         role="img"
-        aria-label="Texas — Houston-rooted, serving Austin, Dallas–Fort Worth, San Antonio, and El Paso"
+        aria-label="Texas — Houston-rooted, serving statewide"
       >
         <title>Texas — Houston-rooted, serving statewide</title>
 
