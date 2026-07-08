@@ -6,6 +6,8 @@ import { smsLink, mailtoLink } from '../utils/links';
 import styles from './StaysSection.module.css';
 
 export function StaysSection() {
+  const visibleStays = FEATURED_STAYS.slice(0, 3);
+
   return (
     <section id="stays" className="section section--hairline-top" aria-label="Furnished stays">
       <div className="container">
@@ -21,15 +23,15 @@ export function StaysSection() {
         />
 
         <div className={styles.grid}>
-          {FEATURED_STAYS.map((property, i) => (
+          {visibleStays.map((property, i) => (
             <PropertyPreviewCard key={property.id} property={property} index={i} />
           ))}
         </div>
 
         <div className={styles.footerRow}>
           <p className={`mono-label ${styles.indexNote}`}>
-            SHOWING {String(FEATURED_STAYS.length).padStart(2, '0')} OF{' '}
-            {String(STAY_COUNT).padStart(2, '0')} STAYS · FULL COLLECTION COMING SOON
+            SHOWING {String(visibleStays.length).padStart(2, '0')} OF{' '}
+            {String(STAY_COUNT).padStart(2, '0')} STAYS · AVAILABILITY BY REQUEST
           </p>
           <div className={styles.ctas}>
             <a href={smsLink(`${SUBJECTS.stays} — dates and unit type?`)} className="btn btn--primary">
