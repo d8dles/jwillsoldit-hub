@@ -1,106 +1,171 @@
 import { useEffect, useRef } from 'react';
 
-const TEXAS_PATH =
-  'M66 10 H116 V41 L133 43 L153 49 L176 54 L218 58 L222 78 L230 92 L226 112 L211 123 L194 131 L181 140 L170 153 L169 177 L162 198 L145 190 L132 169 L119 153 L106 139 L94 130 L82 128 L72 137 L61 132 L53 121 L44 112 L31 104 L10 98 H66 Z';
+// Subtle copper ember cursor trail — editorial trace, not a game effect.
+// Desktop fine-pointer only. Honors prefers-reduced-motion. rAF + fixed
+// particle pool, pointer-events: none, zero layout reads in the hot path.
 
-const TRAIL_COUNT = 7;
+const POOL_SIZE = 56;
+const LIFE_MS = 560;
+const SPAWN_SPACING = 13; // px between spawned particles along the pointer path
+
+interface Particle {
+  x: number;
+  y: number;
+  born: number;
+  drift: number;
+  alive: boolean;
+}
 
 export function CursorTrail() {
-  const marksRef = useRef<HTMLDivElement[]>([]);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-    const marks = marksRef.current.filter(Boolean);
-    if (!marks.length) return;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
     const finePointer = window.matchMedia('(pointer: fine) and (hover: hover)');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (!finePointer.matches || reducedMotion.matches) return;
 
-    let targetX = window.innerWidth / 2;
-    let targetY = window.innerHeight / 2;
-    const points = marks.map(() => ({ x: targetX, y: targetY }));
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let width = 0;
+    let height = 0;
+    let dpr = 1;
+
+    function resize() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas!.width = Math.round(width * dpr);
+      canvas!.height = Math.round(height * dpr);
+      ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resize();
+
+    const pool: Particle[] = Array.from({ length: POOL_SIZE }, () => ({
+      x: 0,
+      y: 0,
+      born: 0,
+      drift: 0,
+      alive: false,
+    }));
+    let poolIndex = 0;
+    let aliveCount = 0;
     let rafId = 0;
-    let active = false;
+    let running = false;
+    let lastX: number | null = null;
+    let lastY: number | null = null;
 
-    function frame() {
-      points[0].x += (targetX - points[0].x) * 0.26;
-      points[0].y += (targetY - points[0].y) * 0.26;
-
-      for (let i = 1; i < points.length; i += 1) {
-        points[i].x += (points[i - 1].x - points[i].x) * 0.22;
-        points[i].y += (points[i - 1].y - points[i].y) * 0.22;
-      }
-
-      marks.forEach((mark, index) => {
-        const scale = 1 - index * 0.045;
-        const opacity = active ? Math.max(0.1, 0.72 - index * 0.095) : 0;
-        mark.style.opacity = String(opacity);
-        mark.style.transform = `translate3d(${points[index].x}px, ${points[index].y}px, 0) translate(-50%, -50%) scale(${scale})`;
-      });
-
-      rafId = requestAnimationFrame(frame);
+    function spawn(x: number, y: number, now: number) {
+      const p = pool[poolIndex];
+      poolIndex = (poolIndex + 1) % POOL_SIZE;
+      if (!p.alive) aliveCount++;
+      p.x = x;
+      p.y = y;
+      p.born = now;
+      p.drift = (Math.random() - 0.5) * 0.5;
+      p.alive = true;
     }
 
-    function onMove(e: MouseEvent) {
-      targetX = e.clientX;
-      targetY = e.clientY;
-      if (!active) {
-        active = true;
+    function frame() {
+      const now = performance.now();
+      ctx!.clearRect(0, 0, width, height);
+
+      for (const p of pool) {
+        if (!p.alive) continue;
+        const t = (now - p.born) / LIFE_MS;
+        if (t >= 1) {
+          p.alive = false;
+          aliveCount--;
+          continue;
+        }
+        const fade = 1 - t;
+        // ember: warm orange cooling toward copper as it dies
+        const r = Math.round(232 - 40 * t);
+        const g = Math.round(93 - 15 * t);
+        const b = Math.round(42 + 4 * t);
+        ctx!.beginPath();
+        ctx!.arc(
+          p.x + p.drift * t * 26,
+          p.y - t * 9, // gentle upward drift
+          0.5 + 2.1 * fade,
+          0,
+          Math.PI * 2
+        );
+        ctx!.fillStyle = `rgba(${r}, ${g}, ${b}, ${(0.38 * fade * fade).toFixed(3)})`;
+        ctx!.fill();
+      }
+
+      if (aliveCount > 0) {
+        rafId = requestAnimationFrame(frame);
+      } else {
+        running = false;
+      }
+    }
+
+    function ensureRunning() {
+      if (!running) {
+        running = true;
         rafId = requestAnimationFrame(frame);
       }
     }
 
-    function onLeave() {
-      active = false;
-      marks.forEach((mark) => {
-        mark.style.opacity = '0';
-      });
+    function onMove(e: MouseEvent) {
+      const now = performance.now();
+      const x = e.clientX;
+      const y = e.clientY;
+      if (lastX === null || lastY === null) {
+        spawn(x, y, now);
+      } else {
+        const dx = x - lastX;
+        const dy = y - lastY;
+        const dist = Math.hypot(dx, dy);
+        const steps = Math.min(Math.floor(dist / SPAWN_SPACING), 6);
+        for (let i = 1; i <= steps; i++) {
+          spawn(lastX + (dx * i) / (steps + 1), lastY + (dy * i) / (steps + 1), now);
+        }
+        if (dist >= SPAWN_SPACING) spawn(x, y, now);
+      }
+      lastX = x;
+      lastY = y;
+      ensureRunning();
+    }
+
+    function onVisibility() {
+      if (document.hidden) {
+        cancelAnimationFrame(rafId);
+        running = false;
+      } else if (aliveCount > 0) {
+        ensureRunning();
+      }
     }
 
     window.addEventListener('mousemove', onMove, { passive: true });
-    document.addEventListener('mouseleave', onLeave);
+    window.addEventListener('resize', resize);
+    document.addEventListener('visibilitychange', onVisibility);
 
     return () => {
       cancelAnimationFrame(rafId);
       window.removeEventListener('mousemove', onMove);
-      document.removeEventListener('mouseleave', onLeave);
+      window.removeEventListener('resize', resize);
+      document.removeEventListener('visibilitychange', onVisibility);
     };
   }, []);
 
   return (
-    <>
-      {Array.from({ length: TRAIL_COUNT }, (_, index) => (
-        <div
-          key={index}
-          ref={(node) => {
-            if (node) marksRef.current[index] = node;
-          }}
-          aria-hidden="true"
-          style={{
-            position: 'fixed',
-            left: 0,
-            top: 0,
-            width: index === 0 ? 26 : 23,
-            height: index === 0 ? 24 : 22,
-            pointerEvents: 'none',
-            zIndex: 999,
-            opacity: 0,
-            transition: 'opacity 120ms ease',
-          }}
-        >
-          <svg viewBox="0 0 240 215" width="100%" height="100%" focusable="false">
-            <path
-              d={TEXAS_PATH}
-              fill="none"
-              stroke={index === 0 ? 'rgba(224, 58, 31, 0.92)' : 'rgba(176, 92, 46, 0.62)'}
-              strokeWidth={index === 0 ? 10 : 8}
-              strokeLinejoin="round"
-              strokeLinecap="round"
-              vectorEffect="non-scaling-stroke"
-            />
-          </svg>
-        </div>
-      ))}
-    </>
+    <canvas
+      ref={canvasRef}
+      aria-hidden="true"
+      style={{
+        position: 'fixed',
+        inset: 0,
+        width: '100vw',
+        height: '100vh',
+        pointerEvents: 'none',
+        zIndex: 999,
+      }}
+    />
   );
 }
