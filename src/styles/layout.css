@@ -31,6 +31,20 @@
   color: var(--red);
 }
 
+/* Black panel — the Route Board ("What are you trying to do?"). */
+.section--panel-ink {
+  background: var(--ink);
+  color: var(--off-white);
+}
+
+.section--panel-ink .mono-label {
+  color: var(--mid-on-dark);
+}
+
+.section--panel-ink .mono-label--red {
+  color: var(--red);
+}
+
 /* Room for the fixed mobile action bar */
 @media (max-width: 767px) {
   body {

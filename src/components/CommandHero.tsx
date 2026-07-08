@@ -1,7 +1,7 @@
 import { PROOF } from '../data/proof';
 import { smartMoveLink } from '../utils/links';
 import { RouteLine } from './RouteLine';
-import { EditorialCollage } from './EditorialCollage';
+import { TexasHeroMap } from './TexasHeroMap';
 import styles from './CommandHero.module.css';
 
 export function CommandHero() {
@@ -39,7 +39,7 @@ export function CommandHero() {
           </div>
 
           <div className={styles.right}>
-            <EditorialCollage />
+            <TexasHeroMap />
           </div>
         </div>
 

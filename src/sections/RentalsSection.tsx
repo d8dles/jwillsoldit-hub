@@ -49,10 +49,7 @@ export function RentalsSection() {
               conversation.
             </p>
             <div className={styles.laneCtas}>
-              <a href="#manage" className="btn btn--ghost">
-                See the ledger
-              </a>
-              <a href={mailtoLink(SUBJECTS.rentalManagement)} className="text-link">
+              <a href={mailtoLink(SUBJECTS.rentalManagement)} className="btn btn--ghost">
                 Ask a management question
               </a>
             </div>

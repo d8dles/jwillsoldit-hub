@@ -3,17 +3,18 @@ import { RouteBoard } from '../components/RouteBoard';
 
 export function RouteBoardSection() {
   return (
-    <section id="routes" className="section" aria-label="Route board">
+    <section id="routes" className="section section--panel-ink" aria-label="Route board">
       <div className="container">
         <SectionHeader
           index="SEC / 01"
           kicker="ROUTE BOARD"
+          onDark
           title={
             <>
               What are you <em>trying to do?</em>
             </>
           }
-          lede="Eight ways to start, depending on where you are. Each one ends with a clear plan and a real conversation — not a form that goes nowhere."
+          lede="Pick the lane closest to your move. Each route points you to the right intake, section, or next conversation — so the site works like a concierge desk instead of a brochure."
         />
         <RouteBoard />
       </div>

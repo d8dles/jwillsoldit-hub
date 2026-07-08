@@ -1,58 +1,104 @@
 .row {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
-  padding: 26px 6px;
+  gap: 12px;
+  padding: 24px clamp(16px, 2.4vw, 28px);
   text-decoration: none;
   color: var(--ink);
   border-top: 1px solid var(--trace);
   position: relative;
-  transition: border-color var(--dur-fast) ease;
+  overflow: hidden;
+  transition:
+    border-color var(--dur-fast) ease,
+    background var(--dur-fast) ease,
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.row:first-child {
+  border-top: none;
 }
 
 .row:last-child {
-  border-bottom: 1px solid var(--trace);
+  border-bottom: 0;
 }
 
 .row::before {
   content: '';
   position: absolute;
   left: 0;
-  top: -1px;
-  height: 1px;
-  width: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
   background: var(--red);
-  transition: width 0.34s var(--ease-out);
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 0.34s var(--ease-out);
+}
+
+.row::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 14% 50%, rgba(176, 92, 46, 0.16), transparent 28%),
+    linear-gradient(90deg, rgba(250, 247, 242, 0.075), rgba(250, 247, 242, 0));
+  opacity: 0;
+  transition: opacity var(--dur-fast) ease;
+  pointer-events: none;
+}
+
+.row:hover {
+  transform: translateX(4px);
 }
 
 .row:hover::before {
-  width: 100%;
+  transform: scaleY(1);
+}
+
+.row:hover::after {
+  opacity: 1;
+}
+
+.number,
+.main,
+.detail,
+.action {
+  position: relative;
+  z-index: 1;
 }
 
 .number {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--mono);
-  font-size: 0.8125rem;
+  font-size: 0.6875rem;
   color: var(--red);
+  border: 1px solid rgba(176, 92, 46, 0.35);
+  border-radius: 999px;
+  background: rgba(176, 92, 46, 0.07);
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 5px;
 }
 
 .label {
   font-family: var(--display);
-  font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+  font-size: clamp(1.85rem, 3.7vw, 2.75rem);
   font-weight: 600;
-  line-height: 1.02;
-  letter-spacing: -0.02em;
+  line-height: 0.96;
+  letter-spacing: -0.035em;
 }
 
 .shortTitle {
   font-family: var(--mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--forest);
 }
@@ -60,20 +106,25 @@
 .detail {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 11px;
 }
 
 .description {
   font-size: 0.9375rem;
-  line-height: 1.6;
+  line-height: 1.58;
   color: var(--mid);
-  max-width: 460px;
+  max-width: 500px;
 }
 
 .audience {
-  font-size: 0.6875rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 7px 10px;
+  font-size: 0.625rem;
   text-transform: none;
   letter-spacing: 0.04em;
+  border: 1px solid rgba(13, 13, 13, 0.12);
+  border-radius: 999px;
 }
 
 .action {
@@ -84,11 +135,19 @@
 }
 
 .destination {
+  min-width: 82px;
+  padding: 10px 13px;
+  border: 1px solid rgba(176, 92, 46, 0.28);
+  border-radius: 999px;
   font-family: var(--mono);
   font-size: 0.625rem;
   letter-spacing: 0.16em;
   color: var(--mid);
-  transition: color var(--dur-fast) ease;
+  text-align: center;
+  transition:
+    color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    background var(--dur-fast) ease;
 }
 
 .arrow {
@@ -104,18 +163,88 @@
 }
 
 .row:hover .destination {
-  color: var(--forest);
+  color: var(--off-white);
+  border-color: rgba(176, 92, 46, 0.8);
+  background: rgba(176, 92, 46, 0.22);
 }
 
 @media (min-width: 900px) {
   .row {
-    grid-template-columns: 64px minmax(220px, 1fr) minmax(0, 1.4fr) 150px;
+    grid-template-columns: 64px minmax(190px, 0.8fr) minmax(0, 1.45fr) 150px;
     align-items: center;
-    gap: 28px;
-    padding: 30px 6px;
+    gap: 26px;
+    padding: 28px clamp(20px, 2.6vw, 34px);
   }
 
   .action {
     justify-content: flex-end;
+  }
+}
+
+/* ── On the black Route Board panel: flip text/borders to read on ink ── */
+:global(.section--panel-ink) .row {
+  color: var(--off-white);
+  border-top-color: rgba(250, 247, 242, 0.105);
+}
+
+:global(.section--panel-ink) .row:last-child {
+  border-bottom-color: rgba(250, 247, 242, 0.105);
+}
+
+:global(.section--panel-ink) .number {
+  border-color: rgba(176, 92, 46, 0.5);
+  background: rgba(176, 92, 46, 0.12);
+}
+
+:global(.section--panel-ink) .shortTitle {
+  color: rgba(250, 247, 242, 0.55);
+}
+
+:global(.section--panel-ink) .description {
+  color: var(--mid-on-dark);
+}
+
+:global(.section--panel-ink) .audience {
+  color: rgba(250, 247, 242, 0.72);
+  border-color: rgba(250, 247, 242, 0.14);
+  background: rgba(250, 247, 242, 0.035);
+}
+
+:global(.section--panel-ink) .destination {
+  color: rgba(250, 247, 242, 0.58);
+  border-color: rgba(250, 247, 242, 0.14);
+  background: rgba(250, 247, 242, 0.025);
+}
+
+:global(.section--panel-ink) .arrow {
+  color: var(--off-white);
+}
+
+:global(.section--panel-ink) .row:hover .arrow {
+  color: var(--red);
+}
+
+:global(.section--panel-ink) .row:hover .destination {
+  color: var(--off-white);
+  border-color: rgba(176, 92, 46, 0.75);
+  background: rgba(176, 92, 46, 0.24);
+}
+
+@media (max-width: 699px) {
+  .row {
+    padding: 22px 16px;
+  }
+
+  .row:hover {
+    transform: none;
+  }
+
+  .number {
+    width: 36px;
+    height: 36px;
+  }
+
+  .audience {
+    white-space: normal;
   }
 }
