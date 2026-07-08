@@ -6,6 +6,8 @@ import { smsLink, mailtoLink } from '../utils/links';
 import styles from './StaysSection.module.css';
 
 export function StaysSection() {
+  // Add or remove furnished stay cards in src/data/properties.ts.
+  // This section renders every public stay automatically.
   const stays = PROPERTIES.filter((property) => property.category === 'stay' && property.publicVisible);
 
   return (
