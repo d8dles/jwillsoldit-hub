@@ -1,33 +1,11 @@
 import { useReveal } from '../utils/motion';
-import { telLink, smsLink, mailtoLink } from '../utils/links';
-import { SUBJECTS } from '../data/contact';
 import styles from './MeetJoeySection.module.css';
 
-// Meet Joey — the warmth anchor of the homepage. Portrait blends into the
-// paper (no hard studio rectangle, never a circle avatar). The four brand
-// pillars answer "why Joey" — a trust section, not another menu.
-
 const PILLARS = [
-  {
-    number: '01',
-    title: 'Texas-Wide Guidance',
-    line: 'Houston rooted. Texas focused.',
-  },
-  {
-    number: '02',
-    title: 'Stays That Feel Like Home',
-    line: 'Curated homes. Flexible terms.',
-  },
-  {
-    number: '03',
-    title: 'Rentals With Real Support',
-    line: 'Fast response. Clear process.',
-  },
-  {
-    number: '04',
-    title: 'Smarter Moves. Stronger Returns.',
-    line: 'Buy, sell, invest with confidence.',
-  },
+  { number: '01', title: 'Texas-Wide Guidance', line: 'Houston rooted. Texas focused.' },
+  { number: '02', title: 'Stays That Feel Like Home', line: 'Curated homes. Flexible terms.' },
+  { number: '03', title: 'Rentals With Real Support', line: 'Fast response. Clear process.' },
+  { number: '04', title: 'Smarter Moves. Stronger Returns.', line: 'Buy, sell, invest with confidence.' },
 ];
 
 export function MeetJoeySection() {
@@ -68,17 +46,6 @@ export function MeetJoeySection() {
               My style is simple: listen closely, move fast, tell the truth,
               and make the next step obvious.
             </p>
-            <div className={styles.links}>
-              <a href={telLink()} className="text-link">
-                Call
-              </a>
-              <a href={smsLink()} className="text-link">
-                Text
-              </a>
-              <a href={mailtoLink(SUBJECTS.general)} className="text-link">
-                Email
-              </a>
-            </div>
           </div>
 
           <div ref={pillarsRef} className={`${styles.pillars} reveal`}>
