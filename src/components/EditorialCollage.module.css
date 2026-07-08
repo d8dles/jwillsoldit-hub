@@ -1,127 +1,77 @@
 .collage {
   position: relative;
-  width: min(100%, 760px);
-  aspect-ratio: 16 / 7;
-  min-height: 320px;
+  width: min(100%, 720px);
+  aspect-ratio: 16 / 8;
+  min-height: 310px;
   opacity: 0;
   animation: collageFade var(--dur-reveal) ease 0.28s forwards;
-  isolation: isolate;
 }
 
 .map {
   position: absolute;
-  left: -10%;
-  top: 6%;
-  width: 73%;
-  height: auto;
+  inset: 2% 0 0 0;
+  width: 100%;
+  height: 100%;
   color: var(--copper);
-  z-index: 1;
-  filter: drop-shadow(0 18px 20px rgba(13, 13, 13, 0.08));
+  overflow: visible;
 }
 
-.mapShadow {
+.mapLift {
+  fill: rgba(13, 13, 13, 0.08);
+  transform: translate(7px, 11px);
+  opacity: 0.55;
+}
+
+.mapPaper {
   fill: rgba(250, 247, 242, 0.9);
-  opacity: 0.86;
 }
 
 .mapOutline {
-  opacity: 0.2;
+  fill: none;
+  stroke: rgba(176, 92, 46, 0.42);
+  stroke-width: 1.05;
+  vector-effect: non-scaling-stroke;
 }
 
 .majorCity {
   font-family: var(--display);
-  font-size: 7.2px;
+  font-size: 7.4px;
   letter-spacing: -0.02em;
   fill: var(--ink);
-  opacity: 0.72;
+  opacity: 0.76;
 }
 
 .smallCity {
   font-family: var(--display);
-  font-size: 4.6px;
+  font-size: 4.5px;
+  letter-spacing: -0.01em;
   fill: var(--ink);
-  opacity: 0.5;
+  opacity: 0.46;
 }
 
 .houstonGlow circle:first-child {
   fill: var(--red);
   opacity: 0.16;
-  filter: blur(1px);
 }
 
 .houstonGlow circle:nth-child(2) {
   fill: var(--red);
-  opacity: 0.9;
+  opacity: 0.88;
 }
 
 .houstonGlow text {
   font-family: var(--display);
-  font-size: 8.4px;
+  font-size: 10px;
   letter-spacing: -0.02em;
   fill: var(--ink);
-  opacity: 0.9;
-}
-
-.imageLayer {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-}
-
-.image {
-  position: absolute;
-  object-fit: cover;
-  filter: grayscale(0.72) sepia(0.18) saturate(0.42) contrast(0.86) brightness(1.12);
-  opacity: 0.68;
-  mix-blend-mode: multiply;
-  box-shadow: 0 24px 38px rgba(13, 13, 13, 0.08);
-}
-
-.image::after {
-  content: '';
-}
-
-.cityImage {
-  left: 36%;
-  top: 0;
-  width: 42%;
-  height: 42%;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 100%);
-}
-
-.landImage {
-  right: 0;
-  top: 0;
-  width: 36%;
-  height: 40%;
-  opacity: 0.6;
-}
-
-.interiorImage {
-  left: 28%;
-  bottom: 0;
-  width: 30%;
-  height: 36%;
-  opacity: 0.58;
-}
-
-.homeImage {
-  right: 10%;
-  bottom: 0;
-  width: 38%;
-  height: 50%;
-  opacity: 0.62;
+  opacity: 0.94;
 }
 
 .collage::after {
   content: '';
   position: absolute;
-  inset: -2%;
-  z-index: 3;
-  background:
-    radial-gradient(circle at 34% 52%, rgba(250, 247, 242, 0.72), rgba(250, 247, 242, 0.08) 34%, transparent 54%),
-    linear-gradient(90deg, rgba(250, 247, 242, 0.92) 0%, rgba(250, 247, 242, 0.18) 28%, rgba(250, 247, 242, 0.06) 100%);
+  inset: -6%;
+  background: linear-gradient(90deg, rgba(250, 247, 242, 0.9), rgba(250, 247, 242, 0.18) 48%, transparent 100%);
   pointer-events: none;
 }
 
@@ -141,25 +91,9 @@
 @media (max-width: 1099px) {
   .collage {
     width: 100%;
-    max-width: 680px;
-    aspect-ratio: 16 / 8.5;
+    max-width: 640px;
+    aspect-ratio: 16 / 9;
     min-height: 260px;
-  }
-
-  .map {
-    left: -2%;
-    top: 2%;
-    width: 66%;
-  }
-
-  .cityImage,
-  .landImage {
-    height: 38%;
-  }
-
-  .homeImage {
-    right: 0;
-    width: 42%;
   }
 }
 
@@ -168,27 +102,11 @@
     min-height: 230px;
   }
 
-  .map {
-    width: 82%;
-    left: 2%;
+  .smallCity {
+    opacity: 0.34;
   }
 
-  .imageLayer {
-    opacity: 0.54;
-  }
-
-  .cityImage {
-    left: 34%;
-    width: 48%;
-  }
-
-  .landImage,
-  .homeImage {
-    display: none;
-  }
-
-  .interiorImage {
-    left: 46%;
-    width: 42%;
+  .majorCity {
+    font-size: 6.7px;
   }
 }
