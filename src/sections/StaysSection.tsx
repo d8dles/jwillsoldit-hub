@@ -19,7 +19,7 @@ export function StaysSection() {
               Furnished stays, <em>run like hospitality.</em>
             </>
           }
-          lede="Short-term, corporate, and monthly furnished stays across the Houston area — professionally prepared and locally coordinated, not listed and forgotten. This carousel is data-driven, so cards can be added or removed from the property file without redesigning the section."
+          lede="Short-term, corporate, and monthly furnished stays across the Houston area — professionally prepared and locally coordinated, not listed and forgotten. Terms flex to your timeline, and availability is confirmed quickly by a real person."
         />
 
         <div className={styles.carousel} aria-label="Furnished stay cards">
