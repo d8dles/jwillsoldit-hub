@@ -35,7 +35,7 @@ export function MeetJoeySection() {
           <div className={styles.portraitWrap}>
             <img
               className={styles.portrait}
-              src="/assets/editorial/joey-williams-headshot.jpg"
+              src="/assets/editorial/joey-williams-headshot.png"
               alt="Joey Williams, REALTOR®"
               width={1122}
               height={1402}
