@@ -19,7 +19,7 @@ export function MeetJoeySection() {
           <div className={styles.portraitWrap} aria-hidden="false">
             <img
               className={styles.portrait}
-              src="/assets/editorial/joey-williams-headshot.jpg"
+              src="/assets/editorial/joey-williams-headshot-cutout.svg"
               alt="Joey Williams, REALTOR®"
               loading="lazy"
             />
