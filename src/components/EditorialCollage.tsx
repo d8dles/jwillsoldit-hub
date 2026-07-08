@@ -20,21 +20,12 @@ function TexasRouteMap() {
         vectorEffect="non-scaling-stroke"
       />
       {CITIES.map((city) => (
-        <g key={city.name} className={styles.cityLabel}>
-          <path
-            className={styles.mapRoute}
-            d={`M166,113 C146,106 124,94 ${city.x},${city.y}`}
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1"
-            strokeDasharray="2 6"
-            vectorEffect="non-scaling-stroke"
-          />
-          <text x={city.x + 4} y={city.y + 2}>{city.name.toUpperCase()}</text>
-        </g>
+        <text key={city.name} className={styles.cityLabel} x={city.x} y={city.y}>
+          {city.name.toUpperCase()}
+        </text>
       ))}
       <g className={styles.houstonDot}>
-        <circle cx="166" cy="113" r="13" />
+        <circle cx="166" cy="113" r="15" />
         <circle cx="166" cy="113" r="5" />
         <text x="150" y="132">HOUSTON</text>
       </g>
