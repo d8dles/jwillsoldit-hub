@@ -67,22 +67,34 @@
   pointer-events: none;
 }
 
-/* Page-colored veil only at the floor line. The PNG itself is not masked,
-   so the arms stay whole and dissolve into the paper instead of being cut. */
+/* Stronger page-colored dissolve. This covers the lower arm/torso cut lines
+   instead of masking the image itself, so the PNG stays intact while the hard
+   crop disappears into the paper. */
 .portraitWrap::after {
   content: '';
   position: absolute;
-  left: -10%;
-  right: -10%;
+  left: -14%;
+  right: -14%;
   bottom: -1px;
-  height: 22%;
-  background: linear-gradient(
-    180deg,
-    rgba(250, 247, 242, 0) 0%,
-    rgba(250, 247, 242, 0.34) 46%,
-    rgba(250, 247, 242, 0.82) 76%,
-    var(--off-white) 100%
-  );
+  height: 42%;
+  background:
+    linear-gradient(
+      90deg,
+      var(--off-white) 0%,
+      rgba(250, 247, 242, 0.92) 6%,
+      rgba(250, 247, 242, 0) 20%,
+      rgba(250, 247, 242, 0) 80%,
+      rgba(250, 247, 242, 0.92) 94%,
+      var(--off-white) 100%
+    ),
+    radial-gradient(ellipse 88% 74% at 52% 85%, rgba(250, 247, 242, 0) 0%, rgba(250, 247, 242, 0.24) 43%, rgba(250, 247, 242, 0.78) 74%, var(--off-white) 100%),
+    linear-gradient(
+      180deg,
+      rgba(250, 247, 242, 0) 0%,
+      rgba(250, 247, 242, 0.2) 30%,
+      rgba(250, 247, 242, 0.72) 66%,
+      var(--off-white) 100%
+    );
   pointer-events: none;
   z-index: 2;
 }
@@ -94,7 +106,7 @@
   height: auto;
   display: block;
   margin-left: -8%;
-  transform: translateY(-2%);
+  transform: translateY(1%);
   filter: drop-shadow(0 20px 24px rgba(13, 13, 13, 0.11));
   animation: portraitRise 900ms var(--ease-out) 0.08s both;
 }
@@ -183,11 +195,11 @@
 @keyframes portraitRise {
   from {
     opacity: 0.82;
-    transform: translateY(18px) scale(1.018);
+    transform: translateY(24px) scale(1.018);
   }
   to {
     opacity: 1;
-    transform: translateY(-2%) scale(1);
+    transform: translateY(1%) scale(1);
   }
 }
 
