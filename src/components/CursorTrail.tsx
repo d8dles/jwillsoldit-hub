@@ -64,14 +64,22 @@ export function CursorTrail() {
         zIndex: 999,
         opacity: 0,
         transition: 'opacity 160ms ease',
+        filter: 'drop-shadow(0 7px 8px rgba(13, 13, 13, 0.16)) drop-shadow(0 0 8px rgba(224, 58, 31, 0.16))',
       }}
     >
       <svg viewBox="0 0 200 195" width="22" height="22" focusable="false">
+        <defs>
+          <linearGradient id="txCursor" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="rgba(250, 247, 242, 0.95)" />
+            <stop offset="0.55" stopColor="rgba(224, 58, 31, 0.72)" />
+            <stop offset="1" stopColor="rgba(176, 92, 46, 0.82)" />
+          </linearGradient>
+        </defs>
         <path
           d="M53,2 L99,2 L99,35 L111,37 L146,46 L188,52 L188,78 L193,97 L190,117 L169,131 L153,139 L141,153 L142,180 L138,183 L113,173 L107,155 L89,128 L78,116 L65,114 L56,126 L44,124 L32,119 L26,102 L6,88 L2,82 L53,78 Z"
-          fill="rgba(224, 58, 31, 0.68)"
-          stroke="rgba(176, 92, 46, 0.9)"
-          strokeWidth="8"
+          fill="url(#txCursor)"
+          stroke="rgba(176, 92, 46, 0.86)"
+          strokeWidth="7"
           vectorEffect="non-scaling-stroke"
         />
       </svg>
