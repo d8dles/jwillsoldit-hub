@@ -1,11 +1,11 @@
 import styles from './EditorialCollage.module.css';
 
 const CITIES = [
-  { name: 'Dallas', x: 126, y: 73 },
-  { name: 'Fort Worth', x: 118, y: 75 },
+  { name: 'Dallas / Fort Worth', x: 119, y: 74 },
   { name: 'Austin', x: 119, y: 121 },
   { name: 'San Antonio', x: 105, y: 139 },
-  { name: 'Galveston', x: 172, y: 122 },
+  { name: 'El Paso', x: 20, y: 97 },
+  { name: 'Amarillo', x: 82, y: 22 },
 ];
 
 function TexasRouteMap() {
@@ -20,27 +20,23 @@ function TexasRouteMap() {
         vectorEffect="non-scaling-stroke"
       />
       {CITIES.map((city) => (
-        <path
-          key={`route-${city.name}`}
-          className={styles.mapRoute}
-          d={`M166,113 C150,102 136,92 ${city.x},${city.y}`}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1"
-          strokeDasharray="3 5"
-          vectorEffect="non-scaling-stroke"
-        />
-      ))}
-      {CITIES.map((city) => (
-        <g key={city.name} className={styles.cityDot}>
-          <circle cx={city.x} cy={city.y} r="2.2" />
-          <text x={city.x + 5} y={city.y + 2}>{city.name.toUpperCase()}</text>
+        <g key={city.name} className={styles.cityLabel}>
+          <path
+            className={styles.mapRoute}
+            d={`M166,113 C146,106 124,94 ${city.x},${city.y}`}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            strokeDasharray="2 6"
+            vectorEffect="non-scaling-stroke"
+          />
+          <text x={city.x + 4} y={city.y + 2}>{city.name.toUpperCase()}</text>
         </g>
       ))}
       <g className={styles.houstonDot}>
-        <circle cx="166" cy="113" r="4" />
-        <circle cx="166" cy="113" r="9" />
-        <text x="154" y="128">HOUSTON</text>
+        <circle cx="166" cy="113" r="13" />
+        <circle cx="166" cy="113" r="5" />
+        <text x="150" y="132">HOUSTON</text>
       </g>
     </svg>
   );
