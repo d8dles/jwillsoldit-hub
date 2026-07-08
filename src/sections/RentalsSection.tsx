@@ -4,9 +4,6 @@ import { smartMoveLink, mailtoLink } from '../utils/links';
 import { SUBJECTS } from '../data/contact';
 import styles from './RentalsSection.module.css';
 
-// Two lanes, one section: renters route to Smart Move,
-// rental OWNERS route to the Manage vertical. No fake listings, no IDX.
-
 export function RentalsSection() {
   const laneA = useReveal<HTMLDivElement>();
   const laneB = useReveal<HTMLDivElement>();
@@ -22,7 +19,7 @@ export function RentalsSection() {
               Rentals, from <em>both sides of the lease.</em>
             </>
           }
-          lede="Rental housing works better with support on both sides: renters finding the right lease, and owners keeping their rental homes running smoothly. Featured rentals are coming soon."
+          lede="Rental housing works better with support on both sides: renters finding the right lease, and owners keeping their rental homes running smoothly."
         />
 
         <div className={styles.lanes}>
@@ -31,7 +28,7 @@ export function RentalsSection() {
             <h3 className={styles.laneTitle}>Looking for a rental</h3>
             <p className={styles.laneBody}>
               Areas, budget, timeline, and criteria — mapped through Smart Move
-              before you burn weekends touring the wrong places. Apartments,
+              before you spend weekends touring the wrong places. Apartments,
               townhomes, and rental houses across Greater Houston.
             </p>
             <a href={smartMoveLink('rent')} className="btn btn--primary" rel="noopener">
@@ -50,7 +47,7 @@ export function RentalsSection() {
             </p>
             <div className={styles.laneCtas}>
               <a href="#manage" className="btn btn--ghost">
-                See the ledger
+                Owner services
               </a>
               <a href={mailtoLink(SUBJECTS.rentalManagement)} className="text-link">
                 Ask a management question
