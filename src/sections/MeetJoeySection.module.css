@@ -37,24 +37,35 @@
   }
 }
 
+/* Warm pool behind the figure so the cutout sits IN the page, not on it. */
+.portraitWrap::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 6%;
+  width: 92%;
+  height: 94%;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    58% 56% at 50% 42%,
+    rgba(176, 92, 46, 0.12),
+    rgba(176, 92, 46, 0) 72%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
 .portrait {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 20px 32px rgba(13, 13, 13, 0.16));
-  /* Fade only the bottom edge into the page — head and shoulders stay crisp. */
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    #000 76%,
-    rgba(0, 0, 0, 0.55) 90%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    #000 76%,
-    rgba(0, 0, 0, 0.55) 90%,
-    transparent 100%
-  );
+  /* Soft lift so the figure rises off the page. */
+  filter: drop-shadow(0 18px 30px rgba(13, 13, 13, 0.15));
+  /* Dissolve ONLY the very bottom edge — shoulders and arms stay intact. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
 }
 
 /* ── Copy ── */

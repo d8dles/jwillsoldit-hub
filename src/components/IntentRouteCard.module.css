@@ -119,3 +119,37 @@
     justify-content: flex-end;
   }
 }
+
+/* ── On the black Route Board panel: flip text/borders to read on ink ── */
+:global(.section--panel-ink) .row {
+  color: var(--off-white);
+  border-top-color: var(--trace-dark);
+}
+
+:global(.section--panel-ink) .row:last-child {
+  border-bottom-color: var(--trace-dark);
+}
+
+:global(.section--panel-ink) .shortTitle {
+  color: var(--mid-on-dark);
+}
+
+:global(.section--panel-ink) .description {
+  color: var(--mid-on-dark);
+}
+
+:global(.section--panel-ink) .destination {
+  color: var(--mid-on-dark);
+}
+
+:global(.section--panel-ink) .arrow {
+  color: var(--off-white);
+}
+
+:global(.section--panel-ink) .row:hover .arrow {
+  color: var(--red);
+}
+
+:global(.section--panel-ink) .row:hover .destination {
+  color: var(--off-white);
+}
