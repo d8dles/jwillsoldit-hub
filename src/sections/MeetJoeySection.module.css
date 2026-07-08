@@ -58,23 +58,31 @@
   position: absolute;
   left: 10%;
   right: 8%;
-  bottom: 4%;
-  height: 46%;
-  background: radial-gradient(ellipse at center, rgba(13, 13, 13, 0.16), rgba(13, 13, 13, 0.05) 46%, transparent 74%);
+  bottom: 3%;
+  height: 44%;
+  background: radial-gradient(ellipse at center, rgba(13, 13, 13, 0.15), rgba(13, 13, 13, 0.045) 46%, transparent 74%);
   filter: blur(20px);
-  transform: translateY(20px) scaleX(0.92);
+  transform: translateY(18px) scaleX(0.92);
   z-index: 0;
   pointer-events: none;
 }
 
+/* Page-colored veil only at the floor line. The PNG itself is not masked,
+   so the arms stay whole and dissolve into the paper instead of being cut. */
 .portraitWrap::after {
   content: '';
   position: absolute;
-  left: -8%;
-  right: -8%;
+  left: -10%;
+  right: -10%;
   bottom: -1px;
-  height: 31%;
-  background: linear-gradient(180deg, rgba(250, 247, 242, 0), var(--off-white) 84%);
+  height: 22%;
+  background: linear-gradient(
+    180deg,
+    rgba(250, 247, 242, 0) 0%,
+    rgba(250, 247, 242, 0.34) 46%,
+    rgba(250, 247, 242, 0.82) 76%,
+    var(--off-white) 100%
+  );
   pointer-events: none;
   z-index: 2;
 }
@@ -88,8 +96,7 @@
   margin-left: -8%;
   transform: translateY(-2%);
   filter: drop-shadow(0 20px 24px rgba(13, 13, 13, 0.11));
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 78%, rgba(0, 0, 0, 0.72) 90%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 78%, rgba(0, 0, 0, 0.72) 90%, transparent 100%);
+  animation: portraitRise 900ms var(--ease-out) 0.08s both;
 }
 
 .copy {
@@ -171,6 +178,23 @@
 
 .pillarLine {
   font-size: 0.6875rem;
+}
+
+@keyframes portraitRise {
+  from {
+    opacity: 0.82;
+    transform: translateY(18px) scale(1.018);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-2%) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait {
+    animation: none;
+  }
 }
 
 @media (min-width: 760px) and (max-width: 1179px) {
