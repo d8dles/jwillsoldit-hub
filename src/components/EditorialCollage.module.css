@@ -22,6 +22,39 @@
   filter: sepia(0.16) saturate(0.42) contrast(0.78) brightness(1.34) drop-shadow(0 26px 22px rgba(13, 13, 13, 0.12));
 }
 
+.cityMarker {
+  position: absolute;
+  font-family: var(--display);
+  font-size: clamp(0.72rem, 0.95vw, 0.92rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  opacity: 0.48;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.elPaso {
+  left: 18%;
+  top: 52%;
+}
+
+.dfw {
+  left: 58%;
+  top: 35%;
+}
+
+.austin {
+  left: 61%;
+  top: 56%;
+}
+
+.sanAntonio {
+  left: 55%;
+  top: 66%;
+}
+
 .houstonMarker {
   position: absolute;
   left: 77.6%;
@@ -37,28 +70,28 @@
   position: absolute;
   left: 0;
   top: 50%;
-  width: 58px;
-  height: 58px;
+  width: 66px;
+  height: 66px;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(224, 58, 31, 0.24), rgba(224, 58, 31, 0.08) 44%, transparent 72%);
+  background: radial-gradient(circle, rgba(224, 58, 31, 0.28), rgba(224, 58, 31, 0.1) 42%, transparent 74%);
   transform: translate(-42%, -50%);
   pointer-events: none;
 }
 
 .houstonDot {
-  width: 9px;
-  height: 9px;
+  width: 10px;
+  height: 10px;
   border-radius: 999px;
   background: var(--red);
-  box-shadow: 0 0 0 5px rgba(224, 58, 31, 0.12), 0 0 24px rgba(224, 58, 31, 0.32);
+  box-shadow: 0 0 0 5px rgba(224, 58, 31, 0.14), 0 0 26px rgba(224, 58, 31, 0.36);
   z-index: 1;
 }
 
 .houstonLabel {
   font-family: var(--display);
-  font-size: clamp(0.95rem, 1.35vw, 1.25rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.1rem, 1.55vw, 1.42rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
   color: var(--ink);
   z-index: 1;
 }
@@ -107,12 +140,32 @@
     opacity: 0.5;
   }
 
+  .cityMarker {
+    font-size: 0.64rem;
+    opacity: 0.34;
+  }
+
+  .dfw {
+    left: 57%;
+    top: 36%;
+  }
+
+  .austin {
+    left: 61%;
+    top: 56%;
+  }
+
+  .sanAntonio {
+    left: 54%;
+    top: 66%;
+  }
+
   .houstonMarker {
     left: 77%;
     top: 58%;
   }
 
   .houstonLabel {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 }
