@@ -1,5 +1,5 @@
 /* Meet Joey — editorial spread. Transparent PNG portrait sits on the page,
-   with soft rounded blends at the lower arms so there are no hard edges. */
+   with the portrait itself softly feathered so the arm edges do not look hard. */
 
 .grid {
   display: grid;
@@ -35,7 +35,7 @@
   }
 }
 
-/* ── Portrait: clean cutout with rounded arm-side blending ── */
+/* ── Portrait: clean cutout, no visible cloud overlays ── */
 
 .portraitWrap {
   position: relative;
@@ -56,15 +56,15 @@
 .portraitWrap::before {
   content: '';
   position: absolute;
-  left: 11%;
-  right: 9%;
-  bottom: 1%;
-  height: 38%;
+  left: 12%;
+  right: 10%;
+  bottom: 0;
+  height: 34%;
   background: radial-gradient(
     ellipse at center,
-    rgba(13, 13, 13, 0.16) 0%,
-    rgba(13, 13, 13, 0.06) 40%,
-    rgba(13, 13, 13, 0.02) 58%,
+    rgba(13, 13, 13, 0.14) 0%,
+    rgba(13, 13, 13, 0.052) 42%,
+    rgba(13, 13, 13, 0.018) 60%,
     transparent 78%
   );
   filter: blur(22px);
@@ -73,43 +73,10 @@
   pointer-events: none;
 }
 
-/* Arm-side blend only. These are rounded off-white ovals placed over the
-   lower left/right arm edges, plus a shallow bottom melt. No Ken Burns,
-   no card/window, no rectangular fill. */
+/* No ::after overlay. The arm sides are blended by the image mask below,
+   so there are no white blobs sitting on top of the portrait. */
 .portraitWrap::after {
-  content: '';
-  position: absolute;
-  left: -10%;
-  right: -10%;
-  bottom: -5%;
-  height: 46%;
-  z-index: 2;
-  pointer-events: none;
-  background:
-    radial-gradient(
-      ellipse 32% 34% at 13% 72%,
-      rgba(250, 247, 242, 0.98) 0%,
-      rgba(250, 247, 242, 0.78) 30%,
-      rgba(250, 247, 242, 0.40) 50%,
-      rgba(250, 247, 242, 0.14) 66%,
-      rgba(250, 247, 242, 0) 80%
-    ),
-    radial-gradient(
-      ellipse 32% 34% at 87% 72%,
-      rgba(250, 247, 242, 0.98) 0%,
-      rgba(250, 247, 242, 0.78) 30%,
-      rgba(250, 247, 242, 0.40) 50%,
-      rgba(250, 247, 242, 0.14) 66%,
-      rgba(250, 247, 242, 0) 80%
-    ),
-    radial-gradient(
-      ellipse 64% 24% at 50% 104%,
-      rgba(250, 247, 242, 0.96) 0%,
-      rgba(250, 247, 242, 0.72) 28%,
-      rgba(250, 247, 242, 0.34) 50%,
-      rgba(250, 247, 242, 0.10) 66%,
-      rgba(250, 247, 242, 0) 80%
-    );
+  content: none;
 }
 
 .portrait {
@@ -121,6 +88,22 @@
   margin-left: -9%;
   transform: translateY(2%);
   filter: drop-shadow(0 24px 28px rgba(13, 13, 13, 0.12));
+  -webkit-mask-image: radial-gradient(
+    ellipse 94% 96% at 50% 40%,
+    #000 0%,
+    #000 66%,
+    rgba(0, 0, 0, 0.82) 76%,
+    rgba(0, 0, 0, 0.42) 88%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 94% 96% at 50% 40%,
+    #000 0%,
+    #000 66%,
+    rgba(0, 0, 0, 0.82) 76%,
+    rgba(0, 0, 0, 0.42) 88%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .copy {
@@ -220,15 +203,25 @@
     max-width: 100%;
   }
 
-  .portraitWrap::after {
-    left: -8%;
-    right: -8%;
-    height: 40%;
-  }
-
   .portrait {
     width: 114%;
     margin-left: -7%;
     transform: translateY(1%);
+    -webkit-mask-image: radial-gradient(
+      ellipse 96% 96% at 50% 38%,
+      #000 0%,
+      #000 68%,
+      rgba(0, 0, 0, 0.78) 78%,
+      rgba(0, 0, 0, 0.36) 90%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    mask-image: radial-gradient(
+      ellipse 96% 96% at 50% 38%,
+      #000 0%,
+      #000 68%,
+      rgba(0, 0, 0, 0.78) 78%,
+      rgba(0, 0, 0, 0.36) 90%,
+      rgba(0, 0, 0, 0) 100%
+    );
   }
 }
