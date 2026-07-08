@@ -19,12 +19,7 @@
   opacity: 0.26;
 }
 
-.mapRoute {
-  color: var(--copper);
-  opacity: 0.22;
-}
-
-.cityLabel text {
+.cityLabel {
   font-family: var(--mono);
   font-size: 4.8px;
   letter-spacing: 0.13em;
@@ -34,12 +29,12 @@
 
 .houstonDot circle:first-child {
   fill: var(--red);
-  opacity: 0.14;
+  opacity: 0.16;
 }
 
 .houstonDot circle:nth-child(2) {
   fill: var(--red);
-  opacity: 0.92;
+  opacity: 0.94;
 }
 
 .houstonDot text {
