@@ -53,16 +53,27 @@ export function MeetJoeySection() {
               taste, speed, and straight answers.
             </p>
             <p className={styles.body}>
-              I built JWILLSOLDIT for people who do not want to be passed
-              around, over-explained to, or left guessing. Whether you are
-              moving across Houston, landing in Texas from another state,
-              renting first, selling next, furnishing a stay, or figuring out
-              what to do with a property you own — I want the first step to
-              feel clear.
+              Real estate does not need more noise.
             </p>
             <p className={styles.body}>
-              My style is simple: listen closely, move fast, tell the truth,
-              and make the next step obvious.
+              It needs better direction.
+            </p>
+            <p className={styles.body}>
+              JWILLSOLDIT was built for people who want the process to feel
+              handled from the first move — not passed around, over-talked, or
+              left sitting in the dark waiting for someone to “circle back.”
+            </p>
+            <p className={styles.body}>
+              Whether you are renting, buying, selling, relocating, furnishing a
+              stay, or figuring out what to do with a property you already own,
+              the point is the same: clear answers, smart moves, and a next step
+              that actually makes sense.
+            </p>
+            <p className={styles.body}>
+              I listen closely. I move fast. I tell the truth.
+            </p>
+            <p className={styles.body}>
+              Then we get it done.
             </p>
           </div>
 
