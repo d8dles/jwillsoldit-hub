@@ -16,41 +16,38 @@
 }
 
 .mapOutline {
-  opacity: 0.3;
+  opacity: 0.26;
 }
 
 .mapRoute {
   color: var(--copper);
-  opacity: 0.34;
+  opacity: 0.22;
 }
 
-.cityDot circle {
-  fill: var(--copper);
-  opacity: 0.52;
-}
-
-.cityDot text,
-.houstonDot text {
+.cityLabel text {
   font-family: var(--mono);
-  font-size: 5px;
-  letter-spacing: 0.16em;
+  font-size: 4.8px;
+  letter-spacing: 0.13em;
   fill: var(--ink);
-  opacity: 0.42;
+  opacity: 0.44;
 }
 
 .houstonDot circle:first-child {
   fill: var(--red);
+  opacity: 0.14;
 }
 
 .houstonDot circle:nth-child(2) {
-  fill: none;
-  stroke: var(--red);
-  opacity: 0.34;
+  fill: var(--red);
+  opacity: 0.92;
 }
 
 .houstonDot text {
+  font-family: var(--mono);
+  font-size: 5.3px;
+  letter-spacing: 0.16em;
   fill: var(--red);
-  opacity: 0.86;
+  opacity: 0.92;
 }
 
 @keyframes collageFade {
