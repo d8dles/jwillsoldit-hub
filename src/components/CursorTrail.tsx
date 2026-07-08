@@ -19,8 +19,8 @@ export function CursorTrail() {
     let active = false;
 
     function frame() {
-      x += (targetX - x) * 0.22;
-      y += (targetY - y) * 0.22;
+      x += (targetX - x) * 0.24;
+      y += (targetY - y) * 0.24;
       marker!.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
       rafId = requestAnimationFrame(frame);
     }
@@ -57,20 +57,19 @@ export function CursorTrail() {
         position: 'fixed',
         left: 0,
         top: 0,
-        width: 24,
-        height: 24,
+        width: 22,
+        height: 22,
         pointerEvents: 'none',
         zIndex: 999,
         opacity: 0,
         transition: 'opacity 160ms ease',
-        filter: 'drop-shadow(0 0 10px rgba(224, 58, 31, 0.22))',
       }}
     >
-      <svg viewBox="0 0 200 195" width="24" height="24" focusable="false">
+      <svg viewBox="0 0 200 195" width="22" height="22" focusable="false">
         <path
           d="M53,2 L99,2 L99,35 L111,37 L146,46 L188,52 L188,78 L193,97 L190,117 L169,131 L153,139 L141,153 L142,180 L138,183 L113,173 L107,155 L89,128 L78,116 L65,114 L56,126 L44,124 L32,119 L26,102 L6,88 L2,82 L53,78 Z"
-          fill="rgba(224, 58, 31, 0.72)"
-          stroke="rgba(176, 92, 46, 0.92)"
+          fill="rgba(224, 58, 31, 0.68)"
+          stroke="rgba(176, 92, 46, 0.9)"
           strokeWidth="8"
           vectorEffect="non-scaling-stroke"
         />
