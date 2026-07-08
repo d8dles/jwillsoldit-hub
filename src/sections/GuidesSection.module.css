@@ -3,16 +3,20 @@
 }
 
 .row {
-  display: grid;
-  grid-template-columns: 44px 1fr auto;
-  align-items: baseline;
-  gap: 18px;
-  padding: 20px 4px;
   border-top: 1px solid var(--trace);
 }
 
 .row:last-child {
   border-bottom: 1px solid var(--trace);
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: baseline;
+  gap: 18px;
+  padding: 20px 4px;
+  cursor: pointer;
 }
 
 .num {
@@ -22,6 +26,7 @@
 }
 
 .title {
+  display: block;
   font-family: var(--display);
   font-size: 1.1875rem;
   font-weight: 600;
@@ -30,10 +35,19 @@
 }
 
 .line {
+  display: block;
   font-size: 0.9375rem;
   line-height: 1.55;
   color: var(--mid);
   max-width: 520px;
+}
+
+.detail {
+  color: var(--mid);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  max-width: 650px;
+  padding: 0 4px 22px 62px;
 }
 
 .status {
@@ -56,13 +70,4 @@
   font-size: 0.9375rem;
   color: var(--mid);
   max-width: 420px;
-}
-
-@media (max-width: 599px) {
-  .row {
-    grid-template-columns: 34px 1fr;
-  }
-  .status {
-    grid-column: 2;
-  }
 }
