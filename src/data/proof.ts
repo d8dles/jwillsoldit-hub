@@ -1,9 +1,7 @@
 import type { ProofTile } from './types';
-import { STAY_COUNT } from './properties';
 
 // Trust/status tiles. REAL FACTS ONLY — no invented stats, no fake reviews,
-// no made-up transaction counts. Derived numbers come from data, so this
-// never hardcodes "8 units forever".
+// no made-up transaction counts.
 
 export const PROOF: ProofTile[] = [
   {
@@ -11,12 +9,6 @@ export const PROOF: ProofTile[] = [
     label: 'HOME MARKET',
     value: 'Houston, TX',
     detail: 'Rooted here · serving Texas',
-  },
-  {
-    id: 'stays',
-    label: 'FURNISHED STAYS',
-    value: String(STAY_COUNT).padStart(2, '0'),
-    detail: 'Short-term to monthly · growing',
   },
   {
     id: 'brokerage',
