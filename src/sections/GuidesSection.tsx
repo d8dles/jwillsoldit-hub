@@ -1,6 +1,6 @@
 import { SectionHeader } from '../components/SectionHeader';
 import { useReveal } from '../utils/motion';
-import { mailtoLink } from '../utils/links';
+import { smartMoveLink } from '../utils/links';
 import styles from './GuidesSection.module.css';
 
 const FIELD_NOTES = [
@@ -50,7 +50,7 @@ export function GuidesSection() {
               What I&rsquo;d tell <em>a friend.</em>
             </>
           }
-          lede="Straight, useful notes on renting, buying, selling, relocating, and staying — available without taking over the page. Open what you need."
+          lede="Quick, plain-English guidance on common move questions. Open the topic that fits, then start Smart Move when you are ready for a real plan."
         />
 
         <div ref={ref} className={`${styles.list} reveal`}>
@@ -62,7 +62,7 @@ export function GuidesSection() {
                   <span className={styles.title}>{note.title}</span>
                   <span className={styles.line}>{note.line}</span>
                 </span>
-                <span className={`mono-label ${styles.status}`}>OPEN</span>
+                <span className={`mono-label ${styles.status}`}>READ</span>
               </summary>
               <p className={styles.detail}>{note.detail}</p>
             </details>
@@ -71,10 +71,10 @@ export function GuidesSection() {
 
         <div className={styles.footerRow}>
           <p className={styles.footerNote}>
-            Need one of these answered in detail? Ask — you&rsquo;ll get the straight version.
+            Have a situation that does not fit neatly into a guide? Start with the intake and I will point it the right way.
           </p>
-          <a href={mailtoLink('Field note request — jwillsoldit.com')} className="btn btn--ghost">
-            Ask for a field note
+          <a href={smartMoveLink()} className="btn btn--ghost" rel="noopener">
+            Start Smart Move
           </a>
         </div>
       </div>
