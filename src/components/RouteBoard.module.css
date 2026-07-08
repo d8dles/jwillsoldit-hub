@@ -1,8 +1,43 @@
 .board {
+  position: relative;
   width: 100%;
+  margin-top: clamp(26px, 4vw, 46px);
+  border: 1px solid rgba(250, 247, 242, 0.14);
+  border-radius: 28px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(176, 92, 46, 0.18), transparent 34%),
+    linear-gradient(180deg, rgba(250, 247, 242, 0.065), rgba(250, 247, 242, 0.018));
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(250, 247, 242, 0.10);
+}
+
+.board::before {
+  content: 'MOVE CONCIERGE / SELECT A LANE';
+  display: block;
+  padding: 14px clamp(18px, 2.4vw, 28px);
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.18em;
+  color: rgba(250, 247, 242, 0.52);
+  border-bottom: 1px solid rgba(250, 247, 242, 0.12);
+  background: rgba(0, 0, 0, 0.14);
 }
 
 .list {
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 699px) {
+  .board {
+    border-radius: 22px;
+    margin-top: 24px;
+  }
+
+  .board::before {
+    padding: 13px 16px;
+    letter-spacing: 0.13em;
+  }
 }
