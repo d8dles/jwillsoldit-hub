@@ -1,4 +1,4 @@
-/* Meet Joey — editorial spread. The portrait stays full and unmasked,
+/* Meet Joey — editorial spread. The portrait stays full and unboxed,
    with a blurred warm aura behind it instead of geometry or cover-up blobs. */
 
 .grid {
@@ -21,8 +21,8 @@
 
 @media (min-width: 1180px) {
   .grid {
-    grid-template-columns: minmax(420px, 0.95fr) minmax(380px, 1.05fr) minmax(270px, 0.78fr);
-    column-gap: clamp(36px, 4vw, 68px);
+    grid-template-columns: minmax(430px, 0.98fr) minmax(380px, 1.02fr) minmax(270px, 0.78fr);
+    column-gap: clamp(34px, 3.8vw, 64px);
     align-items: center;
   }
 
@@ -40,7 +40,7 @@
 .portraitWrap {
   position: relative;
   width: 100%;
-  max-width: 700px;
+  max-width: 730px;
   justify-self: center;
   overflow: visible;
   isolation: isolate;
@@ -49,7 +49,7 @@
 @media (min-width: 760px) {
   .portraitWrap {
     justify-self: start;
-    max-width: 720px;
+    max-width: 760px;
   }
 }
 
@@ -59,19 +59,19 @@
   content: '';
   position: absolute;
   z-index: 0;
-  left: 0;
-  right: 4%;
-  top: 13%;
-  bottom: 2%;
+  left: -7%;
+  right: -8%;
+  top: 12%;
+  bottom: -4%;
   pointer-events: none;
   border-radius: 999px;
-  transform: rotate(-4deg) scale(0.96);
+  transform: rotate(-4deg) scale(1.02);
   background:
-    radial-gradient(ellipse at 50% 46%, rgba(176, 92, 46, 0.24) 0%, rgba(176, 92, 46, 0.12) 38%, rgba(176, 92, 46, 0) 68%),
-    radial-gradient(ellipse at 32% 70%, rgba(128, 55, 35, 0.18) 0%, rgba(128, 55, 35, 0.07) 40%, rgba(128, 55, 35, 0) 72%),
-    radial-gradient(ellipse at 72% 76%, rgba(250, 247, 242, 0.78) 0%, rgba(250, 247, 242, 0.20) 44%, rgba(250, 247, 242, 0) 70%);
-  filter: blur(42px);
-  opacity: 0.92;
+    radial-gradient(ellipse at 50% 44%, rgba(176, 92, 46, 0.22) 0%, rgba(176, 92, 46, 0.12) 36%, rgba(176, 92, 46, 0) 70%),
+    radial-gradient(ellipse at 25% 72%, rgba(128, 55, 35, 0.16) 0%, rgba(128, 55, 35, 0.07) 42%, rgba(128, 55, 35, 0) 76%),
+    radial-gradient(ellipse at 76% 74%, rgba(250, 247, 242, 0.82) 0%, rgba(250, 247, 242, 0.26) 44%, rgba(250, 247, 242, 0) 72%);
+  filter: blur(46px);
+  opacity: 0.94;
 }
 
 /* Ground shadow only — no visible type, no geometry, no clouds on the image. */
@@ -79,82 +79,79 @@
   content: '';
   position: absolute;
   z-index: 0;
-  left: 12%;
-  right: 8%;
-  bottom: -1%;
-  height: 31%;
+  left: 8%;
+  right: 4%;
+  bottom: -2%;
+  height: 32%;
   pointer-events: none;
   border-radius: 999px;
-  background: radial-gradient(ellipse at center, rgba(13, 13, 13, 0.17) 0%, rgba(13, 13, 13, 0.068) 44%, rgba(13, 13, 13, 0) 76%);
-  filter: blur(26px);
-  transform: translateY(19px) scaleX(0.96);
+  background: radial-gradient(ellipse at center, rgba(13, 13, 13, 0.15) 0%, rgba(13, 13, 13, 0.06) 44%, rgba(13, 13, 13, 0) 78%);
+  filter: blur(28px);
+  transform: translateY(22px) scaleX(0.98);
 }
 
 .portrait {
   position: relative;
   z-index: 1;
-  width: min(119%, 735px);
+  width: min(123%, 765px);
   height: auto;
   display: block;
-  margin-left: -9%;
-  transform: translateY(2%);
-  filter: drop-shadow(0 28px 34px rgba(13, 13, 13, 0.17));
+  margin-left: -12%;
+  transform: translateY(3%);
+  filter:
+    drop-shadow(0 28px 34px rgba(13, 13, 13, 0.15))
+    saturate(0.96)
+    contrast(0.99);
   -webkit-mask-image:
     linear-gradient(
       to bottom,
       rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 91.5%,
-      rgba(0, 0, 0, 0.995) 92.5%,
-      rgba(0, 0, 0, 0.985) 93.5%,
-      rgba(0, 0, 0, 0.96) 94.5%,
-      rgba(0, 0, 0, 0.90) 95.5%,
-      rgba(0, 0, 0, 0.78) 96.5%,
-      rgba(0, 0, 0, 0.60) 97.4%,
-      rgba(0, 0, 0, 0.38) 98.3%,
-      rgba(0, 0, 0, 0.16) 99.2%,
+      rgba(0, 0, 0, 1) 89.5%,
+      rgba(0, 0, 0, 0.995) 91%,
+      rgba(0, 0, 0, 0.98) 92.5%,
+      rgba(0, 0, 0, 0.94) 94%,
+      rgba(0, 0, 0, 0.84) 95.5%,
+      rgba(0, 0, 0, 0.66) 97%,
+      rgba(0, 0, 0, 0.42) 98.2%,
+      rgba(0, 0, 0, 0.18) 99.2%,
       rgba(0, 0, 0, 0) 100%
     ),
     linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.16) 0%,
-      rgba(0, 0, 0, 0.36) 1.25%,
-      rgba(0, 0, 0, 0.62) 2.8%,
-      rgba(0, 0, 0, 0.86) 4.8%,
-      rgba(0, 0, 0, 1) 7.25%,
-      rgba(0, 0, 0, 1) 92.75%,
-      rgba(0, 0, 0, 0.86) 95.2%,
-      rgba(0, 0, 0, 0.62) 97.2%,
-      rgba(0, 0, 0, 0.36) 98.75%,
-      rgba(0, 0, 0, 0.16) 100%
+      rgba(0, 0, 0, 0.24) 0%,
+      rgba(0, 0, 0, 0.60) 1.2%,
+      rgba(0, 0, 0, 0.90) 2.8%,
+      rgba(0, 0, 0, 1) 4.8%,
+      rgba(0, 0, 0, 1) 95.2%,
+      rgba(0, 0, 0, 0.90) 97.2%,
+      rgba(0, 0, 0, 0.60) 98.8%,
+      rgba(0, 0, 0, 0.24) 100%
     );
   -webkit-mask-composite: source-in;
   mask-image:
     linear-gradient(
       to bottom,
       rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 91.5%,
-      rgba(0, 0, 0, 0.995) 92.5%,
-      rgba(0, 0, 0, 0.985) 93.5%,
-      rgba(0, 0, 0, 0.96) 94.5%,
-      rgba(0, 0, 0, 0.90) 95.5%,
-      rgba(0, 0, 0, 0.78) 96.5%,
-      rgba(0, 0, 0, 0.60) 97.4%,
-      rgba(0, 0, 0, 0.38) 98.3%,
-      rgba(0, 0, 0, 0.16) 99.2%,
+      rgba(0, 0, 0, 1) 89.5%,
+      rgba(0, 0, 0, 0.995) 91%,
+      rgba(0, 0, 0, 0.98) 92.5%,
+      rgba(0, 0, 0, 0.94) 94%,
+      rgba(0, 0, 0, 0.84) 95.5%,
+      rgba(0, 0, 0, 0.66) 97%,
+      rgba(0, 0, 0, 0.42) 98.2%,
+      rgba(0, 0, 0, 0.18) 99.2%,
       rgba(0, 0, 0, 0) 100%
     ),
     linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.16) 0%,
-      rgba(0, 0, 0, 0.36) 1.25%,
-      rgba(0, 0, 0, 0.62) 2.8%,
-      rgba(0, 0, 0, 0.86) 4.8%,
-      rgba(0, 0, 0, 1) 7.25%,
-      rgba(0, 0, 0, 1) 92.75%,
-      rgba(0, 0, 0, 0.86) 95.2%,
-      rgba(0, 0, 0, 0.62) 97.2%,
-      rgba(0, 0, 0, 0.36) 98.75%,
-      rgba(0, 0, 0, 0.16) 100%
+      rgba(0, 0, 0, 0.24) 0%,
+      rgba(0, 0, 0, 0.60) 1.2%,
+      rgba(0, 0, 0, 0.90) 2.8%,
+      rgba(0, 0, 0, 1) 4.8%,
+      rgba(0, 0, 0, 1) 95.2%,
+      rgba(0, 0, 0, 0.90) 97.2%,
+      rgba(0, 0, 0, 0.60) 98.8%,
+      rgba(0, 0, 0, 0.24) 100%
     );
   mask-composite: intersect;
 }
@@ -217,119 +214,4 @@
 
 .pillar:first-child {
   border-top: none;
-}
-
-.pillarNum {
-  font-family: var(--mono);
-  font-size: 0.6875rem;
-  color: var(--red);
-  display: block;
-  margin-bottom: 6px;
-}
-
-.pillarTitle {
-  font-family: var(--display);
-  font-size: 1.0625rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
-  margin-bottom: 5px;
-}
-
-.pillarLine {
-  font-size: 0.6875rem;
-}
-
-@media (min-width: 760px) and (max-width: 1179px) {
-  .pillarList {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0 clamp(28px, 4vw, 48px);
-  }
-
-  .pillar:nth-child(2) {
-    border-top: none;
-  }
-}
-
-@media (max-width: 699px) {
-  .portraitWrap {
-    max-width: 100%;
-  }
-
-  .portraitWrap::before {
-    left: -2%;
-    right: 2%;
-    top: 15%;
-    bottom: 4%;
-    filter: blur(34px);
-  }
-
-  .portraitWrap::after {
-    left: 11%;
-    right: 11%;
-    bottom: 0;
-    height: 27%;
-  }
-
-  .portrait {
-    width: 114%;
-    margin-left: -7%;
-    transform: translateY(1%);
-    -webkit-mask-image:
-      linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 1) 92%,
-        rgba(0, 0, 0, 0.995) 93%,
-        rgba(0, 0, 0, 0.985) 94%,
-        rgba(0, 0, 0, 0.95) 95%,
-        rgba(0, 0, 0, 0.86) 96%,
-        rgba(0, 0, 0, 0.70) 97%,
-        rgba(0, 0, 0, 0.48) 98%,
-        rgba(0, 0, 0, 0.22) 99%,
-        rgba(0, 0, 0, 0) 100%
-      ),
-      linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.24) 0%,
-        rgba(0, 0, 0, 0.48) 1.4%,
-        rgba(0, 0, 0, 0.74) 3.2%,
-        rgba(0, 0, 0, 0.92) 5.3%,
-        rgba(0, 0, 0, 1) 7.6%,
-        rgba(0, 0, 0, 1) 92.4%,
-        rgba(0, 0, 0, 0.92) 94.7%,
-        rgba(0, 0, 0, 0.74) 96.8%,
-        rgba(0, 0, 0, 0.48) 98.6%,
-        rgba(0, 0, 0, 0.24) 100%
-      );
-    -webkit-mask-composite: source-in;
-    mask-image:
-      linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 1) 92%,
-        rgba(0, 0, 0, 0.995) 93%,
-        rgba(0, 0, 0, 0.985) 94%,
-        rgba(0, 0, 0, 0.95) 95%,
-        rgba(0, 0, 0, 0.86) 96%,
-        rgba(0, 0, 0, 0.70) 97%,
-        rgba(0, 0, 0, 0.48) 98%,
-        rgba(0, 0, 0, 0.22) 99%,
-        rgba(0, 0, 0, 0) 100%
-      ),
-      linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.24) 0%,
-        rgba(0, 0, 0, 0.48) 1.4%,
-        rgba(0, 0, 0, 0.74) 3.2%,
-        rgba(0, 0, 0, 0.92) 5.3%,
-        rgba(0, 0, 0, 1) 7.6%,
-        rgba(0, 0, 0, 1) 92.4%,
-        rgba(0, 0, 0, 0.92) 94.7%,
-        rgba(0, 0, 0, 0.74) 96.8%,
-        rgba(0, 0, 0, 0.48) 98.6%,
-        rgba(0, 0, 0, 0.24) 100%
-      );
-    mask-composite: intersect;
-  }
 }
