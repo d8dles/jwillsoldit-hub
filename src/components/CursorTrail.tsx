@@ -6,6 +6,7 @@ export function CursorTrail() {
   useEffect(() => {
     const marker = markerRef.current;
     if (!marker) return;
+    const markerEl = marker;
 
     const finePointer = window.matchMedia('(pointer: fine) and (hover: hover)');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -21,7 +22,7 @@ export function CursorTrail() {
     function frame() {
       x += (targetX - x) * 0.24;
       y += (targetY - y) * 0.24;
-      marker!.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+      markerEl.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
       rafId = requestAnimationFrame(frame);
     }
 
@@ -30,13 +31,13 @@ export function CursorTrail() {
       targetY = e.clientY;
       if (!active) {
         active = true;
-        marker.style.opacity = '1';
+        markerEl.style.opacity = '1';
         rafId = requestAnimationFrame(frame);
       }
     }
 
     function onLeave() {
-      marker.style.opacity = '0';
+      markerEl.style.opacity = '0';
     }
 
     window.addEventListener('mousemove', onMove, { passive: true });
