@@ -123,14 +123,14 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 24px;
+  gap: 28px;
 }
 
 .crgLogo {
-  height: 44px;
+  height: clamp(58px, 7vw, 86px);
   width: auto;
   filter: brightness(0) invert(1);
-  opacity: 0.85;
+  opacity: 0.92;
 }
 
 .fineprint {
