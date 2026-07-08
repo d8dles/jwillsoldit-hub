@@ -127,7 +127,7 @@
 }
 
 .crgLogo {
-  height: 44px;
+  height: 76px; /* was 44px; +1/3in (32px @ 96dpi) per request */
   width: auto;
   filter: brightness(0) invert(1);
   opacity: 0.85;
