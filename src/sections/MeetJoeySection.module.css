@@ -1,5 +1,6 @@
-/* Meet Joey — editorial spread. The portrait is now sourced from a JPG,
-   so the white studio field is visually blended into the ivory page. */
+/* Meet Joey — editorial spread. The portrait is a true transparent-background
+   PNG (alpha cutout), so it sits directly on the page and casts a soft lift
+   shadow. No blend-mode or wash tricks — the subject shape is the PNG alpha. */
 
 .grid {
   display: grid;
@@ -35,12 +36,12 @@
   }
 }
 
-/* ── Portrait: JPG field blended into page, soft editorial art behind ── */
+/* ── Portrait: transparent PNG cutout, soft editorial art behind ── */
 
 .portraitWrap {
   position: relative;
   width: 100%;
-  max-width: 730px;
+  max-width: 780px;
   justify-self: center;
   overflow: visible;
   isolation: isolate;
@@ -49,7 +50,7 @@
 @media (min-width: 760px) {
   .portraitWrap {
     justify-self: start;
-    max-width: 760px;
+    max-width: 840px;
   }
 }
 
@@ -71,63 +72,40 @@
     radial-gradient(ellipse at 22% 72%, rgba(128, 55, 35, 0.14) 0%, rgba(128, 55, 35, 0.055) 42%, rgba(128, 55, 35, 0) 78%),
     radial-gradient(ellipse at 78% 70%, rgba(250, 247, 242, 0.78) 0%, rgba(250, 247, 242, 0.22) 46%, rgba(250, 247, 242, 0) 74%);
   filter: blur(48px);
-  opacity: 0.9;
-}
-
-/* Soft page-colored wash that dissolves the JPG's studio background. */
-.portraitWrap::after {
-  content: '';
-  position: absolute;
-  z-index: 2;
-  inset: -1% -4% -4% -7%;
-  pointer-events: none;
-  background:
-    linear-gradient(90deg, var(--paper) 0%, rgba(250, 247, 242, 0) 18%, rgba(250, 247, 242, 0) 82%, var(--paper) 100%),
-    linear-gradient(180deg, rgba(250, 247, 242, 0) 54%, rgba(250, 247, 242, 0.45) 78%, var(--paper) 100%);
-  mix-blend-mode: lighten;
-  opacity: 0.72;
+  opacity: 0.62;
 }
 
 .portrait {
   position: relative;
   z-index: 1;
-  width: min(123%, 765px);
+  width: min(128%, 880px);
   height: auto;
   display: block;
   margin-left: -12%;
-  transform: translateY(3%);
-  mix-blend-mode: multiply;
+  transform: translateY(1%);
+  /* Two stacked shadows lift the cutout off the page — a tight contact
+     shadow plus a wide soft one. Both follow the PNG silhouette. */
   filter:
-    drop-shadow(0 28px 34px rgba(13, 13, 13, 0.12))
-    saturate(0.98)
-    contrast(1.02)
-    brightness(1.015);
-  -webkit-mask-image:
-    radial-gradient(120% 112% at 48% 46%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 58%, rgba(0, 0, 0, 0.92) 74%, rgba(0, 0, 0, 0.50) 90%, rgba(0, 0, 0, 0) 100%),
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 88.5%,
-      rgba(0, 0, 0, 0.995) 90.5%,
-      rgba(0, 0, 0, 0.96) 93%,
-      rgba(0, 0, 0, 0.82) 95.5%,
-      rgba(0, 0, 0, 0.54) 98%,
-      rgba(0, 0, 0, 0) 100%
-    );
-  -webkit-mask-composite: source-in;
-  mask-image:
-    radial-gradient(120% 112% at 48% 46%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 58%, rgba(0, 0, 0, 0.92) 74%, rgba(0, 0, 0, 0.50) 90%, rgba(0, 0, 0, 0) 100%),
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 88.5%,
-      rgba(0, 0, 0, 0.995) 90.5%,
-      rgba(0, 0, 0, 0.96) 93%,
-      rgba(0, 0, 0, 0.82) 95.5%,
-      rgba(0, 0, 0, 0.54) 98%,
-      rgba(0, 0, 0, 0) 100%
-    );
-  mask-composite: intersect;
+    drop-shadow(0 10px 16px rgba(13, 13, 13, 0.14))
+    drop-shadow(0 34px 54px rgba(13, 13, 13, 0.20));
+  /* Only a soft bottom dissolve so the torso melts into the page. The
+     subject silhouette itself comes from the PNG alpha channel. */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 88%,
+    rgba(0, 0, 0, 0.82) 93%,
+    rgba(0, 0, 0, 0.34) 98%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 88%,
+    rgba(0, 0, 0, 0.82) 93%,
+    rgba(0, 0, 0, 0.34) 98%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .copy {
