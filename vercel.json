@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/transactions/deposit-lula-smith-james",
+      "destination": "/receipts/james-randolph-smith/"
+    },
+    {
+      "source": "/transactions/deposit-lula-smith-james/",
+      "destination": "/receipts/james-randolph-smith/"
+    }
+  ]
+}
