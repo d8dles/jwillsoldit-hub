@@ -5,6 +5,10 @@
       "destination": "https://jwillsoldit-houston.vercel.app/houston"
     },
     {
+      "source": "/houston/",
+      "destination": "https://jwillsoldit-houston.vercel.app/houston"
+    },
+    {
       "source": "/houston/:path*",
       "destination": "https://jwillsoldit-houston.vercel.app/houston/:path*"
     },
