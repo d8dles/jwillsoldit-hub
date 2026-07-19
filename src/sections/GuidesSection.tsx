@@ -10,6 +10,8 @@ const FIELD_NOTES = [
     line: 'What to know before the move — areas, timing, rent-first vs. buy-now.',
     detail:
       'Start with commute patterns, lease timing, neighborhood rhythm, and whether renting first protects you from buying before you understand the city. The goal is not just finding a place — it is landing well.',
+    href: '/houston',
+    ctaLabel: 'Explore Houston, Handled',
   },
   {
     number: '02',
@@ -69,7 +71,14 @@ export function GuidesSection() {
                 </span>
                 <span className={`mono-label ${styles.status}`}>READ</span>
               </summary>
-              <p className={styles.detail}>{note.detail}</p>
+              <div className={styles.detailPanel}>
+                <p className={styles.detail}>{note.detail}</p>
+                {note.href && note.ctaLabel ? (
+                  <a href={note.href} className={styles.detailLink}>
+                    {note.ctaLabel} →
+                  </a>
+                ) : null}
+              </div>
             </details>
           ))}
         </div>

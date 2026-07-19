@@ -47,12 +47,33 @@
   max-width: 520px;
 }
 
+.detailPanel {
+  max-width: 650px;
+  padding: 0 4px 22px 62px;
+}
+
 .detail {
   color: var(--mid);
   font-size: 0.9375rem;
   line-height: 1.7;
-  max-width: 650px;
-  padding: 0 4px 22px 62px;
+}
+
+.detailLink {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--forest);
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--red);
+  padding-bottom: 3px;
+}
+
+.detailLink:hover {
+  color: var(--red);
 }
 
 .status {
@@ -86,7 +107,7 @@
     grid-column: 2;
   }
 
-  .detail {
+  .detailPanel {
     padding-left: 38px;
   }
 }
