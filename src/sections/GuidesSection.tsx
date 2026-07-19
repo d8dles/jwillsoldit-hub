@@ -9,7 +9,7 @@ const FIELD_NOTES = [
     title: 'Relocating to Texas',
     line: 'What to know before the move — areas, timing, rent-first vs. buy-now.',
     detail:
-      'Start with commute patterns, lease timing, neighborhood rhythm, and whether renting first protects you from buying before you understand the city. The goal is not just finding a place — it is landing well.',
+      'I would start with the places you need to reach, when you need to move, and whether renting first gives you time to learn Houston. I would rather help you land somewhere that works day to day than rush you into the first available place.',
     href: '/houston',
     ctaLabel: 'Explore Houston, Handled',
   },

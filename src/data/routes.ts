@@ -101,7 +101,7 @@ export const ROUTES: IntentRoute[] = [
     label: 'Not Sure',
     shortTitle: 'Start here, sort it out',
     description:
-      'Not ready to pick a lane? Start anyway — a few questions and the right direction gets obvious.',
+      'Not ready to pick a lane? Start anyway. A few answers will help us work out the right next step.',
     audience: "I don't know yet",
     href: smartMoveLink('not-sure'),
     actionType: 'smart_move',
