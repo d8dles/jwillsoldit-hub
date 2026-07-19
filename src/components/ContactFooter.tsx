@@ -58,7 +58,6 @@ export function ContactFooter() {
             </a>
             <a href="/privacy.html">Privacy</a>
             <a href="/houston">Houston Guides</a>
-            <a href="/houston/methodology">Methodology</a>
             <a href={smartMoveLink()} rel="noopener">
               Smart Move
             </a>
