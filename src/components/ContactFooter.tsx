@@ -57,6 +57,7 @@ export function ContactFooter() {
               Consumer Protection Notice
             </a>
             <a href="/privacy.html">Privacy</a>
+            <a href="/houston">Houston Guides</a>
             <a href={smartMoveLink()} rel="noopener">
               Smart Move
             </a>
