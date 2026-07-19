@@ -41,9 +41,9 @@ export function ContactFooter() {
 
         <div className={styles.complianceRow}>
           <div className={styles.identity}>
-            <span className={styles.wordmark}>
+            <a href="/" className={styles.wordmark} aria-label="JWILLSOLDIT home">
               JWILLSOLDIT<span className={styles.dot}>.</span>
-            </span>
+            </a>
             <span className={styles.idLine}>
               {CONTACT.name} · {CONTACT.title} · {CONTACT.brokerage} · {CONTACT.market}
             </span>
@@ -58,6 +58,7 @@ export function ContactFooter() {
             </a>
             <a href="/privacy.html">Privacy</a>
             <a href="/houston">Houston Guides</a>
+            <a href="/houston/methodology">Methodology</a>
             <a href={smartMoveLink()} rel="noopener">
               Smart Move
             </a>
@@ -65,12 +66,14 @@ export function ContactFooter() {
         </div>
 
         <div className={styles.bottomRow}>
-          <img
-            className={styles.crgLogo}
-            src="/assets/crg-logo-transparent.png"
-            alt="Christin Rachelle Group"
-            loading="lazy"
-          />
+          <div className={styles.crgLogoFrame}>
+            <img
+              className={styles.crgLogo}
+              src="/assets/crg-logo-transparent.png"
+              alt="Christin Rachelle Group"
+              loading="lazy"
+            />
+          </div>
           <p className={styles.fineprint}>
             Equal Housing Opportunity. Texas Real Estate Commission notices linked
             above: Information About Brokerage Services &amp; Consumer Protection

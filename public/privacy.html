@@ -31,13 +31,26 @@
   p { margin-bottom: 14px; font-size: 16px; }
   a { color: var(--forest); }
   hr { border: 0; border-top: 1px solid var(--trace); margin: 40px 0; }
-  .footer-note { font-size: 13px; color: var(--mid); }
   .back {
     display: inline-block; margin-bottom: 40px;
     font-family: 'Space Mono', monospace; font-size: 13px;
     color: var(--forest); text-decoration: none;
   }
   .back:hover { color: var(--red); }
+  .brand-footer { background: var(--ink); color: var(--off-white); padding: 72px 0 48px; }
+  .brand-footer__container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+  .brand-footer__compliance { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(250,250,250,.2); margin-bottom: 32px; }
+  .brand-footer__identity { display: flex; flex-direction: column; gap: 8px; }
+  .brand-footer__wordmark { color: var(--off-white); font-family: 'Instrument Sans', system-ui, sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: .06em; text-decoration: none; }
+  .brand-footer__dot { color: var(--red); }
+  .brand-footer__id { color: #A7A19A; font-family: 'Space Mono', monospace; font-size: .6875rem; letter-spacing: .02em; line-height: 1.7; }
+  .brand-footer__links { display: flex; flex-wrap: wrap; gap: 20px; }
+  .brand-footer__links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--off-white); font-family: 'Space Mono', monospace; font-size: .6875rem; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid rgba(250,250,250,.2); padding-bottom: 2px; }
+  .brand-footer__links a:hover { color: var(--red); border-color: var(--red); }
+  .brand-footer__bottom { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+  .brand-footer__logo-frame { position: relative; flex: 0 0 auto; width: 1.5in; height: 1in; overflow: hidden; }
+  .brand-footer__logo { position: absolute; inset: 0 auto auto 0; width: 249.8%; max-width: none; height: auto; transform: translate(-28.3%, -28.6%); filter: brightness(0) invert(1); opacity: .85; }
+  .brand-footer__fineprint { color: #A7A19A; font-size: .75rem; line-height: 1.7; max-width: 720px; }
 </style>
 </head>
 <body>
@@ -62,8 +75,30 @@
   <h2>Your choices</h2>
   <p>To ask what information we hold from a past inquiry, or to request deletion of it, email <a href="mailto:jwillsoldit@icloud.com">jwillsoldit@icloud.com</a>.</p>
 
-  <hr />
-  <p class="footer-note">Joey Williams &middot; REALTOR&reg; &middot; Christin Rachelle Group &middot; Houston, TX. Equal Housing Opportunity. Texas Real Estate Commission notices: <a href="/assets/iabs.pdf">Information About Brokerage Services</a> &middot; <a href="/assets/cpn.pdf">Consumer Protection Notice</a>.</p>
 </main>
+<footer class="brand-footer">
+  <div class="brand-footer__container">
+    <div class="brand-footer__compliance">
+      <div class="brand-footer__identity">
+        <a class="brand-footer__wordmark" href="/" aria-label="JWILLSOLDIT home">JWILLSOLDIT<span class="brand-footer__dot">.</span></a>
+        <span class="brand-footer__id">Joey Williams &middot; REALTOR&reg; &middot; Christin Rachelle Group &middot; Houston, TX</span>
+      </div>
+      <nav class="brand-footer__links" aria-label="Compliance and legal">
+        <a href="/assets/iabs.pdf">IABS</a>
+        <a href="/assets/cpn.pdf">Consumer Protection Notice</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/houston">Houston Guides</a>
+        <a href="/houston/methodology">Methodology</a>
+        <a href="https://move.jwillsoldit.com">Smart Move</a>
+      </nav>
+    </div>
+    <div class="brand-footer__bottom">
+      <div class="brand-footer__logo-frame">
+        <img class="brand-footer__logo" src="/assets/crg-logo-transparent.png" alt="Christin Rachelle Group" loading="lazy" />
+      </div>
+      <p class="brand-footer__fineprint">Equal Housing Opportunity. Texas Real Estate Commission notices linked above: Information About Brokerage Services &amp; Consumer Protection Notice. &copy; 2026 JWILLSOLDIT.</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
