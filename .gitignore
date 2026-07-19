@@ -5,3 +5,5 @@ dist/
 *.local
 *.timestamp-*.mjs
 .DS_Store
+.vercel
+.env*.local

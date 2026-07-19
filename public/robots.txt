@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.jwillsoldit.com/sitemap.xml
+Sitemap: https://www.jwillsoldit.com/houston/sitemap-index.xml
