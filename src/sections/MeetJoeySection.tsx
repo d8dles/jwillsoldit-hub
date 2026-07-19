@@ -64,10 +64,9 @@ export function MeetJoeySection() {
               left sitting in the dark waiting for someone to “circle back.”
             </p>
             <p className={styles.body}>
-              Whether you are renting, buying, selling, relocating, furnishing a
-              stay, or figuring out what to do with a property you already own,
-              the point is the same: clear answers, smart moves, and a next step
-              that actually makes sense.
+              Renting, buying, selling, relocating, furnishing a stay, or sorting
+              out a property you already own—the job is the same: give you a
+              straight answer and a next step that makes sense.
             </p>
             <p className={styles.body}>
               I listen closely. I move fast. I tell the truth.
