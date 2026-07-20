@@ -15,7 +15,9 @@ export function ListingsIndexPage() {
             <div className={styles.meta}>
               <span className="mono-label">LISTINGS / CURRENT INVENTORY</span>
               <span className={styles.rule} aria-hidden="true" />
-              <span className="mono-label mono-label--red">JWILLSOLDIT</span>
+              <a href="/" className="mono-label mono-label--red" aria-label="JWILLSOLDIT home">
+                JWILLSOLDIT
+              </a>
             </div>
             <h1 className={styles.title}>
               Property pages built for <em>the next move.</em>

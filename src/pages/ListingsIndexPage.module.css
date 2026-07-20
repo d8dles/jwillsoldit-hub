@@ -78,6 +78,17 @@
 
 .lane:hover .laneArrow { transform: translateX(5px); }
 
+@media (prefers-reduced-motion: reduce) {
+  .lane,
+  .laneArrow {
+    transition: none;
+  }
+
+  .lane:hover .laneArrow {
+    transform: none;
+  }
+}
+
 .laneQuiet { background: var(--off-white); color: var(--mid); }
 .laneQuiet strong { color: var(--ink); }
 .laneNote { font-size: 0.8rem; line-height: 1.5; }

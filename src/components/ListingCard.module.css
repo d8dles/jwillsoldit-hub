@@ -109,4 +109,10 @@
   .action span {
     transition: none;
   }
+
+  .card,
+  .image,
+  .action:hover span {
+    transform: none;
+  }
 }
