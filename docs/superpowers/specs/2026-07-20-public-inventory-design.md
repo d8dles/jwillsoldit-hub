@@ -40,6 +40,7 @@ offeringType: sale | rental | stay
 rentalMode: long_term | mid_term | short_term | null
 publicStatus: draft | coming_soon | available | pending | rented | booked | sold | off_market | archived
 published: boolean
+archivedAt / archivedBy: nullable archive audit fields
 title and public description fields
 property facts and media references
 pricing fields with a rate period
@@ -64,6 +65,13 @@ The existing private admin listing detail will gain a separate **Public Inventor
 
 The current intake buttons—Approve Listing and Mark Live—will continue to describe intake workflow and will not silently change public inventory status.
 
+The admin will also have an explicit **Archive Property** action. Archiving is a reversible record-retention action, not another availability state:
+
+- Archived properties are excluded from all public responses, filters, search, and counts.
+- Their photos, public copy, channel links, and historical status remain stored.
+- Joey can restore an archived property from an admin archive view and choose its next public status before republishing.
+- The archive action records who archived it and when.
+
 ## Public experience
 
 The hub listings index and category pages will read backend inventory status through a public, read-only endpoint. The UI will retain a static content fallback during rollout so a backend outage does not erase the existing 4231 page.
@@ -82,6 +90,8 @@ The default view will prioritize currently available inventory. Historical statu
 ## Integration boundary
 
 The public endpoint will expose only published, non-sensitive inventory fields. It will never expose client names, intake notes, checklist documents, session data, or service-role credentials.
+
+The endpoint will enforce both visibility gates server-side: an inventory record must be published and not archived before it can be returned. Hiding an item only in the browser is not sufficient.
 
 The endpoint is intentionally channel-neutral. Later integrations can update inventory records through adapters rather than changing the public page contract:
 
@@ -107,9 +117,11 @@ For the first release, Manual admin is the only writer.
 ## Acceptance criteria
 
 - Joey can change a public listing from Available to Coming Soon, Pending, Rented, or another valid type-appropriate state in the private admin.
+- Joey can archive a property, confirm that it disappears from public pages, and restore it later without recreating its content.
 - A public page reflects the change without a source-code edit.
 - Intake approval and public status are visibly separate controls.
 - A short-term stay can be created with nightly/monthly rate, minimum stay, availability window, amenities, house rules, and a booking/inquiry link.
 - Public responses contain no private intake data.
+- Archived properties are omitted from public API responses, including direct slug lookups.
 - Existing 4231 content remains usable if the inventory endpoint is unavailable.
 - Hub and backend builds pass, and status transitions are tested.
