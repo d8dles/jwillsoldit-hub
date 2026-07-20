@@ -1,0 +1,123 @@
+.hero {
+  padding-bottom: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(34px, 6vw, 64px);
+  align-items: start;
+}
+
+@media (min-width: 760px) {
+  .grid {
+    grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.15fr);
+    column-gap: clamp(38px, 5vw, 74px);
+  }
+}
+
+.portraitWrap {
+  position: relative;
+}
+
+.portrait {
+  width: 100%;
+  height: auto;
+}
+
+.name {
+  font-family: var(--display);
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 14px 0 4px;
+}
+
+.period {
+  /* Large display text (var(--fs-h2), 32-52px) -- plain --red clears AA here,
+     matching MeetJoeySection/CommandHero's .period treatment. */
+  color: var(--red);
+}
+
+.role {
+  font-family: var(--mono);
+  font-size: var(--fs-small);
+  color: var(--mid);
+  margin-bottom: 22px;
+}
+
+.lede {
+  font-family: var(--display);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 22px;
+  max-width: 46ch;
+}
+
+.body {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--ink);
+  max-width: 58ch;
+  margin-bottom: 16px;
+}
+
+.list {
+  list-style: none;
+  margin: 22px 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 58ch;
+}
+
+.list li {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+}
+
+.list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--red-text);
+}
+
+.credentials {
+  margin-top: var(--space-block);
+  padding-top: clamp(28px, 4vw, 40px);
+  border-top: 1px solid var(--trace);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.credentialRow {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.elsewhere {
+  margin-top: clamp(28px, 4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.elsewhereLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-top: 10px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: clamp(28px, 4vw, 40px);
+}
