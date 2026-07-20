@@ -3,22 +3,18 @@ import styles from './MeetJoeySection.module.css';
 
 const PILLARS = [
   {
-    number: '01',
     title: 'Texas-Wide Guidance',
     line: 'Houston rooted. Texas focused.',
   },
   {
-    number: '02',
     title: 'Stays That Feel Like Home',
     line: 'Curated homes. Flexible terms.',
   },
   {
-    number: '03',
     title: 'Rentals With Real Support',
     line: 'Fast response. Clear process.',
   },
   {
-    number: '04',
     title: 'Smarter Moves. Stronger Returns.',
     line: 'Buy, sell, invest with confidence.',
   },
@@ -82,8 +78,7 @@ export function MeetJoeySection() {
             </span>
             <ul className={styles.pillarList}>
               {PILLARS.map((pillar) => (
-                <li key={pillar.number} className={styles.pillar}>
-                  <span className={styles.pillarNum}>{pillar.number}</span>
+                <li key={pillar.title} className={styles.pillar}>
                   <h3 className={styles.pillarTitle}>{pillar.title}</h3>
                   <p className={`mono-label ${styles.pillarLine}`}>{pillar.line}</p>
                 </li>
