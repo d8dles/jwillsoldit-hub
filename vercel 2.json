@@ -1,0 +1,24 @@
+{
+  "rewrites": [
+    {
+      "source": "/houston",
+      "destination": "https://jwillsoldit-houston.vercel.app/houston"
+    },
+    {
+      "source": "/houston/",
+      "destination": "https://jwillsoldit-houston.vercel.app/houston"
+    },
+    {
+      "source": "/houston/:path*",
+      "destination": "https://jwillsoldit-houston.vercel.app/houston/:path*"
+    },
+    {
+      "source": "/transactions/deposit-lula-smith-james",
+      "destination": "/receipts/james-randolph-smith/"
+    },
+    {
+      "source": "/transactions/deposit-lula-smith-james/",
+      "destination": "/receipts/james-randolph-smith/"
+    }
+  ]
+}

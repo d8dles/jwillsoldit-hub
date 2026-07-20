@@ -13,6 +13,14 @@
      Use for text-sized red only — fills, borders, large display glyphs, and
      reds on dark panels keep --red. */
   --red-text: #C93318;
+  /* Brightened red for text on dark panels (--forest / --ink). --red itself
+     is only 2.80:1 on --forest and 4.44:1 on --ink -- both fail AA, and
+     --forest fails even the large-text 3:1 floor. This hits 4.59:1 on
+     --forest (the binding constraint) and 7.28:1 on --ink. Same hue family
+     as --red/--ember, lightened rather than a different color. Use for
+     text-sized red on a dark panel only -- fills, borders, and reds on
+     light paper keep --red / --red-text. */
+  --red-on-dark: #EF7F5D;
   --ember: #E85D2A;
   --copper: #B05C2E;
   --ink: #0D0D0D;

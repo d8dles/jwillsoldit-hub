@@ -28,7 +28,7 @@
 }
 
 .section--panel .mono-label--red {
-  color: var(--red);
+  color: var(--red-on-dark);
 }
 
 /* Black panel — the Route Board ("What are you trying to do?"). */
@@ -42,7 +42,7 @@
 }
 
 .section--panel-ink .mono-label--red {
-  color: var(--red);
+  color: var(--red-on-dark);
 }
 
 /* Room for the fixed mobile action bar */

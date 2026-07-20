@@ -21,7 +21,11 @@
 .index {
   font-family: var(--mono);
   font-size: 0.8125rem;
-  color: var(--red);
+  color: var(--red-text);
+}
+
+.onDark .index {
+  color: var(--red-on-dark);
 }
 
 .head {
@@ -80,8 +84,12 @@
 }
 
 .outcomeMark {
-  color: var(--red);
+  color: var(--red-text);
   font-size: 0.75rem;
+}
+
+.onDark .outcomeMark {
+  color: var(--red-on-dark);
 }
 
 .ctaWrap {
@@ -107,12 +115,13 @@
 }
 
 .cta:hover {
-  color: var(--red);
+  color: var(--red-text);
   border-color: var(--red);
 }
 
 .onDark .cta:hover {
-  color: var(--red);
+  color: var(--red-on-dark);
+  border-color: var(--red-on-dark);
 }
 
 @media (min-width: 900px) {

@@ -51,7 +51,7 @@
 .actionArrow {
   grid-area: arrow;
   font-family: var(--mono);
-  color: var(--red);
+  color: var(--red-on-dark);
   font-size: 1.125rem;
   transition: transform var(--dur-fast) var(--ease-out);
 }
@@ -120,7 +120,7 @@
 }
 
 .legalLinks a:hover {
-  color: var(--red);
+  color: var(--red-on-dark);
   border-color: var(--red);
 }
 

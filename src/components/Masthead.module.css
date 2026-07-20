@@ -60,7 +60,7 @@
 }
 
 .quick:hover {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .cta {
