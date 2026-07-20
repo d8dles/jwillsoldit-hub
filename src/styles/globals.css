@@ -65,7 +65,7 @@ button {
 }
 
 .mono-label--red {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .display-h2 {

@@ -81,6 +81,17 @@
   background: var(--copper);
 }
 
+/* Below 768px the persistent bottom action bar already carries Call and Text,
+   so repeating them here only costs width. With them shown the bar needs 378px
+   of content, which overflows a 375px viewport (iPhone SE / 13 mini); without
+   them it needs 281px. Hand the two off to the bottom bar at exactly the width
+   where that bar appears. */
+@media (max-width: 767px) {
+  .quick {
+    display: none;
+  }
+}
+
 @media (min-width: 980px) {
   .nav {
     display: flex;
@@ -97,10 +108,6 @@
   }
   .actions {
     gap: 10px;
-  }
-  .quick {
-    font-size: 0.6875rem;
-    padding: 8px 0;
   }
   .cta {
     font-size: 0.6875rem;

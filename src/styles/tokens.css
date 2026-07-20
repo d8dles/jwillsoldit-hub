@@ -8,6 +8,11 @@
   --forest: #1C3B2E;
   --forest-deep: #142B21;
   --red: #E03A1F;
+  /* Darkened red for small (<18.66px) text on --off-white paper. #E03A1F
+     is only 4.1:1 there (fails AA); this hits ~4.95:1. Same hue family (~9°).
+     Use for text-sized red only — fills, borders, large display glyphs, and
+     reds on dark panels keep --red. */
+  --red-text: #C93318;
   --ember: #E85D2A;
   --copper: #B05C2E;
   --ink: #0D0D0D;
