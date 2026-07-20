@@ -110,8 +110,8 @@
     transition: none;
   }
 
-  .card,
-  .image,
+  .card:hover,
+  .card:hover .image,
   .action:hover span {
     transform: none;
   }
