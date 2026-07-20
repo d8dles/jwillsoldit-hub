@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import type { Listing } from '../data/listings';
-
-const SITE_ORIGIN = 'https://www.jwillsoldit.com';
+import { getListingSeo } from '../data/seo';
 
 interface ListingMetaProps {
   listing: Listing;
@@ -29,9 +28,8 @@ function upsertMeta(
 export function ListingMeta({ listing }: ListingMetaProps) {
   useEffect(() => {
     const originalTitle = document.title;
-    const canonical = `${SITE_ORIGIN}${listing.path}`;
-    const description =
-      '4231 Tulip Oak Dr in Houston, TX 77068 is a 4-bedroom, 2.5-bath rental with 2,362 square feet, a first-floor primary suite, open living spaces, and washer/dryer included.';
+    const seo = getListingSeo(listing);
+    const canonical = seo.canonical;
     const touched: Array<{ node: HTMLMetaElement; original: string | null }> = [];
     const originalCanonical = document.head.querySelector<HTMLLinkElement>(
       'link[rel="canonical"]'
@@ -39,28 +37,18 @@ export function ListingMeta({ listing }: ListingMetaProps) {
     const originalCanonicalHref = originalCanonical?.getAttribute('href') ?? null;
 
     document.title =
-      '4231 Tulip Oak Dr, Houston TX 77068 | For Rent $2,300/mo | JWILLSOLDIT';
+      seo.title;
 
-    upsertMeta('name', 'description', description, touched);
+    upsertMeta('name', 'description', seo.description, touched);
     upsertMeta('property', 'og:type', 'website', touched);
     upsertMeta('property', 'og:title', document.title, touched);
-    upsertMeta('property', 'og:description', description, touched);
+    upsertMeta('property', 'og:description', seo.description, touched);
     upsertMeta('property', 'og:url', canonical, touched);
-    upsertMeta(
-      'property',
-      'og:image',
-      `${SITE_ORIGIN}${listing.heroImage.src}`,
-      touched
-    );
+    upsertMeta('property', 'og:image', seo.image, touched);
     upsertMeta('name', 'twitter:card', 'summary_large_image', touched);
     upsertMeta('name', 'twitter:title', document.title, touched);
-    upsertMeta('name', 'twitter:description', description, touched);
-    upsertMeta(
-      'name',
-      'twitter:image',
-      `${SITE_ORIGIN}${listing.heroImage.src}`,
-      touched
-    );
+    upsertMeta('name', 'twitter:description', seo.description, touched);
+    upsertMeta('name', 'twitter:image', seo.image, touched);
 
     const canonicalNode = originalCanonical ?? document.createElement('link');
     if (!originalCanonical) {
@@ -72,36 +60,7 @@ export function ListingMeta({ listing }: ListingMetaProps) {
     const jsonLd = document.createElement('script');
     jsonLd.id = 'listing-jsonld';
     jsonLd.type = 'application/ld+json';
-    jsonLd.textContent = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'RealEstateListing',
-      name: `${listing.addressLine}, ${listing.city}, ${listing.state} ${listing.zip}`,
-      url: canonical,
-      image: [`${SITE_ORIGIN}${listing.heroImage.src}`],
-      description,
-      numberOfBedrooms: listing.bedrooms,
-      numberOfBathroomsTotal: listing.fullBathrooms + listing.halfBathrooms * 0.5,
-      floorSize: {
-        '@type': 'QuantitativeValue',
-        value: listing.squareFeet,
-        unitCode: 'FTK',
-      },
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: listing.addressLine,
-        addressLocality: listing.city,
-        addressRegion: listing.state,
-        postalCode: listing.zip,
-        addressCountry: 'US',
-      },
-      offers: {
-        '@type': 'Offer',
-        price: listing.price,
-        priceCurrency: 'USD',
-        availability: 'https://schema.org/InStock',
-        url: canonical,
-      },
-    });
+    jsonLd.textContent = JSON.stringify(seo.jsonLd);
 
     document.head.querySelector('#listing-jsonld')?.remove();
     document.head.appendChild(jsonLd);

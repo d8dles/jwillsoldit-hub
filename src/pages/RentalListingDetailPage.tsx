@@ -35,6 +35,7 @@ export function RentalListingDetailPage({ listing }: RentalListingDetailPageProp
                 src={listing.heroImage.src}
                 alt={listing.heroImage.alt}
                 className={styles.heroImage}
+                sizes="(min-width: 860px) 62vw, 100vw"
               />
               <span className={styles.heroIndex}>PROPERTY / 01</span>
             </div>
@@ -135,7 +136,13 @@ export function RentalListingDetailPage({ listing }: RentalListingDetailPageProp
                 onClick={() => setOpenIndex(index)}
                 aria-label={`Open photo ${index + 1} of ${listing.gallery.length}`}
               >
-                <img src={photo.src} alt={photo.alt} loading="lazy" className={styles.galleryImage} />
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  sizes="(min-width: 860px) 25vw, 50vw"
+                  className={styles.galleryImage}
+                />
                 <span className={styles.galleryNumber}>{String(index + 1).padStart(2, '0')}</span>
               </button>
             ))}

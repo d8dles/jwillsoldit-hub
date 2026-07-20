@@ -41,7 +41,7 @@ export interface Listing {
 }
 
 const photo = (number: number, alt: string): ListingPhoto => ({
-  src: `/listings/4231-tulip-oak-dr/TP-${String(number).padStart(3, '0')}.jpg`,
+  src: `/listings/4231-tulip-oak-dr/optimized/TP-${String(number).padStart(3, '0')}.jpg`,
   alt,
 });
 

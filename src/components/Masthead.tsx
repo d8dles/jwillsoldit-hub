@@ -16,6 +16,11 @@ const NAV = [
   { label: 'Contact', href: '#contact', external: false },
 ];
 
+function sectionHref(href: string): string {
+  const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+  return pathname === '/' ? href : `/${href}`;
+}
+
 export function Masthead() {
   return (
     <header className={styles.masthead}>
@@ -27,7 +32,7 @@ export function Masthead() {
           {NAV.map((item) => (
             <a
               key={item.label}
-              href={item.href}
+              href={item.href.startsWith('#') ? sectionHref(item.href) : item.href}
               className={styles.navLink}
               {...(item.external ? { rel: 'noopener' } : {})}
             >

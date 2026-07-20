@@ -2,11 +2,27 @@
   "rewrites": [
     {
       "source": "/listings",
-      "destination": "/index.html"
+      "destination": "/listings/index.html"
     },
     {
-      "source": "/listings/:path*",
-      "destination": "/index.html"
+      "source": "/listings/",
+      "destination": "/listings/index.html"
+    },
+    {
+      "source": "/listings/rentals",
+      "destination": "/listings/rentals/index.html"
+    },
+    {
+      "source": "/listings/rentals/",
+      "destination": "/listings/rentals/index.html"
+    },
+    {
+      "source": "/listings/rentals/4231-tulip-oak-dr",
+      "destination": "/listings/rentals/4231-tulip-oak-dr/index.html"
+    },
+    {
+      "source": "/listings/rentals/4231-tulip-oak-dr/",
+      "destination": "/listings/rentals/4231-tulip-oak-dr/index.html"
     },
     {
       "source": "/houston",
