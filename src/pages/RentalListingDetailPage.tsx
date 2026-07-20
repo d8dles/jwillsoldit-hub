@@ -16,7 +16,7 @@ export function RentalListingDetailPage({ listing }: RentalListingDetailPageProp
   const visiblePhotos = showAllPhotos ? listing.gallery : listing.gallery.slice(0, 12);
 
   return (
-    <ListingShell>
+    <ListingShell mobileIntent="rent">
       <ListingMeta listing={listing} />
 
       <section className={styles.hero}>
@@ -49,7 +49,7 @@ export function RentalListingDetailPage({ listing }: RentalListingDetailPageProp
 
               <div className={styles.stats} aria-label="Home facts">
                 <span><strong>{listing.bedrooms}</strong> beds</span>
-                <span><strong>{listing.fullBathrooms} + {listing.halfBathrooms}</strong> baths</span>
+                <span><strong>{listing.fullBathrooms} full + {listing.halfBathrooms} half</strong> baths</span>
                 <span><strong>{listing.squareFeet.toLocaleString()}</strong> sq ft</span>
               </div>
 
@@ -115,12 +115,18 @@ export function RentalListingDetailPage({ listing }: RentalListingDetailPageProp
               <span className="mono-label mono-label--red">PHOTO SET / {listing.gallery.length}</span>
               <h2 className="display-h2">See the whole <em>shape of it.</em></h2>
             </div>
-            <button type="button" className="text-link" onClick={() => setShowAllPhotos((current) => !current)}>
+            <button
+              type="button"
+              className="text-link"
+              aria-expanded={showAllPhotos}
+              aria-controls="property-photo-grid"
+              onClick={() => setShowAllPhotos((current) => !current)}
+            >
               {showAllPhotos ? 'Show featured set' : `View all ${listing.gallery.length} photos`}
             </button>
           </div>
 
-          <div className={styles.galleryGrid}>
+          <div id="property-photo-grid" className={styles.galleryGrid}>
             {visiblePhotos.map((photo, index) => (
               <button
                 key={photo.src}

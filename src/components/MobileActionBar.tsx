@@ -3,10 +3,14 @@ import { smartMoveLink, telLink, smsLink } from '../utils/links';
 import { useOnScreen } from '../utils/motion';
 import styles from './MobileActionBar.module.css';
 
+interface MobileActionBarProps {
+  intent?: string;
+}
+
 // Fixed bottom action bar — mobile only (hidden ≥768px via CSS).
 // Steps aside when the footer is on screen so compliance links stay reachable.
 
-export function MobileActionBar() {
+export function MobileActionBar({ intent }: MobileActionBarProps) {
   const [footerVisible, setFooterVisible] = useState(false);
   const onChange = useCallback((visible: boolean) => setFooterVisible(visible), []);
   useOnScreen('footer', onChange);
@@ -22,7 +26,7 @@ export function MobileActionBar() {
       <a href={smsLink()} className={styles.item}>
         Text
       </a>
-      <a href={smartMoveLink()} className={`${styles.item} ${styles.primary}`} rel="noopener">
+      <a href={smartMoveLink(intent)} className={`${styles.item} ${styles.primary}`} rel="noopener">
         Smart Move <span aria-hidden="true">→</span>
       </a>
     </nav>

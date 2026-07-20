@@ -6,15 +6,16 @@ import styles from './ListingShell.module.css';
 
 interface ListingShellProps {
   children: ReactNode;
+  mobileIntent?: string;
 }
 
-export function ListingShell({ children }: ListingShellProps) {
+export function ListingShell({ children, mobileIntent }: ListingShellProps) {
   return (
     <>
       <Masthead />
       <main className={styles.main}>{children}</main>
       <ContactFooter />
-      <MobileActionBar />
+      <MobileActionBar intent={mobileIntent} />
     </>
   );
 }
