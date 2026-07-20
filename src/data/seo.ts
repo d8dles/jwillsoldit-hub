@@ -10,6 +10,7 @@ export interface PageSeo {
   canonical: string;
   image: string;
   jsonLd?: Record<string, unknown>;
+  jsonLdId?: string;
 }
 
 export function getListingSeo(listing: Listing): PageSeo {
@@ -25,6 +26,7 @@ export function getListingSeo(listing: Listing): PageSeo {
     description,
     canonical,
     image,
+    jsonLdId: 'listing-jsonld',
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'RealEstateListing',
@@ -64,6 +66,23 @@ export const LISTINGS_INDEX_SEO: PageSeo = {
   description: 'Current JWILLSOLDIT property listings, including rental homes presented locally with direct inquiry routes.',
   canonical: `${SITE_ORIGIN}/listings/`,
   image: `${SITE_ORIGIN}/assets/og-hub-v1.png`,
+  jsonLdId: 'page-jsonld',
+  jsonLd: {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'JWILLSOLDIT Listings',
+    url: `${SITE_ORIGIN}/listings/`,
+    description: 'Current JWILLSOLDIT property listings, including rental homes presented locally with direct inquiry routes.',
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: 1,
+      itemListElement: [{
+        '@type': 'ListItem',
+        position: 1,
+        url: `${SITE_ORIGIN}${TULIP_OAK_LISTING.path}`,
+      }],
+    },
+  },
 };
 
 export const RENTAL_INDEX_SEO: PageSeo = {
@@ -72,6 +91,23 @@ export const RENTAL_INDEX_SEO: PageSeo = {
   description: 'Current JWILLSOLDIT rental listings in Houston, presented locally with verified property details and a direct rental inquiry route.',
   canonical: `${SITE_ORIGIN}/listings/rentals/`,
   image: `${SITE_ORIGIN}${TULIP_OAK_LISTING.heroImage.src}`,
+  jsonLdId: 'page-jsonld',
+  jsonLd: {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Houston Rental Listings',
+    url: `${SITE_ORIGIN}/listings/rentals/`,
+    description: 'Current JWILLSOLDIT rental listings in Houston, presented locally with verified property details and a direct rental inquiry route.',
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: 1,
+      itemListElement: [{
+        '@type': 'ListItem',
+        position: 1,
+        url: `${SITE_ORIGIN}${TULIP_OAK_LISTING.path}`,
+      }],
+    },
+  },
 };
 
 export const RENTAL_SERVICES_SEO: PageSeo = {
@@ -80,6 +116,14 @@ export const RENTAL_SERVICES_SEO: PageSeo = {
   description: 'JWILLSOLDIT helps Houston renters find the right lease and rental owners coordinate leasing, upkeep, turnovers, and follow-up.',
   canonical: `${SITE_ORIGIN}/rentals/`,
   image: `${SITE_ORIGIN}/assets/og-hub-v1.png`,
+  jsonLdId: 'page-jsonld',
+  jsonLd: {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Houston Rental Help for Renters and Owners',
+    url: `${SITE_ORIGIN}/rentals/`,
+    description: 'JWILLSOLDIT helps Houston renters find the right lease and rental owners coordinate leasing, upkeep, turnovers, and follow-up.',
+  },
 };
 
 export const LISTING_SEO_PAGES = [

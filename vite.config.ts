@@ -32,7 +32,7 @@ function renderListingHtml(baseHtml: string, seo: PageSeo): string {
   html = replaceOrInsert(html, /<meta\s+name="twitter:image"[\s\S]*?\/>/, `<meta name="twitter:image" content="${image}" />`);
 
   if (seo.jsonLd) {
-    const jsonLd = `<script id="listing-jsonld" type="application/ld+json">${JSON.stringify(seo.jsonLd)}</script>`;
+    const jsonLd = `<script id="${seo.jsonLdId ?? 'page-jsonld'}" type="application/ld+json">${JSON.stringify(seo.jsonLd)}</script>`;
     html = html.replace('</head>', `  ${jsonLd}\n</head>`);
   }
 

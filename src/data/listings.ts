@@ -49,7 +49,7 @@ const photo = (number: number, alt: string): ListingPhoto => {
     src: `${basePath}/${file}`,
     alt,
     srcSet: [800, 1200, 1600]
-      .map((width) => `${basePath}/${width}/${file} ${width}w`)
+      .map((width) => `${width === 1600 ? `${basePath}/${file}` : `${basePath}/${width}/${file}`} ${width}w`)
       .join(', '),
   };
 };
