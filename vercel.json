@@ -1,6 +1,38 @@
 {
   "rewrites": [
     {
+      "source": "/listings",
+      "destination": "/listings/index.html"
+    },
+    {
+      "source": "/rentals",
+      "destination": "/rentals/index.html"
+    },
+    {
+      "source": "/rentals/",
+      "destination": "/rentals/index.html"
+    },
+    {
+      "source": "/listings/",
+      "destination": "/listings/index.html"
+    },
+    {
+      "source": "/listings/rentals",
+      "destination": "/listings/rentals/index.html"
+    },
+    {
+      "source": "/listings/rentals/",
+      "destination": "/listings/rentals/index.html"
+    },
+    {
+      "source": "/listings/rentals/4231-tulip-oak-dr",
+      "destination": "/listings/rentals/4231-tulip-oak-dr/index.html"
+    },
+    {
+      "source": "/listings/rentals/4231-tulip-oak-dr/",
+      "destination": "/listings/rentals/4231-tulip-oak-dr/index.html"
+    },
+    {
       "source": "/houston",
       "destination": "https://jwillsoldit-houston.vercel.app/houston"
     },

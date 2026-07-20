@@ -6,6 +6,7 @@ const NAV = [
   { label: 'Move', href: smartMoveLink(), external: true },
   { label: 'Stay', href: '#stays', external: false },
   { label: 'Rent', href: '#rentals', external: false },
+  { label: 'Listings', href: '/listings', external: false },
   { label: 'Sell', href: smartMoveLink('sell'), external: true },
   { label: 'Own', href: '#manage', external: false },
   { label: 'Invest', href: '#invest', external: false },
@@ -15,18 +16,24 @@ const NAV = [
   { label: 'Contact', href: '#contact', external: false },
 ];
 
+function sectionHref(href: string): string {
+  const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+  if (href === '#rentals' && pathname !== '/') return '/rentals';
+  return pathname === '/' ? href : `/${href}`;
+}
+
 export function Masthead() {
   return (
     <header className={styles.masthead}>
       <div className={styles.inner}>
-        <BrandLockup />
+        <BrandLockup href="/" />
 
         {/* Desktop nav */}
         <nav className={styles.nav} aria-label="Primary">
           {NAV.map((item) => (
             <a
               key={item.label}
-              href={item.href}
+              href={item.href.startsWith('#') ? sectionHref(item.href) : item.href}
               className={styles.navLink}
               {...(item.external ? { rel: 'noopener' } : {})}
             >
