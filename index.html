@@ -36,13 +36,9 @@
     <!--
       Structured data (JSON-LD). Entity graph for JWILLSOLDIT + Joey Williams.
       Every value here must stay TRUE — it mirrors already-public business facts.
-      TWO ENRICHMENT SLOTS are intentionally left out pending real data
-      (do not fabricate these):
-        1. TREC license number -> add to Person as hasCredential, and to
-           RealEstateAgent as an identifier.
-        2. Social / authority profiles (HAR, Zillow, Google Business Profile,
-           Instagram, Facebook, LinkedIn) -> add as Person.sameAs and
-           Organization.sameAs arrays.
+      The TREC license number and sameAs profiles below are structured data
+      only: they exist for search engines / AI crawlers reading this script
+      tag, not as visible page text — nothing here renders in the UI.
     -->
     <script type="application/ld+json">
     {
@@ -68,6 +64,11 @@
           "email": "jwillsoldit@icloud.com",
           "telephone": "+1-561-685-6566",
           "founder": { "@id": "https://www.jwillsoldit.com/#joey" },
+          "sameAs": [
+            "https://www.har.com/joey-williams/agent_jtwill",
+            "https://www.facebook.com/jwillsoldit",
+            "https://www.instagram.com/jwillsoldit"
+          ],
           "areaServed": [
             { "@type": "City", "name": "Houston", "containedInPlace": { "@type": "State", "name": "Texas" } },
             { "@type": "State", "name": "Texas" }
@@ -93,6 +94,18 @@
           "description": "Houston-rooted REALTOR® handling moves, rentals, furnished stays, and property strategy across Texas — with taste, speed, and straight answers.",
           "worksFor": { "@id": "https://www.jwillsoldit.com/#brokerage" },
           "memberOf": { "@id": "https://www.jwillsoldit.com/#brokerage" },
+          "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "license",
+            "name": "Texas Real Estate License",
+            "recognizedBy": { "@type": "GovernmentOrganization", "name": "Texas Real Estate Commission" },
+            "identifier": "702090"
+          },
+          "sameAs": [
+            "https://www.har.com/joey-williams/agent_jtwill",
+            "https://www.facebook.com/jwillsoldit",
+            "https://www.instagram.com/jwillsoldit"
+          ],
           "knowsAbout": [
             "Houston real estate",
             "Relocation to Greater Houston",
@@ -119,6 +132,11 @@
           "email": "jwillsoldit@icloud.com",
           "telephone": "+1-561-685-6566",
           "priceRange": "$$",
+          "identifier": {
+            "@type": "PropertyValue",
+            "name": "TREC License Number",
+            "value": "702090"
+          },
           "description": "Real estate, rentals, furnished stays, and property management across Greater Houston and Texas.",
           "founder": { "@id": "https://www.jwillsoldit.com/#joey" },
           "employee": { "@id": "https://www.jwillsoldit.com/#joey" },
