@@ -8,6 +8,8 @@
       name="description"
       content="Houston-rooted real estate guidance, furnished stays, rental support, and property strategy across Texas. Joey Williams — REALTOR®, Christin Rachelle Group."
     />
+    <meta name="author" content="Joey Williams" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://www.jwillsoldit.com/" />
 
     <!-- Open Graph -->
@@ -19,14 +21,133 @@
       content="Moves, furnished stays, rentals, property management, and owner services across Texas — all organized in one place."
     />
     <meta property="og:url" content="https://www.jwillsoldit.com/" />
+    <meta property="og:image" content="https://www.jwillsoldit.com/assets/og-hub-v1.png" />
+    <meta property="og:image:alt" content="JWILLSOLDIT — Texas, Handled." />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Your Next Move Starts Here." />
     <meta
       name="twitter:description"
       content="Moves, furnished stays, rentals, property management, and owner services across Texas — all organized in one place."
     />
+    <meta name="twitter:image" content="https://www.jwillsoldit.com/assets/og-hub-v1.png" />
+
+    <!--
+      Structured data (JSON-LD). Entity graph for JWILLSOLDIT + Joey Williams.
+      Every value here must stay TRUE — it mirrors already-public business facts.
+      TWO ENRICHMENT SLOTS are intentionally left out pending real data
+      (do not fabricate these):
+        1. TREC license number -> add to Person as hasCredential, and to
+           RealEstateAgent as an identifier.
+        2. Social / authority profiles (HAR, Zillow, Google Business Profile,
+           Instagram, Facebook, LinkedIn) -> add as Person.sameAs and
+           Organization.sameAs arrays.
+    -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.jwillsoldit.com/#website",
+          "url": "https://www.jwillsoldit.com/",
+          "name": "JWILLSOLDIT",
+          "description": "Houston-rooted real estate guidance, furnished stays, rental support, and property strategy across Texas.",
+          "publisher": { "@id": "https://www.jwillsoldit.com/#organization" },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.jwillsoldit.com/#organization",
+          "name": "JWILLSOLDIT",
+          "url": "https://www.jwillsoldit.com/",
+          "logo": "https://www.jwillsoldit.com/assets/og-hub-v1.png",
+          "image": "https://www.jwillsoldit.com/assets/og-hub-v1.png",
+          "description": "The JWILLSOLDIT ecosystem — moves, furnished stays, rentals, property management, and investing across Greater Houston and Texas, led by REALTOR® Joey Williams.",
+          "email": "jwillsoldit@icloud.com",
+          "telephone": "+1-561-685-6566",
+          "founder": { "@id": "https://www.jwillsoldit.com/#joey" },
+          "areaServed": [
+            { "@type": "City", "name": "Houston", "containedInPlace": { "@type": "State", "name": "Texas" } },
+            { "@type": "State", "name": "Texas" }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.jwillsoldit.com/#brokerage",
+          "name": "Christin Rachelle Group",
+          "areaServed": { "@type": "State", "name": "Texas" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.jwillsoldit.com/#joey",
+          "name": "Joey Williams",
+          "givenName": "Joey",
+          "familyName": "Williams",
+          "jobTitle": "REALTOR®",
+          "url": "https://www.jwillsoldit.com/",
+          "image": "https://www.jwillsoldit.com/assets/editorial/joey-williams-headshot.png",
+          "email": "jwillsoldit@icloud.com",
+          "telephone": "+1-561-685-6566",
+          "description": "Houston-rooted REALTOR® handling moves, rentals, furnished stays, and property strategy across Texas — with taste, speed, and straight answers.",
+          "worksFor": { "@id": "https://www.jwillsoldit.com/#brokerage" },
+          "memberOf": { "@id": "https://www.jwillsoldit.com/#brokerage" },
+          "knowsAbout": [
+            "Houston real estate",
+            "Relocation to Greater Houston",
+            "Greater Houston neighborhoods and regions",
+            "Residential property management",
+            "Furnished and short-term stays",
+            "Residential rentals",
+            "Real estate investing",
+            "Texas property taxes",
+            "Flood risk and insurance in Houston",
+            "Municipal Utility Districts (MUDs)"
+          ],
+          "areaServed": [
+            { "@type": "City", "name": "Houston", "containedInPlace": { "@type": "State", "name": "Texas" } },
+            { "@type": "State", "name": "Texas" }
+          ]
+        },
+        {
+          "@type": "RealEstateAgent",
+          "@id": "https://www.jwillsoldit.com/#practice",
+          "name": "Joey Williams — JWILLSOLDIT",
+          "url": "https://www.jwillsoldit.com/",
+          "image": "https://www.jwillsoldit.com/assets/editorial/joey-williams-headshot.png",
+          "email": "jwillsoldit@icloud.com",
+          "telephone": "+1-561-685-6566",
+          "priceRange": "$$",
+          "description": "Real estate, rentals, furnished stays, and property management across Greater Houston and Texas.",
+          "founder": { "@id": "https://www.jwillsoldit.com/#joey" },
+          "employee": { "@id": "https://www.jwillsoldit.com/#joey" },
+          "parentOrganization": { "@id": "https://www.jwillsoldit.com/#brokerage" },
+          "areaServed": [
+            { "@type": "City", "name": "Houston", "containedInPlace": { "@type": "State", "name": "Texas" } },
+            { "@type": "State", "name": "Texas" }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "JWILLSOLDIT services",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Long-term rental management", "description": "Full-service management coordination: marketing, tenant screening coordination, lease handling, rent collection, and responsive issue follow-up." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Short-term rental & furnished-stay coordination", "description": "End-to-end coordination: listing oversight, guest communication, and scheduled cleaning and restocking through trusted service partners." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Maintenance & vendor coordination", "description": "Vendor coordination and property follow-up — quotes, scheduling, completion checks, and documentation." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Turnovers & make-ready", "description": "Move-out to move-in execution: punch list, cleaning, repairs, staging-level reset, and re-list readiness." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Owner updates & reporting", "description": "Clear owner updates that keep performance, expenses, and next steps easy to understand." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Furnished / corporate / monthly stays", "description": "Operated furnished units with flexible terms — availability confirmed directly by inquiry." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rental search help", "description": "A guided rental search — areas, budget, timeline, and criteria mapped before you tour." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Buyer guidance", "description": "Search strategy, neighborhood mapping, offer positioning, and contract-to-close coordination." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seller / listing strategy", "description": "Pricing analysis, prep and presentation plan, listing execution, and negotiation through closing." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Relocation guidance", "description": "Area orientation, rent-first vs. buy-now framing, timing plan, and a landing path built around your move date." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Investor & owner support", "description": "Acquisition guidance connected to real operating experience: what a property takes to run, before you buy it." } }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Fonts: same system as Smart Move for brand continuity -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
