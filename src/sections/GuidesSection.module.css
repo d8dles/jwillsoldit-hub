@@ -27,7 +27,7 @@
 .num {
   font-family: var(--mono);
   font-size: 0.75rem;
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .title {
