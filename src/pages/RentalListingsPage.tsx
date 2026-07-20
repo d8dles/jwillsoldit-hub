@@ -20,7 +20,7 @@ export function RentalListingsPage() {
       <section className={`section ${styles.hero}`}>
         <div className="container">
           <span className="mono-label mono-label--red">LISTINGS / RENTALS</span>
-          <h1 className={styles.title}>Find a rental that <em>fits the route.</em></h1>
+          <h1 className={styles.title}>Find a rental that <em>fits your route.</em></h1>
           <p className={styles.lede}>
             JWILLSOLDIT property pages show the home here first; verify current
             price and availability before applying.

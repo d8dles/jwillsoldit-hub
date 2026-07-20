@@ -46,7 +46,6 @@ export function ListingsIndexPage() {
             <div className={`${styles.lane} ${styles.laneQuiet}`}>
               <span className="mono-label">02 / SALES</span>
               <strong>No active sale listings</strong>
-              <span className={styles.laneNote}>Inventory will appear here when live.</span>
             </div>
           </div>
         </div>
