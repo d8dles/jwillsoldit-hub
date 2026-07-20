@@ -1,0 +1,105 @@
+.hero {
+  padding-top: clamp(100px, 13vw, 170px);
+  padding-bottom: clamp(64px, 9vw, 120px);
+  background: linear-gradient(135deg, rgba(28, 59, 46, 0.055), transparent 58%), var(--off-white);
+}
+
+.heroInner { max-width: 880px; }
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.rule { width: 44px; height: 1px; background: var(--trace); }
+
+.title {
+  max-width: 800px;
+  font-family: var(--display);
+  font-size: var(--fs-hero);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+}
+
+.title em { color: var(--forest); font-style: italic; font-weight: 400; }
+
+.lede {
+  max-width: 610px;
+  margin-top: 28px;
+  color: var(--mid);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.lanes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: clamp(48px, 7vw, 84px);
+  background: var(--trace);
+  border: 1px solid var(--trace);
+}
+
+.lane {
+  position: relative;
+  display: flex;
+  min-height: 160px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 24px;
+  background: var(--pure);
+  text-decoration: none;
+  transition: background var(--dur-fast) ease;
+}
+
+.lane:hover { background: #f2eee8; }
+
+.lane strong {
+  max-width: 230px;
+  font-family: var(--display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.laneArrow {
+  position: absolute;
+  right: 24px;
+  bottom: 22px;
+  color: var(--red);
+  font-family: var(--mono);
+  font-size: 1.2rem;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.lane:hover .laneArrow { transform: translateX(5px); }
+
+.laneQuiet { background: var(--off-white); color: var(--mid); }
+.laneQuiet strong { color: var(--ink); }
+.laneNote { font-size: 0.8rem; line-height: 1.5; }
+
+.inventory { padding-top: clamp(64px, 9vw, 120px); }
+
+.sectionHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: var(--space-block);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 720px) {
+  .lanes, .grid { grid-template-columns: 1fr; }
+  .sectionHeading { display: block; }
+  .sectionHeading h2 { margin-top: 14px; }
+}

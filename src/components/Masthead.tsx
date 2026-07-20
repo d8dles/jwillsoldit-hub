@@ -6,6 +6,7 @@ const NAV = [
   { label: 'Move', href: smartMoveLink(), external: true },
   { label: 'Stay', href: '#stays', external: false },
   { label: 'Rent', href: '#rentals', external: false },
+  { label: 'Listings', href: '/listings', external: false },
   { label: 'Sell', href: smartMoveLink('sell'), external: true },
   { label: 'Own', href: '#manage', external: false },
   { label: 'Invest', href: '#invest', external: false },

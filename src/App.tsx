@@ -10,6 +10,8 @@ import { ManageSection } from './sections/ManageSection';
 import { InvestSection } from './sections/InvestSection';
 import { GuidesSection } from './sections/GuidesSection';
 import { ContactSection } from './sections/ContactSection';
+import { ListingsIndexPage } from './pages/ListingsIndexPage';
+import { RentalListingsPage } from './pages/RentalListingsPage';
 
 function HomePage() {
   return (
@@ -33,5 +35,10 @@ function HomePage() {
 }
 
 export default function App() {
+  const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+
+  if (pathname === '/listings') return <ListingsIndexPage />;
+  if (pathname === '/listings/rentals') return <RentalListingsPage />;
+
   return <HomePage />;
 }
