@@ -11,7 +11,7 @@ import { InvestSection } from './sections/InvestSection';
 import { GuidesSection } from './sections/GuidesSection';
 import { ContactSection } from './sections/ContactSection';
 
-export default function App() {
+function HomePage() {
   return (
     <>
       <Masthead />
@@ -30,4 +30,8 @@ export default function App() {
       <CursorTrail />
     </>
   );
+}
+
+export default function App() {
+  return <HomePage />;
 }

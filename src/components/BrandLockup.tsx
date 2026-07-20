@@ -3,14 +3,19 @@ import styles from './BrandLockup.module.css';
 interface BrandLockupProps {
   onDark?: boolean;
   compact?: boolean;
+  href?: string;
 }
 
-export function BrandLockup({ onDark = false, compact = false }: BrandLockupProps) {
+export function BrandLockup({
+  onDark = false,
+  compact = false,
+  href = '#top',
+}: BrandLockupProps) {
   return (
     <a
-      href="#top"
+      href={href}
       className={`${styles.lockup} ${onDark ? styles.onDark : ''}`}
-      aria-label="JWILLSOLDIT — back to top"
+      aria-label="JWILLSOLDIT — home"
     >
       <span className={styles.wordmark}>
         JWILLSOLDIT<span className={styles.dot}>.</span>
