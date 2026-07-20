@@ -15,7 +15,7 @@ export function BrandLockup({
     <a
       href={href}
       className={`${styles.lockup} ${onDark ? styles.onDark : ''}`}
-      aria-label="JWILLSOLDIT — home"
+      aria-label={href === '#top' ? 'JWILLSOLDIT — back to top' : 'JWILLSOLDIT — home'}
     >
       <span className={styles.wordmark}>
         JWILLSOLDIT<span className={styles.dot}>.</span>

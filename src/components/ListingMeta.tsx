@@ -80,7 +80,7 @@ export function ListingMeta({ listing }: ListingMetaProps) {
       image: [`${SITE_ORIGIN}${listing.heroImage.src}`],
       description,
       numberOfBedrooms: listing.bedrooms,
-      numberOfBathroomsTotal: listing.fullBathrooms + listing.halfBathrooms,
+      numberOfBathroomsTotal: listing.fullBathrooms + listing.halfBathrooms * 0.5,
       floorSize: {
         '@type': 'QuantitativeValue',
         value: listing.squareFeet,
