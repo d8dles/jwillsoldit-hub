@@ -6,7 +6,7 @@ import styles from './RentalListingsPage.module.css';
 
 export function RentalListingsPage() {
   return (
-    <ListingShell>
+    <ListingShell mobileIntent="rent">
       <section className={`section ${styles.hero}`}>
         <div className="container">
           <span className="mono-label mono-label--red">LISTINGS / RENTALS</span>

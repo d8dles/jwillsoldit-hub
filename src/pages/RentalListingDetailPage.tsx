@@ -33,6 +33,7 @@ export function RentalListingDetailPage({ listing }: RentalListingDetailPageProp
             <div className={styles.heroImageFrame}>
               <img
                 src={listing.heroImage.src}
+                srcSet={listing.heroImage.srcSet}
                 alt={listing.heroImage.alt}
                 className={styles.heroImage}
                 sizes="(min-width: 860px) 62vw, 100vw"
@@ -134,10 +135,11 @@ export function RentalListingDetailPage({ listing }: RentalListingDetailPageProp
                 type="button"
                 className={styles.galleryButton}
                 onClick={() => setOpenIndex(index)}
-                aria-label={`Open photo ${index + 1} of ${listing.gallery.length}`}
+                aria-label={`Open photo ${index + 1} of ${listing.gallery.length}: ${photo.alt}`}
               >
                 <img
                   src={photo.src}
+                  srcSet={photo.srcSet}
                   alt={photo.alt}
                   loading="lazy"
                   sizes="(min-width: 860px) 25vw, 50vw"

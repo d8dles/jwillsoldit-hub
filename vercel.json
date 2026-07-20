@@ -5,6 +5,14 @@
       "destination": "/listings/index.html"
     },
     {
+      "source": "/rentals",
+      "destination": "/rentals/index.html"
+    },
+    {
+      "source": "/rentals/",
+      "destination": "/rentals/index.html"
+    },
+    {
       "source": "/listings/",
       "destination": "/listings/index.html"
     },

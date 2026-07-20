@@ -22,7 +22,7 @@ export function RentalsSection() {
               Rentals, from <em>both sides of the lease.</em>
             </>
           }
-          lede="Rental housing works better with support on both sides: renters finding the right lease, and owners keeping their rental homes running smoothly. Featured rentals are coming soon."
+          lede="Rental housing works better with support on both sides: renters finding the right lease, and owners keeping their rental homes running smoothly. Current homes live in the listings lane; service questions start here."
         />
 
         <div className={styles.lanes}>
@@ -34,9 +34,12 @@ export function RentalsSection() {
               before you burn weekends touring the wrong places. Apartments,
               townhomes, and rental houses across Greater Houston.
             </p>
-            <a href={smartMoveLink('rent')} className="btn btn--primary" rel="noopener">
-              <span className="tick">▸</span> Start the rental route
-            </a>
+            <div className={styles.laneCtas}>
+              <a href={smartMoveLink('rent')} className="btn btn--primary" rel="noopener">
+                <span className="tick">▸</span> Start the rental route
+              </a>
+              <a href="/listings/rentals" className="btn btn--ghost">See current rentals</a>
+            </div>
           </div>
 
           <div ref={laneB} className={`${styles.lane} reveal`}>

@@ -6,6 +6,7 @@ export type ListingStatus = 'active' | 'pending' | 'leased' | 'sold';
 export interface ListingPhoto {
   src: string;
   alt: string;
+  srcSet?: string;
 }
 
 export interface Listing {
@@ -40,13 +41,65 @@ export interface Listing {
   inquiryUrl: string;
 }
 
-const photo = (number: number, alt: string): ListingPhoto => ({
-  src: `/listings/4231-tulip-oak-dr/optimized/TP-${String(number).padStart(3, '0')}.jpg`,
-  alt,
-});
+const photo = (number: number, alt: string): ListingPhoto => {
+  const file = `TP-${String(number).padStart(3, '0')}.jpg`;
+  const basePath = '/listings/4231-tulip-oak-dr/optimized';
+
+  return {
+    src: `${basePath}/${file}`,
+    alt,
+    srcSet: [800, 1200, 1600]
+      .map((width) => `${basePath}/${width}/${file} ${width}w`)
+      .join(', '),
+  };
+};
+
+const PHOTO_ALTS = [
+  'Twilight front exterior of 4231 Tulip Oak Dr',
+  'Daylight front exterior of 4231 Tulip Oak Dr',
+  'Angled view of the front exterior and entry',
+  'Front exterior with driveway and neighboring homes',
+  'Covered front entry with brick detail and landscaping',
+  'Entry foyer looking toward the open living area',
+  'Ground-floor room with wood-look flooring and a window',
+  'Open kitchen and living area viewed from the entry',
+  'Kitchen with island, granite counters, and stainless appliances',
+  'Kitchen island and stainless range wall',
+  'Open living and dining area beside the kitchen',
+  'Living area with windows, blinds, and wood-look flooring',
+  'Wide view of the open living area and kitchen',
+  'Living room with ceiling fan, windows, and rear door',
+  'Open living area with kitchen and staircase',
+  'Half bathroom with pedestal sink and toilet',
+  'Carpeted bedroom with two windows',
+  'Carpeted bedroom with window and interior doors',
+  'Carpeted bedroom with windows and wall-mounted TV bracket',
+  'Carpeted bedroom with window and doorway',
+  'Carpeted bedroom with closet doors',
+  'Carpeted bedroom with windows and wall-mounted TV bracket',
+  'Upstairs carpeted room with windows and half wall',
+  'Carpeted bedroom with window and closet doors',
+  'Upstairs bedroom with carpet and closet doors',
+  'Upstairs carpeted room with wall-mounted TV bracket',
+  'Upstairs room with window and open doorway',
+  'Upstairs carpeted room with windows and hallway',
+  'Upstairs carpeted room with windows and closet',
+  'Upstairs carpeted room with open doorway and windows',
+  'Upstairs hallway overlooking the stairwell',
+  'Carpeted bedroom with window and two doors',
+  'Carpeted upstairs room with window and closet',
+  'Carpeted upstairs room with windows and hallway',
+  'Carpeted upstairs room with half wall and storage door',
+  'Fenced rear yard and back exterior of the home',
+  'Rear side door opening to the fenced yard',
+  'Laundry nook with washer and dryer',
+  'Close view of the washer and dryer',
+  'Bathroom with vanity, mirror, and shower',
+  'Bathroom with tub, shower, and vanity',
+] as const;
 
 const gallery = Array.from({ length: 41 }, (_, index) =>
-  photo(index + 1, `4231 Tulip Oak Dr rental listing photo ${index + 1}`)
+  photo(index + 1, PHOTO_ALTS[index])
 );
 
 export const TULIP_OAK_LISTING: Listing = {

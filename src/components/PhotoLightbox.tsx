@@ -101,7 +101,7 @@ export function PhotoLightbox({ photos, openIndex, onClose, onChange }: PhotoLig
         </div>
 
         <figure className={styles.figure}>
-          <img src={photo.src} alt={photo.alt} className={styles.image} />
+          <img src={photo.src} srcSet={photo.srcSet} sizes="100vw" alt={photo.alt} className={styles.image} />
           <figcaption className={styles.caption}>{photo.alt}</figcaption>
         </figure>
 

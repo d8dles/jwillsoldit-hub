@@ -74,7 +74,16 @@ export const RENTAL_INDEX_SEO: PageSeo = {
   image: `${SITE_ORIGIN}${TULIP_OAK_LISTING.heroImage.src}`,
 };
 
+export const RENTAL_SERVICES_SEO: PageSeo = {
+  outputPath: 'rentals/index.html',
+  title: 'Houston Rental Help for Renters and Owners | JWILLSOLDIT',
+  description: 'JWILLSOLDIT helps Houston renters find the right lease and rental owners coordinate leasing, upkeep, turnovers, and follow-up.',
+  canonical: `${SITE_ORIGIN}/rentals/`,
+  image: `${SITE_ORIGIN}/assets/og-hub-v1.png`,
+};
+
 export const LISTING_SEO_PAGES = [
+  RENTAL_SERVICES_SEO,
   LISTINGS_INDEX_SEO,
   RENTAL_INDEX_SEO,
   getListingSeo(TULIP_OAK_LISTING),

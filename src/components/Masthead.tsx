@@ -18,6 +18,7 @@ const NAV = [
 
 function sectionHref(href: string): string {
   const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+  if (href === '#rentals' && pathname !== '/') return '/rentals';
   return pathname === '/' ? href : `/${href}`;
 }
 

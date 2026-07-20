@@ -14,6 +14,8 @@ export function ListingCard({ listing }: ListingCardProps) {
       <a href={listing.path} className={styles.imageLink} aria-label={`View ${listing.addressLine}`}>
         <img
           src={listing.heroImage.src}
+          srcSet={listing.heroImage.srcSet}
+          sizes="(min-width: 860px) 50vw, 100vw"
           alt={listing.heroImage.alt}
           className={styles.image}
           loading="lazy"
