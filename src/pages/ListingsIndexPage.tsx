@@ -1,11 +1,20 @@
+import { useMemo, useState } from 'react';
 import { ListingCard } from '../components/ListingCard';
 import { ListingShell } from '../components/ListingShell';
-import { ACTIVE_LISTINGS } from '../data/listings';
+import { InventoryFilters, type InventoryFilter } from '../components/InventoryFilters';
+import { ALL_LISTINGS } from '../data/listings';
+import { usePublicInventory } from '../hooks/usePublicInventory';
 import { useReveal } from '../utils/motion';
 import styles from './ListingsIndexPage.module.css';
 
 export function ListingsIndexPage() {
   const heroRef = useReveal<HTMLDivElement>();
+  const [filter, setFilter] = useState<InventoryFilter>('available');
+  const { listings } = usePublicInventory(ALL_LISTINGS);
+  const filteredListings = useMemo(
+    () => filter === 'all' ? listings : listings.filter((listing) => listing.status === filter),
+    [filter, listings],
+  );
 
   return (
     <ListingShell>
@@ -46,14 +55,19 @@ export function ListingsIndexPage() {
       <section className={`section section--hairline-top ${styles.inventory}`}>
         <div className="container">
           <div className={styles.sectionHeading}>
-            <span className="mono-label">ACTIVE / 01</span>
-            <h2 className="display-h2">On the board <em>now.</em></h2>
+            <div>
+              <span className="mono-label">PUBLIC INVENTORY / {String(filteredListings.length).padStart(2, '0')}</span>
+              <h2 className="display-h2">On the board <em>now.</em></h2>
+            </div>
           </div>
-          <div className={styles.grid}>
-            {ACTIVE_LISTINGS.map((listing) => (
-              <ListingCard key={listing.id} listing={listing} />
-            ))}
-          </div>
+          <InventoryFilters value={filter} onChange={setFilter} />
+          {filteredListings.length ? (
+            <div className={styles.grid}>
+              {filteredListings.map((listing) => <ListingCard key={listing.id} listing={listing} />)}
+            </div>
+          ) : (
+            <p className={styles.empty}>No public properties match this status right now.</p>
+          )}
         </div>
       </section>
     </ListingShell>

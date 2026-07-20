@@ -1,7 +1,8 @@
 import { smartMoveLink } from '../utils/links';
+import type { PublicStatus } from './inventory';
 
 export type ListingCategory = 'rental' | 'sale';
-export type ListingStatus = 'active' | 'pending' | 'leased' | 'sold';
+export type ListingStatus = PublicStatus;
 
 export interface ListingPhoto {
   src: string;
@@ -12,6 +13,7 @@ export interface ListingPhoto {
 export interface Listing {
   id: string;
   slug: string;
+  inventorySlug: string;
   path: string;
   category: ListingCategory;
   status: ListingStatus;
@@ -105,10 +107,11 @@ const gallery = Array.from({ length: 41 }, (_, index) =>
 export const TULIP_OAK_LISTING: Listing = {
   id: 'rental-4231-tulip-oak-dr',
   slug: '4231-tulip-oak-dr',
+  inventorySlug: '4231-tulip-oak-dr',
   path: '/listings/rentals/4231-tulip-oak-dr/',
   category: 'rental',
-  status: 'active',
-  statusLabel: 'For rent',
+  status: 'available',
+  statusLabel: 'Available',
   addressLine: '4231 Tulip Oak Dr',
   city: 'Houston',
   state: 'TX',
@@ -143,7 +146,10 @@ export const TULIP_OAK_LISTING: Listing = {
   inquiryUrl: smartMoveLink('rent'),
 };
 
-export const ACTIVE_LISTINGS = [TULIP_OAK_LISTING];
-export const ACTIVE_RENTALS = ACTIVE_LISTINGS.filter(
-  (listing) => listing.category === 'rental' && listing.status === 'active'
+export const ALL_LISTINGS = [TULIP_OAK_LISTING];
+export const ACTIVE_LISTINGS = ALL_LISTINGS.filter(
+  (listing) => listing.status === 'available'
+);
+export const ACTIVE_RENTALS = ALL_LISTINGS.filter(
+  (listing) => listing.category === 'rental' && listing.status === 'available'
 );

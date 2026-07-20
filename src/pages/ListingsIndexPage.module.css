@@ -109,6 +109,13 @@
   gap: 24px;
 }
 
+.empty {
+  padding: 28px;
+  border: 1px dashed var(--trace);
+  color: var(--mid);
+  font-size: 0.9rem;
+}
+
 @media (max-width: 720px) {
   .lanes, .grid { grid-template-columns: 1fr; }
   .sectionHeading { display: block; }

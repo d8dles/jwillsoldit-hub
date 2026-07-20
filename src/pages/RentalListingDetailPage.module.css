@@ -4,6 +4,27 @@
   color: var(--off-white);
 }
 
+.unavailable {
+  min-height: 70vh;
+  padding: clamp(150px, 20vw, 240px) 0 120px;
+  background: var(--ink);
+  color: var(--off-white);
+}
+
+.unavailable h1 {
+  max-width: 760px;
+  margin-top: 22px;
+  font-family: var(--display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 0.92;
+}
+
+.unavailable h1 em { color: #c4d0c7; font-style: italic; font-weight: 400; }
+.unavailable p { max-width: 540px; margin-top: 28px; color: var(--mid-on-dark); line-height: 1.7; }
+.unavailableActions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+
 .breadcrumbs {
   display: flex;
   flex-wrap: wrap;
