@@ -70,6 +70,7 @@ export function MeetJoeySection() {
             <p className={styles.body}>
               Then we get it done.
             </p>
+            <a href="/about" className="text-link">Full bio, license, and credentials</a>
           </div>
 
           <div ref={pillarsRef} className={`${styles.pillars} reveal`}>

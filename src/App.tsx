@@ -10,6 +10,7 @@ import { ManageSection } from './sections/ManageSection';
 import { InvestSection } from './sections/InvestSection';
 import { GuidesSection } from './sections/GuidesSection';
 import { ContactSection } from './sections/ContactSection';
+import { AboutPage } from './pages/AboutPage';
 import { ListingsIndexPage } from './pages/ListingsIndexPage';
 import { RentalListingsPage } from './pages/RentalListingsPage';
 import { RentalListingDetailPage } from './pages/RentalListingDetailPage';
@@ -40,6 +41,7 @@ function HomePage() {
 export default function App() {
   const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
 
+  if (pathname === '/about') return <AboutPage />;
   if (pathname === '/listings') return <ListingsIndexPage />;
   if (pathname === '/listings/rentals') return <RentalListingsPage />;
   if (pathname === '/rentals') return <RentalServicesPage />;

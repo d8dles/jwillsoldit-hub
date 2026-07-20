@@ -110,6 +110,52 @@ export const RENTAL_INDEX_SEO: PageSeo = {
   },
 };
 
+export const ABOUT_SEO: PageSeo = {
+  outputPath: 'about/index.html',
+  title: 'About Joey Williams, REALTOR® | JWILLSOLDIT',
+  description: 'Joey Williams is a Houston-rooted REALTOR® with Christin Rachelle Group, TREC-licensed, handling moves, rentals, furnished stays, and property strategy across Texas.',
+  canonical: `${SITE_ORIGIN}/about`,
+  image: `${SITE_ORIGIN}/assets/editorial/joey-williams-headshot.png`,
+  jsonLdId: 'page-jsonld',
+  jsonLd: {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    url: `${SITE_ORIGIN}/about`,
+    mainEntity: {
+      '@type': 'Person',
+      '@id': `${SITE_ORIGIN}/#joey`,
+      name: 'Joey Williams',
+      jobTitle: 'REALTOR®',
+      url: `${SITE_ORIGIN}/about`,
+      image: `${SITE_ORIGIN}/assets/editorial/joey-williams-headshot.png`,
+      email: 'jwillsoldit@icloud.com',
+      telephone: '+1-561-685-6566',
+      description: 'Houston-rooted REALTOR® handling moves, rentals, furnished stays, and property strategy across Texas.',
+      worksFor: {
+        '@type': 'Organization',
+        '@id': `${SITE_ORIGIN}/#brokerage`,
+        name: 'Christin Rachelle Group',
+      },
+      hasCredential: {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'license',
+        name: 'Texas Real Estate License',
+        recognizedBy: { '@type': 'GovernmentOrganization', name: 'Texas Real Estate Commission' },
+        identifier: '702090',
+      },
+      sameAs: [
+        'https://www.har.com/joey-williams/agent_jtwill',
+        'https://www.facebook.com/jwillsoldit',
+        'https://www.instagram.com/jwillsoldit',
+      ],
+      areaServed: [
+        { '@type': 'City', name: 'Houston', containedInPlace: { '@type': 'State', name: 'Texas' } },
+        { '@type': 'State', name: 'Texas' },
+      ],
+    },
+  },
+};
+
 export const RENTAL_SERVICES_SEO: PageSeo = {
   outputPath: 'rentals/index.html',
   title: 'Houston Rental Help for Renters and Owners | JWILLSOLDIT',
@@ -131,4 +177,5 @@ export const LISTING_SEO_PAGES = [
   LISTINGS_INDEX_SEO,
   RENTAL_INDEX_SEO,
   getListingSeo(TULIP_OAK_LISTING),
+  ABOUT_SEO,
 ];
