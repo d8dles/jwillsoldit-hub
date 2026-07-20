@@ -46,7 +46,7 @@
 }
 
 .plateMark {
-  color: var(--red);
+  color: var(--red-text);
   font-size: 0.625rem;
   background: var(--pure);
   padding: 4px 6px;
@@ -152,6 +152,6 @@
 }
 
 .actionSecondary:hover {
-  color: var(--red);
+  color: var(--red-text);
   border-color: var(--red);
 }

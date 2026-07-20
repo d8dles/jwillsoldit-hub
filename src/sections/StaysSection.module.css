@@ -76,7 +76,7 @@
 
 .arrow:hover {
   border-color: var(--ink);
-  color: var(--red);
+  color: var(--red-text);
 }
 
 /* Touch devices lead with swipe — the arrows are desktop affordance. */

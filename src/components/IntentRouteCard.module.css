@@ -75,7 +75,7 @@
   justify-content: center;
   font-family: var(--mono);
   font-size: 0.6875rem;
-  color: var(--red);
+  color: var(--red-text);
   border: 1px solid rgba(176, 92, 46, 0.35);
   border-radius: 999px;
   background: rgba(176, 92, 46, 0.07);
@@ -159,7 +159,7 @@
 
 .row:hover .arrow {
   transform: translateX(6px);
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .row:hover .destination {
@@ -192,6 +192,7 @@
 }
 
 :global(.section--panel-ink) .number {
+  color: var(--red-on-dark);
   border-color: rgba(176, 92, 46, 0.5);
   background: rgba(176, 92, 46, 0.12);
 }
@@ -221,7 +222,7 @@
 }
 
 :global(.section--panel-ink) .row:hover .arrow {
-  color: var(--red);
+  color: var(--red-on-dark);
 }
 
 :global(.section--panel-ink) .row:hover .destination {
