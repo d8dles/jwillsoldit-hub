@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/listings",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/listings/:path*",
+      "destination": "/index.html"
+    },
+    {
       "source": "/houston",
       "destination": "https://jwillsoldit-houston.vercel.app/houston"
     },
