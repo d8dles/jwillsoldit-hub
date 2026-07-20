@@ -12,6 +12,8 @@ import { GuidesSection } from './sections/GuidesSection';
 import { ContactSection } from './sections/ContactSection';
 import { ListingsIndexPage } from './pages/ListingsIndexPage';
 import { RentalListingsPage } from './pages/RentalListingsPage';
+import { RentalListingDetailPage } from './pages/RentalListingDetailPage';
+import { TULIP_OAK_LISTING } from './data/listings';
 
 function HomePage() {
   return (
@@ -39,6 +41,9 @@ export default function App() {
 
   if (pathname === '/listings') return <ListingsIndexPage />;
   if (pathname === '/listings/rentals') return <RentalListingsPage />;
+  if (pathname === '/listings/rentals/4231-tulip-oak-dr') {
+    return <RentalListingDetailPage listing={TULIP_OAK_LISTING} />;
+  }
 
   return <HomePage />;
 }

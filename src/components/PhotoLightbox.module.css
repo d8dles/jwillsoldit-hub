@@ -1,0 +1,72 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 4vw, 48px);
+  background: rgba(13, 13, 13, 0.94);
+}
+
+.viewer {
+  width: min(1080px, 100%);
+  max-height: 100%;
+  color: var(--off-white);
+}
+
+.toolbar,
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.toolbar { margin-bottom: 14px; }
+
+.counter,
+.close,
+.navButton {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.counter { color: var(--mid-on-dark); }
+
+.close,
+.navButton {
+  min-height: 44px;
+  padding: 8px 0;
+  border: 0;
+  color: var(--off-white);
+  background: transparent;
+}
+
+.close:hover,
+.navButton:hover { color: var(--red); }
+
+.close span { margin-left: 8px; font-size: 1.2rem; }
+
+.figure { margin: 0; }
+
+.image {
+  width: 100%;
+  max-height: calc(100vh - 190px);
+  object-fit: contain;
+  background: #050505;
+}
+
+.caption {
+  margin-top: 10px;
+  color: var(--mid-on-dark);
+  font-size: 0.75rem;
+}
+
+.controls { margin-top: 10px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .close,
+  .navButton { transition: none; }
+}
