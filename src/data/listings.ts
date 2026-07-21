@@ -1,7 +1,7 @@
 import { smartMoveLink } from '../utils/links';
 import type { PublicStatus } from './inventory';
 
-export type ListingCategory = 'rental' | 'sale';
+export type ListingCategory = 'rental' | 'sale' | 'stay';
 export type ListingStatus = PublicStatus;
 
 export interface ListingPhoto {

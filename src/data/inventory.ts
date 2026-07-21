@@ -1,3 +1,5 @@
+import type { PublicInventoryRecord } from './publicInventory';
+
 export type OfferingType = 'sale' | 'rental' | 'stay';
 
 export type PublicStatus =
@@ -25,7 +27,7 @@ export interface PublicInventoryState {
 export interface PublicInventoryResponse {
   success: boolean;
   inventoryConfigured: boolean;
-  inventory: PublicInventoryState[];
+  inventory: PublicInventoryRecord[];
 }
 
 export const STATUS_LABELS: Record<PublicStatus, string> = {
