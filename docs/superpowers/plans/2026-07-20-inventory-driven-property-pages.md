@@ -129,7 +129,7 @@ git commit -m "Add inventory-driven property content"
 
 - [ ] **Step 1: Write a failing serialization test**
 
-Extract a pure browser-safe serializer in `assets/js/admin-inventory-form.js` and add a Node-importable test fixture under `tests/inventory.test.mjs` that asserts:
+Make `assets/js/admin-inventory-form.js` an ES module with no DOM work at import time, and add a Node-importable test fixture under `tests/inventory.test.mjs` that asserts:
 
 ```js
 const payload = serializeInventoryForm({
@@ -154,7 +154,7 @@ Expected: FAIL because the serializer and gallery form contract do not exist.
 
 - [ ] **Step 3: Add the reusable admin media editor**
 
-Implement `serializeInventoryForm`, `renderGalleryRows`, and `readGalleryRows` in `assets/js/admin-inventory-form.js`. Use DOM-created elements for user-entered values; never concatenate unescaped user values into `innerHTML`. Add a `data-gallery-list` container, `Add photo`, `Move up`, `Move down`, and `Remove` controls to both new and detail forms. Add fields for title, description, features, hero image, `src`, `alt`, `srcSet`, inquiry URL, and the existing property facts. Keep type-specific stay fields under the existing stay card. Add a `Preview public page` link that updates from `publicPath` and remains disabled when the path is blank.
+Implement and export `serializeInventoryForm`, `renderGalleryRows`, and `readGalleryRows` in `assets/js/admin-inventory-form.js`. Import the module from `admin-inventory-new.js` and `admin-inventory-detail.js`, and load those two scripts with `type="module"` after the existing global `admin-shell.js` script. Use DOM-created elements for user-entered values; never concatenate unescaped user values into `innerHTML`. Add a `data-gallery-list` container, `Add photo`, `Move up`, `Move down`, and `Remove` controls to both new and detail forms. Add fields for title, description, features, hero image, `src`, `alt`, `srcSet`, inquiry URL, and the existing property facts. Keep type-specific stay fields under the existing stay card. Add a `Preview public page` link that updates from `publicPath` and remains disabled when the path is blank.
 
 The detail editor must populate these fields from the GET response and PATCH only the changed normalized object. The new form must send the same object to POST.
 
@@ -395,10 +395,3 @@ curl -i https://www.jwillsoldit.com/listings/rentals/4231-tulip-oak-dr/
 ```
 
 Expected: published 4231 record `200`, missing slug `404`, unauthenticated admin API `401`, and both public hub routes `200`. Report deployment URLs, commit SHAs, test results, and any non-blocking platform warnings.
-
-- [ ] **Step 6: Commit release documentation**
-
-```bash
-git add docs/superpowers/specs/2026-07-20-inventory-driven-property-pages-design.md
-git commit -m "Document inventory-driven property page release"
-```
