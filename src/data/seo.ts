@@ -65,7 +65,7 @@ export const LISTINGS_INDEX_SEO: PageSeo = {
   title: 'JWILLSOLDIT Listings | Texas, Handled',
   description: 'Current JWILLSOLDIT property listings, including rental homes presented locally with direct inquiry routes.',
   canonical: `${SITE_ORIGIN}/listings/`,
-  image: `${SITE_ORIGIN}/assets/og-hub-v1.png`,
+  image: `${SITE_ORIGIN}/assets/jwillsoldit-texas-handled-v2.png`,
   jsonLdId: 'page-jsonld',
   jsonLd: {
     '@context': 'https://schema.org',
@@ -161,7 +161,7 @@ export const RENTAL_SERVICES_SEO: PageSeo = {
   title: 'Houston Rental Help for Renters and Owners | JWILLSOLDIT',
   description: 'JWILLSOLDIT helps Houston renters find the right lease and rental owners coordinate leasing, upkeep, turnovers, and follow-up.',
   canonical: `${SITE_ORIGIN}/rentals/`,
-  image: `${SITE_ORIGIN}/assets/og-hub-v1.png`,
+  image: `${SITE_ORIGIN}/assets/jwillsoldit-texas-handled-v2.png`,
   jsonLdId: 'page-jsonld',
   jsonLd: {
     '@context': 'https://schema.org',
