@@ -128,7 +128,7 @@ export const ABOUT_SEO: PageSeo = {
       jobTitle: 'REALTOR®',
       url: `${SITE_ORIGIN}/about`,
       image: `${SITE_ORIGIN}/assets/editorial/joey-williams-headshot.png`,
-      email: 'jwillsoldit@icloud.com',
+      email: 'joey@jwillsoldit.com',
       telephone: '+1-561-685-6566',
       description: 'Houston-rooted REALTOR® handling moves, rentals, furnished stays, and property strategy across Texas.',
       worksFor: {
