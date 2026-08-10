@@ -191,6 +191,30 @@
   margin-bottom: 16px;
 }
 
+/* Inline guide links: keyword-level entry points into Houston, Handled.
+   Underlined in brand red so they read as navigation inside running copy
+   without turning the paragraph into a wall of link color. */
+.body a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.18s ease;
+}
+
+.body a:hover,
+.body a:focus-visible {
+  color: var(--red-text);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin-top: 22px;
+}
+
 /* ── Pillars: integrated proof, not repeated contact CTAs ── */
 
 .pillars {

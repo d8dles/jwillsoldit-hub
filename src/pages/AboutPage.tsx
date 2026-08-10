@@ -31,62 +31,72 @@ export function AboutPage() {
               <p className={styles.role}>REALTOR® · Christin Rachelle Group · Houston, Texas</p>
 
               <p className={styles.lede}>
-                Real estate, rentals, furnished stays, and property strategy
-                across Texas, run by someone who is actually from here.
+                I started as a broker&rsquo;s assistant. I learned this
+                business from the paperwork up, and that is still why I
+                catch things other agents miss.
               </p>
 
               <p className={styles.body}>
-                I grew up in north Houston. This is not a market I studied
-                for a test. It is the one I grew up driving, eating in, and
-                watching change.
+                That seat shows you everything. Contracts, deadlines,
+                inspection reports, the deals that come apart three days
+                before closing and the exact reason why. I was handling all
+                of it long before I had a client of my own.
               </p>
 
               <p className={styles.body}>
-                People call it Space City because of NASA, and that is true,
-                but the city actually runs on oil, the Port of Houston, and
-                the bayou that winds out past the refineries and east toward
-                Galveston Bay. That mix, energy money, shipping, and water,
-                is the real backbone of this place. It is also why one
-                address can look nothing like the one three miles over.
+                Ask people what they cannot stand about working with an
+                agent and you get the same answer every time. They go quiet.
+                Calls stop coming back, nobody tells you where your deal
+                stands, and you hear about the problem once it is too late
+                to do anything about it. That is the biggest complaint in
+                this industry and the easiest one to fix. I am better than
+                that.
               </p>
 
               <p className={styles.body}>
-                I still stop at House of Pies at 1am out of habit, not for a
-                photo. If you want to know where real fajitas started, that
-                is Ninfa&rsquo;s on Navigation, not a chain menu. Prince&rsquo;s
-                has been flipping burgers since 1929 and it is still
-                standing while plenty of newer places have come and gone.
-                None of that makes me special. It just means I actually know
-                this city instead of looking it up before a showing.
+                I am from Houston. Taconazo when I want real tacos, Astros
+                all summer, NRG on Sundays in the fall. I am not reading
+                about this city. I live in it.
               </p>
 
               <p className={styles.body}>
-                That is the same approach I bring to real estate.
-                JWILLSOLDIT is the practice I built around one idea: you get
-                a straight answer from the first conversation, not a script
-                and a follow-up call three days later.
+                And I work all of it, not one pocket. Somebody taking a job
+                at the{' '}
+                <a href="/houston/regions/central-houston">Medical Center</a>{' '}
+                needs something different than a family looking at{' '}
+                <a href="/houston/areas/katy">Katy</a> for the schools, or a
+                couple who wants to walk to dinner in{' '}
+                <a href="/houston/areas/the-heights">the Heights</a>, or an
+                engineer who would rather be near{' '}
+                <a href="/houston/areas/clear-lake">NASA out in Clear Lake</a>.
+                Most people already know what they are drawn to. They just
+                do not know where in Houston it lives yet. Finding that is
+                the part I am good at.
               </p>
-
-              <ul className={styles.list}>
-                <li>Buyers and sellers get an honest read on the market, not a pitch.</li>
-                <li>Renters get someone who actually knows the inventory.</li>
-                <li>Owners get a property manager who picks up the phone.</li>
-                <li>Investors get someone who has run the numbers on what they are buying.</li>
-              </ul>
 
               <p className={styles.body}>
-                I work across Greater Houston and Texas: buying, selling,
-                renting, relocating, furnished stays, and the property
-                management and investment work that starts after a sale
-                closes.
+                Houston also takes some explaining, and I would rather you
+                understand it than take my word for anything. There is{' '}
+                <a href="/houston/guides/no-zoning-explained">no zoning
+                here</a>. Your{' '}
+                <a href="/houston/guides/property-taxes">tax bill</a>{' '}
+                depends on which{' '}
+                <a href="/houston/guides/muds-pids-and-utility-districts">
+                  districts
+                </a>{' '}
+                your address falls into.{' '}
+                <a href="/houston/guides/flood-risk-and-insurance">
+                  Flood history
+                </a>{' '}
+                can change from one block to the next. I wrote all of it
+                down, sources and all, so you can check it yourself.
               </p>
 
-              <div className={styles.credentials}>
-                <span className="mono-label">LICENSE</span>
-                <p className={styles.credentialRow}><strong>REALTOR®</strong>, Christin Rachelle Group</p>
-                <p className={styles.credentialRow}>Texas Real Estate License #702090</p>
-                <p className={styles.credentialRow}>Licensed by the Texas Real Estate Commission</p>
-              </div>
+              <p className={styles.body}>
+                <a href="/houston/guides" className="text-link">
+                  Read Houston, Handled
+                </a>
+              </p>
 
               <div className={styles.elsewhere}>
                 <span className="mono-label">ELSEWHERE</span>

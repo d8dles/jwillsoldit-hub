@@ -3,20 +3,20 @@ import styles from './MeetJoeySection.module.css';
 
 const PILLARS = [
   {
-    title: 'Texas-Wide Guidance',
-    line: 'Houston rooted. Texas focused.',
+    title: 'Buying & Selling',
+    line: 'Straight read. No pitch.',
   },
   {
-    title: 'Stays That Feel Like Home',
-    line: 'Curated homes. Flexible terms.',
+    title: 'Rentals',
+    line: 'I know the inventory.',
   },
   {
-    title: 'Rentals With Real Support',
-    line: 'Fast response. Clear process.',
+    title: 'Property Management',
+    line: 'I answer the phone.',
   },
   {
-    title: 'Smarter Moves. Stronger Returns.',
-    line: 'Buy, sell, invest with confidence.',
+    title: 'Investing',
+    line: 'I run them. I know the numbers.',
   },
 ];
 
@@ -45,33 +45,50 @@ export function MeetJoeySection() {
               Joey Williams<span className={styles.period}>.</span>
             </h2>
             <p className={styles.lede}>
-              Real estate, rentals, stays, and property strategy in the
-              city I actually grew up in.
+              Buying, selling, renting, or holding property anywhere in
+              Houston. I handle the whole thing, and you always know where
+              you stand.
             </p>
             <p className={styles.body}>
-              I grew up in north Houston, so I am not studying this market.
-              I know it.
+              I started as a broker&rsquo;s assistant and learned this
+              business from the paperwork up. That is why I catch what other
+              agents miss, and why your deal never goes quiet on you.
             </p>
             <p className={styles.body}>
-              Everyone knows Space City for NASA. Houston actually runs on
-              oil, the Port, and the bayou that cuts all the way out to
-              Galveston. That is the city underneath the skyline.
+              I work the whole city, not one pocket of it. Most people
+              already know what they are drawn to. They just do not know
+              where in Houston it lives yet. Finding that is the part I am
+              good at.
             </p>
             <p className={styles.body}>
-              I still eat at House of Pies at midnight and send people to
-              Ninfa&rsquo;s on Navigation for the real fajitas, not the mall
-              version.
+              Houston takes some explaining. There is{' '}
+              <a href="/houston/guides/no-zoning-explained">no zoning</a>,
+              your{' '}
+              <a href="/houston/guides/property-taxes">tax bill</a> depends
+              on which{' '}
+              <a href="/houston/guides/muds-pids-and-utility-districts">
+                districts
+              </a>{' '}
+              you land in,{' '}
+              <a href="/houston/guides/flood-risk-and-insurance">
+                flood history
+              </a>{' '}
+              changes block to block, and the{' '}
+              <a href="/houston/guides/traffic-and-commutes">commute</a>{' '}
+              you are picturing may not be the one you get. I wrote all of
+              it down with sources.
             </p>
-            <p className={styles.body}>
-              JWILLSOLDIT works the same way. You get a straight answer from
-              the first conversation, not a script.
-            </p>
-            <a href="/about" className="text-link">More about me and my license</a>
+            <div className={styles.actions}>
+              <a href="/houston/guides" className="text-link">
+                Read Houston, Handled
+              </a>
+              <a href="/about" className="text-link">More about me</a>
+            </div>
           </div>
 
           <div ref={pillarsRef} className={`${styles.pillars} reveal`}>
             <span className={`mono-label mono-label--red ${styles.pillarsHead}`}>
-              BUILT AROUND HOW YOU MOVE
+              WHAT I HANDLE
             </span>
             <ul className={styles.pillarList}>
               {PILLARS.map((pillar) => (
