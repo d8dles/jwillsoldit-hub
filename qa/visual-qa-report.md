@@ -45,7 +45,7 @@ All other sections passed review without changes.
 
 ## Smart Move link audit (rendered DOM)
 
-Every consumer route resolves to `https://move.jwillsoldit.com` — base URL or `?intent=rent|buy|sell|relocate|not-sure` (params inert by design; Smart Move ignores unknown query params). No local routes, no fake paths, **zero calls to `/api/smart-move` or any API**. All `tel:` / `sms:` links use `+15616856566`; all `mailto:` links use `jwillsoldit@icloud.com` with the correct prefilled subjects (Short-Term Stay Inquiry, Owner / Property Management Intro, Rental Management Question, Investor / Owner Question).
+Every consumer route resolves to `https://move.jwillsoldit.com` — base URL or `?intent=rent|buy|sell|relocate|not-sure` (params inert by design; Smart Move ignores unknown query params). No local routes, no fake paths, **zero calls to `/api/smart-move` or any API**. All `tel:` / `sms:` links use `+15616856566`; all `mailto:` links use `joey@jwillsoldit.com` with the correct prefilled subjects (Short-Term Stay Inquiry, Owner / Property Management Intro, Rental Management Question, Investor / Owner Question).
 
 ## Banned-copy check
 

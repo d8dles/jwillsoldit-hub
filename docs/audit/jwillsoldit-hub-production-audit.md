@@ -34,7 +34,7 @@ The live site is healthy, consistent with `main`, and free of broken assets, con
 | Broken image icons | ✅ None anywhere | `brokenImages: []`; CRG logo force-loaded `1536×1024` OK |
 | Nav anchors `#top #joey #routes #stays #rentals #manage #invest #guides #contact` | ✅ All targets exist; all links resolve | 10/10 `id`s present, `deadAnchorLinks: []` |
 | Smart Move links → `move.jwillsoldit.com` | ✅ All 6 variants | `https://move.jwillsoldit.com/?intent=…` |
-| Call / Text / Email formatting | ✅ Correct | `tel:+15616856566`, `sms:+15616856566?…`, `mailto:jwillsoldit@icloud.com?subject=…` |
+| Call / Text / Email formatting | ✅ Correct | `tel:+15616856566`, `sms:+15616856566?…`, `mailto:joey@jwillsoldit.com?subject=…` |
 | Compliance links `/assets/iabs.pdf`, `/assets/cpn.pdf`, `/privacy.html` | ✅ All `200` | `application/pdf` 41.5 KB / 200 KB; privacy `text/html` |
 | Old `.jpg` headshot path | ✅ Correctly `404` (removed) | `…/joey-williams-headshot.jpg → 404` |
 

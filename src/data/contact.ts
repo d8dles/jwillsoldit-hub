@@ -7,7 +7,7 @@ export const CONTACT = {
   market: 'Houston, TX',
   phoneE164: '+15616856566',
   phoneDisplay: '(561) 685-6566',
-  email: 'jwillsoldit@icloud.com',
+  email: 'joey@jwillsoldit.com',
   smartMoveUrl: 'https://move.jwillsoldit.com',
 } as const;
 
