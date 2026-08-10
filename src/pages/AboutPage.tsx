@@ -32,34 +32,58 @@ export function AboutPage() {
 
               <p className={styles.lede}>
                 Real estate, rentals, furnished stays, and property strategy
-                across Texas — handled with taste, speed, and straight
-                answers.
+                across Texas, run by someone who is actually from here.
               </p>
 
               <p className={styles.body}>
-                I&rsquo;m a Houston-rooted REALTOR® with Christin Rachelle
-                Group, licensed by the Texas Real Estate Commission.
-                JWILLSOLDIT is the practice I built around one idea: the
-                process should feel handled from the first conversation, not
-                passed around or left waiting on a &ldquo;circle back.&rdquo;
+                I grew up in north Houston. This is not a market I studied
+                for a test. It is the one I grew up driving, eating in, and
+                watching change.
+              </p>
+
+              <p className={styles.body}>
+                People call it Space City because of NASA, and that is true,
+                but the city actually runs on oil, the Port of Houston, and
+                the bayou that winds out past the refineries and east toward
+                Galveston Bay. That mix, energy money, shipping, and water,
+                is the real backbone of this place. It is also why one
+                address can look nothing like the one three miles over.
+              </p>
+
+              <p className={styles.body}>
+                I still stop at House of Pies at 1am out of habit, not for a
+                photo. If you want to know where real fajitas started, that
+                is Ninfa&rsquo;s on Navigation, not a chain menu. Prince&rsquo;s
+                has been flipping burgers since 1929 and it is still
+                standing while plenty of newer places have come and gone.
+                None of that makes me special. It just means I actually know
+                this city instead of looking it up before a showing.
+              </p>
+
+              <p className={styles.body}>
+                That is the same approach I bring to real estate.
+                JWILLSOLDIT is the practice I built around one idea: you get
+                a straight answer from the first conversation, not a script
+                and a follow-up call three days later.
               </p>
 
               <ul className={styles.list}>
-                <li>Buyers and sellers get a straight read on the market, not a pitch.</li>
-                <li>Renters get a guided search, not a scroll through the same listings everyone else already saw.</li>
-                <li>Owners get a property manager who actually answers the phone.</li>
-                <li>Investors get someone who has run what they&rsquo;re buying, not just sold it.</li>
+                <li>Buyers and sellers get an honest read on the market, not a pitch.</li>
+                <li>Renters get someone who actually knows the inventory.</li>
+                <li>Owners get a property manager who picks up the phone.</li>
+                <li>Investors get someone who has run the numbers on what they are buying.</li>
               </ul>
 
               <p className={styles.body}>
-                I work across Greater Houston and Texas — buying, selling,
+                I work across Greater Houston and Texas: buying, selling,
                 renting, relocating, furnished stays, and the property
                 management and investment work that starts after a sale
                 closes.
               </p>
 
               <div className={styles.credentials}>
-                <p className={styles.credentialRow}><strong>REALTOR®</strong> — Christin Rachelle Group</p>
+                <span className="mono-label">LICENSE</span>
+                <p className={styles.credentialRow}><strong>REALTOR®</strong>, Christin Rachelle Group</p>
                 <p className={styles.credentialRow}>Texas Real Estate License #702090</p>
                 <p className={styles.credentialRow}>Licensed by the Texas Real Estate Commission</p>
               </div>

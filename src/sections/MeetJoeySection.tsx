@@ -45,32 +45,28 @@ export function MeetJoeySection() {
               Joey Williams<span className={styles.period}>.</span>
             </h2>
             <p className={styles.lede}>
-              Real estate, rentals, stays, and property strategy — handled with
-              taste, speed, and straight answers.
+              Real estate, rentals, stays, and property strategy in the
+              city I actually grew up in.
             </p>
             <p className={styles.body}>
-              Real estate does not need more noise.
+              I grew up in north Houston, so I am not studying this market.
+              I know it.
             </p>
             <p className={styles.body}>
-              It needs better direction.
+              Everyone knows Space City for NASA. Houston actually runs on
+              oil, the Port, and the bayou that cuts all the way out to
+              Galveston. That is the city underneath the skyline.
             </p>
             <p className={styles.body}>
-              JWILLSOLDIT was built for people who want the process to feel
-              handled from the first move — not passed around, over-talked, or
-              left sitting in the dark waiting for someone to “circle back.”
+              I still eat at House of Pies at midnight and send people to
+              Ninfa&rsquo;s on Navigation for the real fajitas, not the mall
+              version.
             </p>
             <p className={styles.body}>
-              Renting, buying, selling, relocating, furnishing a stay, or sorting
-              out a property you already own—the job is the same: give you a
-              straight answer and a next step that makes sense.
+              JWILLSOLDIT works the same way. You get a straight answer from
+              the first conversation, not a script.
             </p>
-            <p className={styles.body}>
-              I listen closely. I move fast. I tell the truth.
-            </p>
-            <p className={styles.body}>
-              Then we get it done.
-            </p>
-            <a href="/about" className="text-link">Full bio, license, and credentials</a>
+            <a href="/about" className="text-link">More about me and my license</a>
           </div>
 
           <div ref={pillarsRef} className={`${styles.pillars} reveal`}>
