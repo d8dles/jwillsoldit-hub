@@ -7,7 +7,7 @@ const FIELD_NOTES = [
   {
     number: '01',
     title: 'Relocating to Texas',
-    line: 'What to know before the move — areas, timing, rent-first vs. buy-now.',
+    line: 'Areas, timing, and whether to rent first or buy now.',
     detail:
       'I would start with the places you need to reach, when you need to move, and whether renting first gives you time to learn Houston. I would rather help you land somewhere that works day to day than rush you into the first available place.',
     href: '/houston',
@@ -30,7 +30,7 @@ const FIELD_NOTES = [
   {
     number: '04',
     title: 'Seller prep',
-    line: 'The prep that moves the number — and the prep that does not.',
+    line: 'The prep that moves your number, and the prep that wastes your money.',
     detail:
       'Focus on pricing, condition, access, photos, repair optics, and buyer objections. Not every upgrade pays you back, but every weak point affects confidence.',
   },
@@ -57,7 +57,7 @@ export function GuidesSection() {
               What I&rsquo;d tell <em>a friend.</em>
             </>
           }
-          lede="Quick, plain-English guidance on common move questions. Open the topic that fits, then use the intake when you are ready for a real plan."
+          lede="Straight answers to the questions that come up on every move. Open whichever one fits, then start the intake when you want a real plan."
         />
 
         <div ref={ref} className={`${styles.list} reveal`}>

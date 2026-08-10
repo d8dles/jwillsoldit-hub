@@ -23,9 +23,9 @@ export function CommandHero() {
             </h1>
 
             <p className={styles.thesis}>
-              Houston-rooted real estate guidance, furnished stays, rental
-              support, and property strategy across Texas — built around the
-              way people actually move.
+              Buying, selling, renting, furnished stays, and property
+              management across Texas, run out of Houston by someone who
+              picks up the phone.
             </p>
 
             <div className={styles.ctas}>

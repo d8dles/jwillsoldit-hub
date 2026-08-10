@@ -54,7 +54,7 @@ export function PropertyPreviewCard({ property, index }: PropertyPreviewCardProp
 
         <div className={styles.actions}>
           <a
-            href={smsLink(`${p.inquirySubject} — current availability?`)}
+            href={smsLink(`${p.inquirySubject}: current availability?`)}
             className={styles.actionPrimary}
           >
             Request availability
