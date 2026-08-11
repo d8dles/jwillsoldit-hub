@@ -1,8 +1,7 @@
 import { SectionHeader } from '../components/SectionHeader';
 import { INVEST_SERVICES } from '../data/services';
 import { useReveal } from '../utils/motion';
-import { smartMoveLink, mailtoLink } from '../utils/links';
-import { SUBJECTS } from '../data/contact';
+import { smartMoveLink } from '../utils/links';
 import styles from './InvestSection.module.css';
 
 // Careful positioning: acquisition connected to real operating experience.
@@ -50,7 +49,7 @@ export function InvestSection() {
             <a href={smartMoveLink('buy')} className="btn btn--primary" rel="noopener">
               <span className="tick">▸</span> Route an acquisition
             </a>
-            <a href={mailtoLink(SUBJECTS.investor)} className="btn btn--ghost">
+            <a href="/contact#investor" className="btn btn--ghost">
               {service ? service.ctaLabel : 'Ask an operations question'}
             </a>
           </div>

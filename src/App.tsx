@@ -15,6 +15,7 @@ import { ListingsIndexPage } from './pages/ListingsIndexPage';
 import { RentalListingsPage } from './pages/RentalListingsPage';
 import { RentalListingDetailPage } from './pages/RentalListingDetailPage';
 import { RentalServicesPage } from './pages/RentalServicesPage';
+import { ContactPage } from './pages/ContactPage';
 import { TULIP_OAK_LISTING } from './data/listings';
 import { PathnameProvider } from './routing';
 
@@ -49,6 +50,7 @@ export default function App({ pathname: requestedPathname }: AppProps) {
 
   let page = <HomePage />;
   if (pathname === '/about') page = <AboutPage />;
+  else if (pathname === '/contact') page = <ContactPage />;
   else if (pathname === '/listings') page = <ListingsIndexPage />;
   else if (pathname === '/listings/rentals') page = <RentalListingsPage />;
   else if (pathname === '/rentals') page = <RentalServicesPage />;

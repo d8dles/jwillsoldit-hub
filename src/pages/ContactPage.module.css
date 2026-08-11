@@ -1,0 +1,72 @@
+.hero {
+  padding: clamp(76px, 10vw, 132px) 0 clamp(52px, 7vw, 88px);
+  border-bottom: 1px solid var(--trace);
+}
+
+.hero h1 {
+  max-width: 10ch;
+  margin-top: 20px;
+  font-family: var(--display);
+  font-size: var(--fs-hero);
+  line-height: 0.94;
+  letter-spacing: -0.05em;
+}
+
+.hero > div > p:last-child {
+  max-width: 58ch;
+  margin-top: 24px;
+  color: var(--mid);
+  line-height: 1.7;
+}
+
+.grid {
+  display: grid;
+  gap: 1px;
+  margin-top: var(--space-block);
+  margin-bottom: var(--space-section);
+  padding: 0;
+  background: var(--trace);
+  border: 1px solid var(--trace);
+}
+
+.card {
+  scroll-margin-top: 88px;
+  padding: clamp(28px, 5vw, 52px);
+  background: var(--off-white);
+}
+
+.card h2 {
+  margin-top: 14px;
+  font-family: var(--display);
+  font-size: var(--fs-h3);
+  line-height: 1.05;
+}
+
+.card > p:not(.mono-label) {
+  max-width: 56ch;
+  margin-top: 16px;
+  color: var(--mid);
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.email {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--red-text);
+  text-underline-offset: 4px;
+}
+
+@media (min-width: 860px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

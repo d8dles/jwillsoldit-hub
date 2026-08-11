@@ -9,6 +9,7 @@ export const CONTACT = {
   phoneDisplay: '(561) 685-6566',
   email: 'joey@jwillsoldit.com',
   smartMoveUrl: 'https://move.jwillsoldit.com',
+  airbnbHostUrl: 'https://www.airbnb.com/users/profile/about?context=host',
 } as const;
 
 export const SUBJECTS = {
