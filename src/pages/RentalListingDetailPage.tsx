@@ -23,9 +23,9 @@ export function RentalListingDetailPage({ listing }: RentalListingDetailPageProp
       <ListingShell mobileIntent="rent">
         <section className={styles.unavailable}>
           <div className="container">
-            <span className="mono-label mono-label--red">LISTING / NO LONGER PUBLIC</span>
-            <h1>This property is no longer <em>on the board.</em></h1>
-            <p>The home may be rented, pending, or being held off-market. Browse current JWILLSOLDIT inventory for the next available route.</p>
+            <span className="mono-label mono-label--red">LISTING / NO LONGER AVAILABLE HERE</span>
+            <h1>This home is no longer <em>available here.</em></h1>
+            <p>It may already be rented, pending, or temporarily off the market. See what else is available, or tell me what you are looking for.</p>
             <div className={styles.unavailableActions}>
               <a href="/listings" className="btn btn--primary"><span className="tick">▸</span> Browse listings</a>
               <a href="/listings/rentals" className="btn btn--on-dark">View rentals</a>
@@ -125,7 +125,7 @@ export function RentalListingDetailPage({ listing }: RentalListingDetailPageProp
               <div><dt>Year built</dt><dd>{publicListing.yearBuilt}</dd></div>
               <div><dt>Stories</dt><dd>{publicListing.stories}</dd></div>
               <div><dt>Garage</dt><dd>{publicListing.garage}</dd></div>
-              <div><dt>Lease route</dt><dd>Long-term rental inquiry</dd></div>
+              <div><dt>Lease type</dt><dd>Long-term rental</dd></div>
             </dl>
           </div>
         </div>
@@ -177,12 +177,12 @@ export function RentalListingDetailPage({ listing }: RentalListingDetailPageProp
         <div className="container">
           <div className={styles.ctaInner}>
             <div>
-              <span className="mono-label mono-label--red">NEXT STEP / RENTAL ROUTE</span>
+              <span className="mono-label mono-label--red">INTERESTED IN THIS HOME?</span>
               <h2>Want to <em>see it?</em></h2>
             </div>
             <div className={styles.ctaActions}>
               <a href={smartMoveLink('rent')} className="btn btn--primary" rel="noopener">
-                <span className="tick">▸</span> Start the rental route
+                <span className="tick">▸</span> Ask about this rental
               </a>
               <a href={telLink()} className="btn btn--on-dark">Call Joey</a>
             </div>

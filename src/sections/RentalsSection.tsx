@@ -75,10 +75,9 @@ export function RentalsSection() {
             <span className="mono-label mono-label--red">FOR OWNERS</span>
             <h3 className={styles.laneTitle}>Own a rental (or about to)</h3>
             <p className={styles.laneBody}>
-              Leasing, management, maintenance follow-up, turnovers, and owner
-              updates, coordinated with trusted service partners behind the
-              work. Full details are below, or skip straight to a
-              conversation.
+              I can help keep leasing, maintenance, turnovers, vendors, and
+              owner updates moving, so you are not chasing every detail
+              yourself. Read the details below or tell me about your property.
             </p>
             <div className={styles.laneCtas}>
               <a href="/contact#management" className="btn btn--ghost">

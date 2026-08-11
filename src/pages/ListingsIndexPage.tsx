@@ -22,18 +22,18 @@ export function ListingsIndexPage() {
         <div className="container">
           <div ref={heroRef} className={`${styles.heroInner} reveal`}>
             <div className={styles.meta}>
-              <span className="mono-label">LISTINGS / CURRENT INVENTORY</span>
+              <span className="mono-label">CURRENT LISTINGS</span>
               <span className={styles.rule} aria-hidden="true" />
               <a href="/" className="mono-label mono-label--red" aria-label="JWILLSOLDIT home">
                 JWILLSOLDIT
               </a>
             </div>
             <h1 className={styles.title}>
-              Property pages built for <em>the next move.</em>
+              See what is <em>available.</em>
             </h1>
             <p className={styles.lede}>
-              Real homes, presented here first. Browse the property details on
-              JWILLSOLDIT, then choose the right next step.
+              Browse the homes currently listed through JWILLSOLDIT. Each page
+              includes the details, photos, and a direct way to ask about the property.
             </p>
           </div>
 
@@ -55,8 +55,8 @@ export function ListingsIndexPage() {
         <div className="container">
           <div className={styles.sectionHeading}>
             <div>
-              <span className="mono-label">PUBLIC INVENTORY / {String(filteredListings.length).padStart(2, '0')}</span>
-              <h2 className="display-h2">On the board <em>now.</em></h2>
+              <span className="mono-label">CURRENT LISTINGS / {String(filteredListings.length).padStart(2, '0')}</span>
+              <h2 className="display-h2">Available <em>now.</em></h2>
             </div>
           </div>
           <InventoryFilters value={filter} onChange={setFilter} />
@@ -65,7 +65,7 @@ export function ListingsIndexPage() {
               {filteredListings.map((listing) => <ListingCard key={listing.id} listing={listing} />)}
             </div>
           ) : (
-            <p className={styles.empty}>No public properties match this status right now.</p>
+            <p className={styles.empty}>No listings match this status right now.</p>
           )}
         </div>
       </section>

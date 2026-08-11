@@ -63,7 +63,7 @@ export function getListingSeo(listing: Listing): PageSeo {
 export const LISTINGS_INDEX_SEO: PageSeo = {
   outputPath: 'listings/index.html',
   title: 'JWILLSOLDIT Listings | Texas, Handled',
-  description: 'Current JWILLSOLDIT property listings, including rental homes presented locally with direct inquiry routes.',
+  description: 'Current JWILLSOLDIT property listings, including rental homes with verified details and a direct way to ask about each property.',
   canonical: `${SITE_ORIGIN}/listings/`,
   image: `${SITE_ORIGIN}/assets/jwillsoldit-texas-handled-v2.png`,
   jsonLdId: 'page-jsonld',
@@ -72,7 +72,7 @@ export const LISTINGS_INDEX_SEO: PageSeo = {
     '@type': 'CollectionPage',
     name: 'JWILLSOLDIT Listings',
     url: `${SITE_ORIGIN}/listings/`,
-    description: 'Current JWILLSOLDIT property listings, including rental homes presented locally with direct inquiry routes.',
+    description: 'Current JWILLSOLDIT property listings, including rental homes with verified details and a direct way to ask about each property.',
     mainEntity: {
       '@type': 'ItemList',
       numberOfItems: 1,
@@ -88,7 +88,7 @@ export const LISTINGS_INDEX_SEO: PageSeo = {
 export const RENTAL_INDEX_SEO: PageSeo = {
   outputPath: 'listings/rentals/index.html',
   title: 'Houston Rental Listings | JWILLSOLDIT',
-  description: 'Current JWILLSOLDIT rental listings in Houston, presented locally with verified property details and a direct rental inquiry route.',
+  description: 'Current JWILLSOLDIT rental listings in Houston, with verified property details and a direct way to ask about each home.',
   canonical: `${SITE_ORIGIN}/listings/rentals/`,
   image: `${SITE_ORIGIN}${TULIP_OAK_LISTING.heroImage.src}`,
   jsonLdId: 'page-jsonld',
@@ -97,7 +97,7 @@ export const RENTAL_INDEX_SEO: PageSeo = {
     '@type': 'CollectionPage',
     name: 'Houston Rental Listings',
     url: `${SITE_ORIGIN}/listings/rentals/`,
-    description: 'Current JWILLSOLDIT rental listings in Houston, presented locally with verified property details and a direct rental inquiry route.',
+    description: 'Current JWILLSOLDIT rental listings in Houston, with verified property details and a direct way to ask about each home.',
     mainEntity: {
       '@type': 'ItemList',
       numberOfItems: 1,
@@ -175,7 +175,7 @@ export const RENTAL_SERVICES_SEO: PageSeo = {
 export const CONTACT_SEO: PageSeo = {
   outputPath: 'contact/index.html',
   title: 'Contact Joey Williams | JWILLSOLDIT',
-  description: 'Contact Joey Williams about Houston rental management, owner services, or investment-property operations.',
+  description: 'Contact Joey Williams about Houston rental management, owner services, or buying and managing an investment property.',
   canonical: `${SITE_ORIGIN}/contact`,
   image: `${SITE_ORIGIN}/assets/jwillsoldit-texas-handled-v2.png`,
   jsonLdId: 'page-jsonld',
@@ -184,7 +184,7 @@ export const CONTACT_SEO: PageSeo = {
     '@type': 'ContactPage',
     name: 'Contact Joey Williams',
     url: `${SITE_ORIGIN}/contact`,
-    description: 'Contact Joey Williams about Houston rental management, owner services, or investment-property operations.',
+    description: 'Contact Joey Williams about Houston rental management, owner services, or buying and managing an investment property.',
   },
 };
 

@@ -32,10 +32,10 @@ export function CommandHero() {
 
             <div className={styles.ctas}>
               <a href={smartMoveLink()} className="btn btn--primary" rel="noopener">
-                <span className="tick">▸</span> Start Smart Move
+                <span className="tick">▸</span> Tell me about your move
               </a>
               <a href="#routes" className="btn btn--ghost">
-                Explore Services
+                See how I can help
               </a>
             </div>
           </div>

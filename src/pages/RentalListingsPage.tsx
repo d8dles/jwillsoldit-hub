@@ -20,10 +20,10 @@ export function RentalListingsPage() {
       <section className={`section ${styles.hero}`}>
         <div className="container">
           <span className="mono-label mono-label--red">LISTINGS / RENTALS</span>
-          <h1 className={styles.title}>Find a rental that <em>fits your route.</em></h1>
+          <h1 className={styles.title}>Find a rental that <em>fits your life.</em></h1>
           <p className={styles.lede}>
-            JWILLSOLDIT property pages show the home here first; verify current
-            price and availability before applying.
+            Review the home and its current details here, then confirm price
+            and availability before applying.
           </p>
         </div>
       </section>
@@ -32,11 +32,11 @@ export function RentalListingsPage() {
         <div className="container">
           <div className={styles.headingRow}>
             <div>
-              <span className="mono-label">RENTAL INVENTORY / {String(filteredRentals.length).padStart(2, '0')}</span>
+              <span className="mono-label">CURRENT RENTALS / {String(filteredRentals.length).padStart(2, '0')}</span>
               <h2 className="display-h2">Available <em>now.</em></h2>
             </div>
             <a href={smartMoveLink('rent')} className="btn btn--primary" rel="noopener">
-              <span className="tick">▸</span> Start the rental route
+              <span className="tick">▸</span> Tell me what you are looking for
             </a>
           </div>
 

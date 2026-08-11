@@ -21,6 +21,6 @@ export const PROOF: ProofTile[] = [
     id: 'line',
     label: 'DIRECT CONTACT',
     value: 'Call or text',
-    detail: 'Clear contact. Clear next steps.',
+    detail: 'You reach Joey directly.',
   },
 ];

@@ -13,7 +13,7 @@ export const ROUTES: IntentRoute[] = [
     label: 'Rent',
     shortTitle: 'Find the right lease',
     description:
-      'Apartments, townhomes, and rental houses across Greater Houston. I match them to your budget and timeline before you waste a weekend touring.',
+      'Apartments, townhomes, and rental houses across Greater Houston. I help narrow them by budget, timing, and what you actually need before you spend a weekend touring.',
     audience: 'I need a place to rent',
     href: smartMoveLink('rent'),
     actionType: 'smart_move',
@@ -39,8 +39,8 @@ export const ROUTES: IntentRoute[] = [
     label: 'Sell',
     shortTitle: 'Sell with a clear plan',
     description:
-      'Pricing, prep, and listing strategy on your timeline. Selling and buying at the same time? I run both sides.',
-    audience: 'I own and want out (or up)',
+      'I help you decide what to prepare, how to price the home, and what to expect from listing through closing. If you are also buying, I help keep both timelines together.',
+    audience: 'I am ready to sell or make a change',
     href: smartMoveLink('sell'),
     actionType: 'smart_move',
     intentParam: 'sell',
@@ -52,7 +52,7 @@ export const ROUTES: IntentRoute[] = [
     label: 'Relocate',
     shortTitle: 'Find your place in Texas',
     description:
-      'Moving to Texas from anywhere. You get the lay of the land and a plan before you commit to an address.',
+      'Moving to Texas from anywhere. We will compare the places that fit your work, routine, budget, and timing before you commit to an address.',
     audience: "I'm new to Texas",
     href: smartMoveLink('relocate'),
     actionType: 'smart_move',
@@ -65,7 +65,7 @@ export const ROUTES: IntentRoute[] = [
     label: 'Stay',
     shortTitle: 'Furnished, flexible, ready',
     description:
-      'Short-term, corporate, and monthly furnished stays, professionally prepared. Ask and I will tell you what is open.',
+      'Furnished stays for weeks or months. Ask me what is currently available and whether the terms fit your stay.',
     audience: 'I need weeks or months, not a lease',
     href: '#stays',
     actionType: 'anchor',
@@ -77,7 +77,7 @@ export const ROUTES: IntentRoute[] = [
     label: 'Own & Manage',
     shortTitle: 'Help managing what you own',
     description:
-      'Long-term management, short-term coordination, turnovers, vendors, and owner updates. All of it run through one place.',
+      'Help with long-term rentals, furnished stays, turnovers, vendors, and clear owner updates.',
     audience: 'I own property',
     href: '#manage',
     actionType: 'anchor',
@@ -87,10 +87,10 @@ export const ROUTES: IntentRoute[] = [
     id: 'invest',
     number: '07',
     label: 'Invest',
-    shortTitle: 'Buy what you can operate',
+    shortTitle: 'Understand what ownership takes',
     description:
-      'I run rentals every day, so I can tell you what a property actually costs to operate before you buy it.',
-    audience: 'I want property that performs',
+      'I work with rentals after closing too, so I can help you understand what a property may really cost to own and maintain before you buy it.',
+    audience: 'I am considering a rental property',
     href: '#invest',
     actionType: 'anchor',
     featured: true,
