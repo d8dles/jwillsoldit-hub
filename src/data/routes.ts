@@ -4,7 +4,7 @@ import { smartMoveLink } from '../utils/links';
 // The Route Board. Consumer move intents route to Smart Move
 // (the existing intake engine at move.jwillsoldit.com).
 // Guest/owner intents anchor to sections on this page.
-// `?intent=` params are inert today — forward compatibility only.
+// `?intent=` params preselect the matching Smart Move route.
 
 export const ROUTES: IntentRoute[] = [
   {

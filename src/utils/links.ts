@@ -1,8 +1,8 @@
 import { CONTACT } from '../data/contact';
 
 // Link builders. The hub LINKS to Smart Move — it never posts to its API.
-// `intent` params are inert today (Smart Move ignores unknown query params);
-// they exist for forward compatibility and must not require Smart Move changes.
+// Smart Move reads supported `intent` params and applies the same selection
+// behavior as pressing the corresponding route on the form.
 
 export function smartMoveLink(intent?: string): string {
   return intent
