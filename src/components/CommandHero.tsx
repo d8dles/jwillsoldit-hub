@@ -1,5 +1,5 @@
 import { PROOF } from '../data/proof';
-import { smartMoveLink } from '../utils/links';
+import { smartMoveLink, smsLink, telLink } from '../utils/links';
 import { RouteLine } from './RouteLine';
 import { TexasHeroMap } from './TexasHeroMap';
 import styles from './CommandHero.module.css';
@@ -49,7 +49,13 @@ export function CommandHero() {
           {PROOF.map((tile) => (
             <div key={tile.id} className={styles.status}>
               <span className={`mono-label ${styles.statusLabel}`}>{tile.label}</span>
-              <span className={styles.statusValue}>{tile.value}</span>
+              {tile.id === 'line' ? (
+                <span className={styles.statusValue}>
+                  <a href={telLink()}>Call</a> or <a href={smsLink()}>text</a>
+                </span>
+              ) : (
+                <span className={styles.statusValue}>{tile.value}</span>
+              )}
               {tile.detail && <span className={styles.statusDetail}>{tile.detail}</span>}
             </div>
           ))}

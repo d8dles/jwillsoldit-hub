@@ -2,6 +2,7 @@ import { SectionHeader } from '../components/SectionHeader';
 import { INVEST_SERVICES } from '../data/services';
 import { useReveal } from '../utils/motion';
 import { smartMoveLink } from '../utils/links';
+import { CONTACT } from '../data/contact';
 import styles from './InvestSection.module.css';
 
 // Careful positioning: acquisition connected to real operating experience.
@@ -26,6 +27,35 @@ export function InvestSection() {
         />
 
         <div ref={ref} className={`${styles.body} reveal`}>
+          <div className={styles.comparison} aria-label="Rental strategy comparison">
+            <article>
+              <p className="mono-label mono-label--red">LONG-TERM RENTAL</p>
+              <h3>Fewer turnovers, a longer relationship.</h3>
+              <p>
+                The work centers on screening, the lease, rent collection,
+                maintenance, renewals, and the condition of the home when the
+                resident moves out. Income may be steadier than a furnished
+                stay, but the lease and landlord responsibilities last much
+                longer than a weekend booking.
+              </p>
+              <a href="/contact#management">Ask about long-term management</a>
+            </article>
+            <article>
+              <p className="mono-label mono-label--red">FURNISHED / VACATION RENTAL</p>
+              <h3>More moving parts, more often.</h3>
+              <p>
+                Short stays can mean active pricing, guest messages, cleaning,
+                restocking, utilities, furnishings, platform fees, and frequent
+                inspections. Before buying, we also need to verify local rules,
+                deed or HOA restrictions, insurance, taxes, and whether the
+                property works during slower seasons.
+              </p>
+              <a href={CONTACT.airbnbHostUrl} target="_blank" rel="noopener noreferrer">
+                See Joey&rsquo;s furnished stays
+              </a>
+            </article>
+          </div>
+
           <div className={styles.points}>
             <p className={styles.point}>
               <span className={styles.pointIndex}>A</span>

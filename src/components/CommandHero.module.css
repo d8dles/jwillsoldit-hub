@@ -120,6 +120,18 @@
   letter-spacing: -0.01em;
 }
 
+.statusValue a {
+  color: inherit;
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.statusValue a:hover,
+.statusValue a:focus-visible {
+  color: var(--red-text);
+}
+
 .statusDetail {
   font-size: 0.75rem;
   color: var(--mid);
