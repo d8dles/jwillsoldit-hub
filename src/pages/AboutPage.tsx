@@ -69,28 +69,31 @@ export function AboutPage() {
                 <a href="/houston/areas/the-heights">the Heights</a>, or an
                 engineer who would rather be near{' '}
                 <a href="/houston/areas/clear-lake">NASA out in Clear Lake</a>.
-                Most people already know what they are drawn to. They just
-                do not know where in Houston it lives yet. Finding that is
-                the part I am good at.
+                Same city, four completely different answers. Sorting out
+                which one is yours is the whole job.
               </p>
 
               <p className={styles.body}>
-                Houston also takes some explaining, and I would rather you
-                understand it than take my word for anything. There is{' '}
-                <a href="/houston/guides/no-zoning-explained">no zoning
-                here</a>. Your{' '}
-                <a href="/houston/guides/property-taxes">tax bill</a>{' '}
-                depends on which{' '}
-                <a href="/houston/guides/muds-pids-and-utility-districts">
-                  districts
-                </a>{' '}
-                your address falls into.{' '}
-                <a href="/houston/guides/flood-risk-and-insurance">
-                  Flood history
-                </a>{' '}
-                can change from one block to the next. I wrote all of it
-                down, sources and all, so you can check it yourself.
+                The other half of this job is the stuff nobody explains
+                until it costs you something. So I started writing it down,
+                sourced, so you can check my work instead of taking my word
+                for it.
               </p>
+
+              <div className={styles.guideLinks}>
+                <a href="/houston/guides/no-zoning-explained">No zoning</a>
+                <a href="/houston/guides/property-taxes">Property taxes</a>
+                <a href="/houston/guides/muds-pids-and-utility-districts">
+                  Utility districts
+                </a>
+                <a href="/houston/guides/flood-risk-and-insurance">
+                  Flood maps
+                </a>
+                <a href="/houston/guides/traffic-and-commutes">Commutes</a>
+                <a href="/houston/guides/first-time-homebuyer">
+                  First-time buyers
+                </a>
+              </div>
 
               <p className={styles.body}>
                 <a href="/houston/guides" className="text-link">

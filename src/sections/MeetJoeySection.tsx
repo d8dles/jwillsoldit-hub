@@ -45,39 +45,30 @@ export function MeetJoeySection() {
               Joey Williams<span className={styles.period}>.</span>
             </h2>
             <p className={styles.lede}>
-              Buying, selling, renting, or holding property anywhere in
-              Houston. I handle the whole thing, and you always know where
-              you stand.
+              Inside the Loop, out past the Grand Parkway, and everything in
+              between. Rent it, buy it, sell it, or hold it. I work all of
+              it.
             </p>
             <p className={styles.body}>
-              I started as a broker&rsquo;s assistant and learned this
-              business from the paperwork up. That is why I catch what other
-              agents miss, and why your deal never goes quiet on you.
+              Most people already know what they are drawn to. They just do
+              not know where in Houston it lives yet. Finding that is the
+              part I am good at.
             </p>
             <p className={styles.body}>
-              I work the whole city, not one pocket of it. Most people
-              already know what they are drawn to. They just do not know
-              where in Houston it lives yet. Finding that is the part I am
-              good at.
+              Nobody hands you any of this. You find out at closing, when
+              it is expensive to care. So I put it in writing.
             </p>
-            <p className={styles.body}>
-              Houston takes some explaining. There is{' '}
-              <a href="/houston/guides/no-zoning-explained">no zoning</a>,
-              your{' '}
-              <a href="/houston/guides/property-taxes">tax bill</a> depends
-              on which{' '}
+            <div className={styles.guideLinks}>
+              <a href="/houston/guides/no-zoning-explained">No zoning</a>
+              <a href="/houston/guides/property-taxes">Property taxes</a>
               <a href="/houston/guides/muds-pids-and-utility-districts">
-                districts
-              </a>{' '}
-              you land in,{' '}
+                Utility districts
+              </a>
               <a href="/houston/guides/flood-risk-and-insurance">
-                flood history
-              </a>{' '}
-              changes block to block, and the{' '}
-              <a href="/houston/guides/traffic-and-commutes">commute</a>{' '}
-              you are picturing may not be the one you get. I wrote all of
-              it down with sources.
-            </p>
+                Flood maps
+              </a>
+              <a href="/houston/guides/traffic-and-commutes">Commutes</a>
+            </div>
             <div className={styles.actions}>
               <a href="/houston/guides" className="text-link">
                 Read Houston, Handled

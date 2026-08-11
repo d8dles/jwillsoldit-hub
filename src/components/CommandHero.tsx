@@ -23,9 +23,9 @@ export function CommandHero() {
             </h1>
 
             <p className={styles.thesis}>
-              Houston-rooted real estate guidance, furnished stays, rental
-              support, and property strategy across Texas — built around the
-              way people actually move.
+              No zoning. Flood lines that change block to block. Utility
+              districts nobody mentions until closing. Houston takes
+              explaining, and that&rsquo;s where I start.
             </p>
 
             <div className={styles.ctas}>

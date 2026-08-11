@@ -30,7 +30,7 @@ export function RentalsSection() {
             <span className="mono-label mono-label--red">LANE A</span>
             <h3 className={styles.laneTitle}>Looking for a rental</h3>
             <p className={styles.laneBody}>
-              Areas, budget, timeline, and criteria — mapped through Smart Move
+              Smart Move maps your areas, budget, timeline, and criteria
               before you burn weekends touring the wrong places. Apartments,
               townhomes, and rental houses across Greater Houston.
             </p>
@@ -47,8 +47,8 @@ export function RentalsSection() {
             <h3 className={styles.laneTitle}>Own a rental (or about to)</h3>
             <p className={styles.laneBody}>
               Leasing, management, maintenance follow-up, turnovers, and owner
-              updates — coordinated with trusted service partners behind the
-              work. Full service details are below, or skip straight to a
+              updates, coordinated with trusted service partners behind the
+              work. Full details are below, or skip straight to a
               conversation.
             </p>
             <div className={styles.laneCtas}>

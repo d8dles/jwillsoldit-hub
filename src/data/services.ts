@@ -30,7 +30,7 @@ export const SERVICES: Service[] = [
     problem: 'Listings, guests, cleaning schedules, and pricing decisions never stop.',
     deliverable:
       'End-to-end coordination: listing oversight, guest communication, and scheduled cleaning and restocking through trusted service partners.',
-    outcome: 'A rental that runs like hospitality — consistent, prepared, and looked after.',
+    outcome: 'A rental that runs like hospitality. Consistent, prepared, looked after.',
     ctaLabel: 'Talk short-term rentals',
     href: mailtoLink(SUBJECTS.ownerIntro),
     featured: true,
@@ -43,7 +43,7 @@ export const SERVICES: Service[] = [
     audience: 'Owners with occupied or listed properties',
     problem: 'Small issues become expensive when nobody owns the follow-up.',
     deliverable:
-      'Vendor coordination and property follow-up — quotes, scheduling, completion checks, and documentation, so nothing is left as a loose end.',
+      'Vendor coordination and property follow-up. Quotes, scheduling, completion checks, and documentation, so nothing is left hanging.',
     outcome: 'Problems get fixed once, on record.',
     ctaLabel: 'Ask about coverage',
     href: mailtoLink(SUBJECTS.rentalManagement),
@@ -87,7 +87,7 @@ export const SERVICES: Service[] = [
     audience: 'Guests who need weeks or months, not a lease',
     problem: 'Hotels are burnout; twelve-month leases are overkill.',
     deliverable:
-      'Operated furnished units with flexible terms — availability confirmed directly by inquiry.',
+      'Operated furnished units with flexible terms. Ask and I will confirm what is available.',
     outcome: 'A real place to live, on your timeline.',
     ctaLabel: 'Request availability',
     href: mailtoLink(SUBJECTS.stays),
@@ -103,7 +103,7 @@ export const SERVICES: Service[] = [
     audience: 'Renters in Greater Houston',
     problem: 'Rental searching alone means guessing at areas, terms, and timing.',
     deliverable:
-      'A guided rental search through Smart Move — areas, budget, timeline, and criteria mapped before you tour.',
+      'A guided rental search through Smart Move. Areas, budget, timeline, and criteria mapped before you tour.',
     outcome: 'The right lease, faster.',
     ctaLabel: 'Start with Smart Move',
     href: smartMoveLink('rent'),
@@ -130,7 +130,7 @@ export const SERVICES: Service[] = [
     id: 'seller-strategy',
     category: 'move',
     serviceName: 'Seller / listing strategy',
-    audience: 'Owners ready to sell — or sell and buy',
+    audience: 'Owners ready to sell, or sell and buy',
     problem: 'Mispriced or under-prepped listings leave money on the table.',
     deliverable:
       'Pricing analysis, prep and presentation plan, listing execution, and negotiation through closing.',
@@ -161,7 +161,7 @@ export const SERVICES: Service[] = [
     category: 'invest',
     serviceName: 'Investor & owner support',
     audience: 'Current and future rental / STR owners',
-    problem: 'Acquisition and operations usually live with different people — details fall in the gap.',
+    problem: 'Acquisition and operations usually sit with different people, and details fall in the gap.',
     deliverable:
       'Acquisition guidance connected to real operating experience: what a property takes to run, before you buy it.',
     outcome: 'You buy what you can actually operate.',

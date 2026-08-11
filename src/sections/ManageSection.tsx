@@ -20,7 +20,7 @@ export function ManageSection() {
               The part most agents <em>don&rsquo;t do.</em>
             </>
           }
-          lede="Owning property comes with real work — leasing, upkeep, guests, paperwork. These services exist so owners get organized support and clear communication, without running it all themselves."
+          lede="Owning property is work. Leasing, upkeep, guests, paperwork. These services exist so you get all of it handled and stay in the loop without running it yourself."
         />
 
         <ServiceLedger services={MANAGE_SERVICES} onDark />

@@ -13,7 +13,7 @@ export const ROUTES: IntentRoute[] = [
     label: 'Rent',
     shortTitle: 'Find the right lease',
     description:
-      'Apartments, townhomes, and rental houses across Greater Houston — matched to your timeline and budget, not a listing dump.',
+      'Apartments, townhomes, and rental houses across Greater Houston. I match them to your budget and timeline before you waste a weekend touring.',
     audience: 'I need a place to rent',
     href: smartMoveLink('rent'),
     actionType: 'smart_move',
@@ -26,7 +26,7 @@ export const ROUTES: IntentRoute[] = [
     label: 'Buy',
     shortTitle: 'Own your next place',
     description:
-      'From first search to keys — strategy, neighborhoods, offers, and closing, run with a plan.',
+      'First search to keys. Neighborhoods, offers, inspections, closing. You always know what happens next.',
     audience: 'I want to buy',
     href: smartMoveLink('buy'),
     actionType: 'smart_move',
@@ -39,7 +39,7 @@ export const ROUTES: IntentRoute[] = [
     label: 'Sell',
     shortTitle: 'Exit on your terms',
     description:
-      'Pricing, prep, and listing strategy built around your timeline — including sell-and-buy coordination.',
+      'Pricing, prep, and listing strategy on your timeline. Selling and buying at the same time? I run both sides.',
     audience: 'I own and want out (or up)',
     href: smartMoveLink('sell'),
     actionType: 'smart_move',
@@ -52,7 +52,7 @@ export const ROUTES: IntentRoute[] = [
     label: 'Relocate',
     shortTitle: 'Land in Texas right',
     description:
-      'Moving to Texas from anywhere — area orientation, timing, and a landing plan before you commit.',
+      'Moving to Texas from anywhere. You get the lay of the land and a plan before you commit to an address.',
     audience: "I'm new to Texas",
     href: smartMoveLink('relocate'),
     actionType: 'smart_move',
@@ -65,7 +65,7 @@ export const ROUTES: IntentRoute[] = [
     label: 'Stay',
     shortTitle: 'Furnished, flexible, ready',
     description:
-      'Short-term, corporate, and monthly furnished stays — professionally prepared, availability by inquiry.',
+      'Short-term, corporate, and monthly furnished stays, professionally prepared. Ask and I will tell you what is open.',
     audience: 'I need weeks or months, not a lease',
     href: '#stays',
     actionType: 'anchor',
@@ -77,7 +77,7 @@ export const ROUTES: IntentRoute[] = [
     label: 'Own & Manage',
     shortTitle: 'Property, run properly',
     description:
-      'Long-term rental management, short-term rental coordination, turnovers, vendor follow-up, and owner updates — organized through JWILLSOLDIT.',
+      'Long-term management, short-term coordination, turnovers, vendors, and owner updates. All of it run through one place.',
     audience: 'I own property',
     href: '#manage',
     actionType: 'anchor',
@@ -89,7 +89,7 @@ export const ROUTES: IntentRoute[] = [
     label: 'Invest',
     shortTitle: 'Buy what you can operate',
     description:
-      'Acquisition guidance connected to real operating experience — what a property takes to run, before you buy it.',
+      'I run rentals every day, so I can tell you what a property actually costs to operate before you buy it.',
     audience: 'I want property that performs',
     href: '#invest',
     actionType: 'anchor',
@@ -101,7 +101,7 @@ export const ROUTES: IntentRoute[] = [
     label: 'Not Sure',
     shortTitle: 'Start here, sort it out',
     description:
-      'Not ready to pick a lane? Start anyway. A few answers will help us work out the right next step.',
+      'Not ready to pick a lane? Start anyway. A few questions and we will figure out where you land.',
     audience: "I don't know yet",
     href: smartMoveLink('not-sure'),
     actionType: 'smart_move',

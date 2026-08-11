@@ -31,7 +31,7 @@ export function StaysSection() {
               Furnished stays, <em>run like hospitality.</em>
             </>
           }
-          lede="Short-term, corporate, and monthly furnished stays across the Houston area — professionally prepared and locally coordinated, not listed and forgotten. Terms flex to your timeline, and availability is confirmed quickly by a real person."
+          lede="Short-term, corporate, and monthly furnished stays around Houston. Every one is prepared and looked after locally, terms bend to your timeline, and a real person confirms availability when you ask."
         />
 
         <div className={styles.carousel}>
@@ -74,7 +74,7 @@ export function StaysSection() {
             {String(STAY_COUNT).padStart(2, '0')} STAYS · SHORT-TERM TO MONTHLY · SWIPE TO BROWSE
           </p>
           <div className={styles.ctas}>
-            <a href={smsLink(`${SUBJECTS.stays} — dates and unit type?`)} className="btn btn--primary">
+            <a href={smsLink(`${SUBJECTS.stays}: dates and unit type?`)} className="btn btn--primary">
               <span className="tick">▸</span> Request availability
             </a>
             <a href={mailtoLink(SUBJECTS.stays)} className="btn btn--ghost">

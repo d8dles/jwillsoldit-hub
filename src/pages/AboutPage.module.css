@@ -67,6 +67,37 @@
 
 
 
+/* Compact keyword row into the guide library. Short anchors on purpose:
+   these are the terms people actually search, and they scan faster than
+   the same links buried inside a sentence. Mirrors the homepage section. */
+.guideLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 0;
+  margin: 4px 0 8px;
+}
+
+.guideLinks a {
+  font-family: var(--mono);
+  font-size: var(--fs-micro, 0.75rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--mid);
+  text-decoration: none;
+  padding-bottom: 1px;
+  border-bottom: 1px solid var(--red);
+  transition: color 0.18s ease;
+}
+
+.guideLinks a:not(:last-child) {
+  margin-right: 18px;
+}
+
+.guideLinks a:hover,
+.guideLinks a:focus-visible {
+  color: var(--red-text);
+}
+
 /* Inline links into Houston, Handled — keyword-level entry points from the
    bio into the guide and area pages. Same treatment as the homepage section. */
 .body a {
