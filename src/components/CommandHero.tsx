@@ -23,9 +23,9 @@ export function CommandHero() {
             </h1>
 
             <p className={styles.thesis}>
-              Buying, selling, renting, furnished stays, and property
-              management across Texas, run out of Houston by someone who
-              picks up the phone.
+              No zoning. Flood lines that change block to block. Utility
+              districts nobody mentions until closing. Houston takes
+              explaining, and that&rsquo;s where I start.
             </p>
 
             <div className={styles.ctas}>

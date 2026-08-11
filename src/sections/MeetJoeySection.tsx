@@ -61,22 +61,23 @@ export function MeetJoeySection() {
               good at.
             </p>
             <p className={styles.body}>
-              Houston takes some explaining. There is{' '}
-              <a href="/houston/guides/no-zoning-explained">no zoning</a>,
-              your{' '}
-              <a href="/houston/guides/property-taxes">tax bill</a> depends
-              on which{' '}
+              So I wrote it all down, sources and all:{' '}
+              <a href="/houston/guides/no-zoning-explained">
+                what no zoning actually means
+              </a>
+              , how your{' '}
+              <a href="/houston/guides/property-taxes">tax bill</a> gets
+              built, which{' '}
               <a href="/houston/guides/muds-pids-and-utility-districts">
-                districts
+                utility districts
               </a>{' '}
               you land in,{' '}
               <a href="/houston/guides/flood-risk-and-insurance">
-                flood history
-              </a>{' '}
-              changes block to block, and the{' '}
+                how to read a flood map
+              </a>
+              , and the{' '}
               <a href="/houston/guides/traffic-and-commutes">commute</a>{' '}
-              you are picturing may not be the one you get. I wrote all of
-              it down with sources.
+              you are actually signing up for.
             </p>
             <div className={styles.actions}>
               <a href="/houston/guides" className="text-link">
