@@ -1,6 +1,7 @@
 import { SectionHeader } from '../components/SectionHeader';
 import { useReveal } from '../utils/motion';
 import { smartMoveLink } from '../utils/links';
+import { CONTACT } from '../data/contact';
 import styles from './GuidesSection.module.css';
 
 const FIELD_NOTES = [
@@ -10,8 +11,8 @@ const FIELD_NOTES = [
     line: 'Areas, timing, and whether to rent first or buy now.',
     detail:
       'I would start with the places you need to reach, when you need to move, and whether renting first gives you time to learn Houston. I would rather help you land somewhere that works day to day than rush you into the first available place.',
-    href: '/houston',
-    ctaLabel: 'Explore Houston, Handled',
+    href: '/houston/guides/how-houston-is-organized',
+    ctaLabel: 'Read how Houston is organized',
   },
   {
     number: '02',
@@ -19,6 +20,8 @@ const FIELD_NOTES = [
     line: 'Walk in with everything a landlord actually asks for.',
     detail:
       'Have income documentation, rental history, ID, pet details, move-in funds, and honest context ready before touring. Clean paperwork can matter as much as speed.',
+    href: '/houston/guides/houston-renter-checklist',
+    ctaLabel: 'Open the Houston renter checklist',
   },
   {
     number: '03',
@@ -26,6 +29,8 @@ const FIELD_NOTES = [
     line: 'From first search to a serious offer, without the guesswork.',
     detail:
       'Get clear on payment comfort, loan type, cash needed, commute, repairs, insurance, taxes, and resale logic before falling in love with a listing.',
+    href: '/houston/guides/first-time-homebuyer',
+    ctaLabel: 'Open the first-time buyer guide',
   },
   {
     number: '04',
@@ -33,6 +38,14 @@ const FIELD_NOTES = [
     line: 'The prep that moves your number, and the prep that wastes your money.',
     detail:
       'Focus on pricing, condition, access, photos, repair optics, and buyer objections. Not every upgrade pays you back, but every weak point affects confidence.',
+    checklist: [
+      'Gather mortgage, survey, title, repair, permit, warranty, and insurance records.',
+      'Walk the property for deferred maintenance, odors, lighting, clutter, and obvious buyer objections.',
+      'Price repairs against the likely sale benefit before approving upgrades.',
+      'Plan photography, showing access, pets, valuables, and the move-out timeline.',
+    ],
+    href: smartMoveLink('sell'),
+    ctaLabel: 'Talk through selling the property',
   },
   {
     number: '05',
@@ -40,6 +53,14 @@ const FIELD_NOTES = [
     line: 'What is included, how terms flex, and what to ask up front.',
     detail:
       'Confirm dates, utilities, deposits, parking, pets, guest rules, cleaning, work setup, renewal options, and monthly terms before assuming a stay works for your timeline.',
+    checklist: [
+      'Confirm the full price, deposit, cleaning charges, cancellation terms, and payment schedule.',
+      'Ask which utilities, internet, furnishings, linens, parking, and household supplies are included.',
+      'Check pet, guest, smoking, quiet-hour, maintenance, and extension rules before booking.',
+      'Document the condition at arrival and know who to contact if something needs attention.',
+    ],
+    href: CONTACT.airbnbHostUrl,
+    ctaLabel: 'See current furnished stays',
   },
 ];
 
@@ -57,7 +78,7 @@ export function GuidesSection() {
               What I&rsquo;d tell <em>a friend.</em>
             </>
           }
-          lede="Straight answers to the questions that come up on every move. Open whichever one fits, then start the intake when you want a real plan."
+          lede="Start with the question that brought you here. When you are ready to talk through your own move, send me the details and we will take it from there."
         />
 
         <div ref={ref} className={`${styles.list} reveal`}>
@@ -73,8 +94,17 @@ export function GuidesSection() {
               </summary>
               <div className={styles.detailPanel}>
                 <p className={styles.detail}>{note.detail}</p>
+                {'checklist' in note && note.checklist ? (
+                  <ul className={styles.checklist}>
+                    {note.checklist.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                ) : null}
                 {note.href && note.ctaLabel ? (
-                  <a href={note.href} className={styles.detailLink}>
+                  <a
+                    href={note.href}
+                    className={styles.detailLink}
+                    {...(note.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  >
                     {note.ctaLabel} →
                   </a>
                 ) : null}
@@ -85,7 +115,7 @@ export function GuidesSection() {
 
         <div className={styles.footerRow}>
           <p className={styles.footerNote}>
-            Have a situation that does not fit neatly into a guide? Start with the intake and I will point it the right way.
+            Don&rsquo;t see your situation here? Tell me what is going on and I will help you make sense of it.
           </p>
           <a href={smartMoveLink()} className="btn btn--ghost" rel="noopener">
             Get a plan

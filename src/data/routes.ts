@@ -4,7 +4,7 @@ import { smartMoveLink } from '../utils/links';
 // The Route Board. Consumer move intents route to Smart Move
 // (the existing intake engine at move.jwillsoldit.com).
 // Guest/owner intents anchor to sections on this page.
-// `?intent=` params are inert today — forward compatibility only.
+// `?intent=` params preselect the matching Smart Move route.
 
 export const ROUTES: IntentRoute[] = [
   {
@@ -26,7 +26,7 @@ export const ROUTES: IntentRoute[] = [
     label: 'Buy',
     shortTitle: 'Own your next place',
     description:
-      'First search to keys. Neighborhoods, offers, inspections, closing. You always know what happens next.',
+      'From the first search to the day you get the keys, I help you compare the areas and homes, write the offer, and stay ahead of inspections and closing.',
     audience: 'I want to buy',
     href: smartMoveLink('buy'),
     actionType: 'smart_move',
@@ -37,7 +37,7 @@ export const ROUTES: IntentRoute[] = [
     id: 'sell',
     number: '03',
     label: 'Sell',
-    shortTitle: 'Exit on your terms',
+    shortTitle: 'Sell with a clear plan',
     description:
       'Pricing, prep, and listing strategy on your timeline. Selling and buying at the same time? I run both sides.',
     audience: 'I own and want out (or up)',
@@ -50,7 +50,7 @@ export const ROUTES: IntentRoute[] = [
     id: 'relocate',
     number: '04',
     label: 'Relocate',
-    shortTitle: 'Land in Texas right',
+    shortTitle: 'Find your place in Texas',
     description:
       'Moving to Texas from anywhere. You get the lay of the land and a plan before you commit to an address.',
     audience: "I'm new to Texas",
@@ -75,7 +75,7 @@ export const ROUTES: IntentRoute[] = [
     id: 'own-manage',
     number: '06',
     label: 'Own & Manage',
-    shortTitle: 'Property, run properly',
+    shortTitle: 'Help managing what you own',
     description:
       'Long-term management, short-term coordination, turnovers, vendors, and owner updates. All of it run through one place.',
     audience: 'I own property',
@@ -101,7 +101,7 @@ export const ROUTES: IntentRoute[] = [
     label: 'Not Sure',
     shortTitle: 'Start here, sort it out',
     description:
-      'Not ready to pick a lane? Start anyway. A few questions and we will figure out where you land.',
+      'You do not need to have it all figured out. Tell me what is changing, and we will work out the next step together.',
     audience: "I don't know yet",
     href: smartMoveLink('not-sure'),
     actionType: 'smart_move',

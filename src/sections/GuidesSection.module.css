@@ -58,6 +58,20 @@
   line-height: 1.7;
 }
 
+.checklist {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0 2px;
+  padding-left: 20px;
+  color: var(--mid);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.checklist li::marker {
+  color: var(--red-text);
+}
+
 .detailLink {
   display: inline-block;
   margin-top: 12px;

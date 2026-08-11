@@ -35,13 +35,24 @@ export function ServiceLedgerRow({ service, index, onDark = false }: ServiceLedg
       </div>
 
       <div className={styles.ctaWrap}>
-        <a
-          href={s.href}
-          className={styles.cta}
-          {...(s.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-        >
-          {s.ctaLabel} <span aria-hidden="true">→</span>
-        </a>
+        {s.starterChecklist ? (
+          <details className={styles.starter}>
+            <summary className={styles.cta}>{s.ctaLabel} <span aria-hidden="true">→</span></summary>
+            <div className={styles.starterPanel}>
+              <p>To get started, have these basics ready:</p>
+              <ul>{s.starterChecklist.map((item) => <li key={item}>{item}</li>)}</ul>
+              <a href={s.href}>Send Joey the property details →</a>
+            </div>
+          </details>
+        ) : (
+          <a
+            href={s.href}
+            className={styles.cta}
+            {...(s.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          >
+            {s.ctaLabel} <span aria-hidden="true">→</span>
+          </a>
+        )}
       </div>
     </article>
   );

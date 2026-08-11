@@ -49,6 +49,13 @@ export const SERVICES: Service[] = [
     href: '/contact#management',
     featured: true,
     status: 'active',
+    starterChecklist: [
+      'Property address, occupancy, and the issue you need handled',
+      'Photos, access instructions, warranty information, and any vendor history',
+      'Your approval limit and whether you want estimates before work begins',
+      'The person responsible for tenant or guest scheduling',
+      'How you want completion photos, receipts, and follow-up documented',
+    ],
   },
   {
     id: 'turnovers',
@@ -63,6 +70,13 @@ export const SERVICES: Service[] = [
     href: '/contact#management',
     featured: true,
     status: 'active',
+    starterChecklist: [
+      'Move-out or checkout date and the next target move-in date',
+      'A condition walk-through with photos and a written punch list',
+      'Cleaning, paint, repairs, locks, landscaping, utilities, and safety checks',
+      'Furniture, linen, supply, or appliance replacements when applicable',
+      'Final inspection, listing photos, keys, and readiness to show or host',
+    ],
   },
   {
     id: 'owner-reporting',

@@ -61,9 +61,6 @@ export function PropertyPreviewCard({ property, index }: PropertyPreviewCardProp
           >
             View on Airbnb
           </a>
-          <a href={CONTACT.airbnbHostUrl} className={styles.actionSecondary} target="_blank" rel="noopener noreferrer">
-            Open host profile
-          </a>
         </div>
       </div>
     </article>

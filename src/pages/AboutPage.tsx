@@ -31,32 +31,31 @@ export function AboutPage() {
               <p className={styles.role}>REALTOR® · Christin Rachelle Group · Houston, Texas</p>
 
               <p className={styles.lede}>
-                I started as a broker&rsquo;s assistant. I learned this
-                business from the paperwork up, and that is still why I
-                catch things other agents miss.
+                I started as a broker&rsquo;s assistant and learned the business
+                from the paperwork up. That background still shapes how I
+                work now: I pay attention early, communicate clearly, and do
+                not wait until closing to explain something important.
               </p>
 
               <p className={styles.body}>
-                That seat shows you everything. Contracts, deadlines,
-                inspection reports, the deals that come apart three days
-                before closing and the exact reason why. I was handling all
-                of it long before I had a client of my own.
+                Contracts, deadlines, inspection reports, last-minute
+                problems&mdash;I saw what kept a deal together and what
+                caused one to fall apart. I was handling those details long
+                before I had a client of my own.
               </p>
 
               <p className={styles.body}>
-                Ask people what they cannot stand about working with an
-                agent and you get the same answer every time. They go quiet.
-                Calls stop coming back, nobody tells you where your deal
-                stands, and you hear about the problem once it is too late
-                to do anything about it. That is the biggest complaint in
-                this industry and the easiest one to fix. I am better than
-                that.
+                You should not have to chase your agent for an update or
+                find out about a problem after it is too late to do much
+                about it. I keep people informed, return the call, and tell
+                them where things actually stand&mdash;even when the answer
+                is not the easy one.
               </p>
 
               <p className={styles.body}>
-                I am from Houston. Taconazo when I want real tacos, Astros
-                all summer, NRG on Sundays in the fall. I am not reading
-                about this city. I live in it.
+                I am from Houston. Taconazo when I want tacos, Astros all
+                summer, NRG on Sundays in the fall. This is not a market I
+                study from a distance. It is home.
               </p>
 
               <p className={styles.body}>
@@ -74,10 +73,9 @@ export function AboutPage() {
               </p>
 
               <p className={styles.body}>
-                The other half of this job is the stuff nobody explains
-                until it costs you something. So I started writing it down,
-                sourced, so you can check my work instead of taking my word
-                for it.
+                Houston also has a way of hiding important details until
+                they cost you something. That is why I started putting them
+                in writing, with sources you can check for yourself.
               </p>
 
               <div className={styles.guideLinks}>

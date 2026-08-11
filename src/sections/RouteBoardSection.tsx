@@ -14,7 +14,7 @@ export function RouteBoardSection() {
               What are you <em>trying to do?</em>
             </>
           }
-          lede="Pick the lane closest to your move. Each one takes you straight to the right intake or the right conversation, so you are not hunting through a menu to find help."
+          lede="Tell me what you are working toward. I will ask the right questions, get the details in one place, and help you figure out what comes next."
         />
         <RouteBoard />
       </div>

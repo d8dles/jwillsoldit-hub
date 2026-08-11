@@ -4,6 +4,40 @@
   gap: 40px;
 }
 
+.comparison {
+  display: grid;
+  gap: 1px;
+  max-width: 1180px;
+  background: var(--trace);
+  border: 1px solid var(--trace);
+}
+
+.comparison article {
+  padding: clamp(24px, 4vw, 40px);
+  background: var(--off-white);
+}
+
+.comparison h3 {
+  margin-top: 14px;
+  font-family: var(--display);
+  font-size: var(--fs-h3);
+  line-height: 1.05;
+}
+
+.comparison article > p:not(.mono-label) {
+  max-width: 58ch;
+  margin-top: 16px;
+  color: var(--mid);
+  line-height: 1.7;
+}
+
+.comparison a {
+  display: inline-block;
+  margin-top: 22px;
+  color: var(--red-text);
+  text-underline-offset: 4px;
+}
+
 .points {
   display: grid;
   grid-template-columns: 1fr;
@@ -35,6 +69,10 @@
 }
 
 @media (min-width: 900px) {
+  .comparison {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .points {
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;

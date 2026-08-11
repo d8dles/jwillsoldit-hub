@@ -21,28 +21,58 @@ export function RentalsSection() {
               Rentals, from <em>both sides of the lease.</em>
             </>
           }
-          lede="Rental housing works better with support on both sides: renters finding the right lease, and owners keeping their rental homes running smoothly. Current homes live in the listings lane; service questions start here."
+          lede="Whether you are looking for a place to rent or need help caring for one you own, you can start here. Browse what is available, tell me what you need, or ask me about management."
         />
 
         <div className={styles.lanes}>
           <div ref={laneA} className={`${styles.lane} reveal`}>
-            <span className="mono-label mono-label--red">LANE A</span>
+            <span className="mono-label mono-label--red">FOR RENTERS</span>
             <h3 className={styles.laneTitle}>Looking for a rental</h3>
             <p className={styles.laneBody}>
-              Smart Move maps your areas, budget, timeline, and criteria
-              before you burn weekends touring the wrong places. Apartments,
-              townhomes, and rental houses across Greater Houston.
+              Tell me your budget, timing, preferred areas, and what the home
+              needs to have. I will help narrow the search before you spend
+              every weekend touring the wrong places.
             </p>
+            <div className={styles.ownerGuides}>
+              <details>
+                <summary>Prepare a long-term rental</summary>
+                <div className={styles.ownerGuideBody}>
+                  <p>A year-long lease usually means fewer turnovers, but more responsibility tied to one resident and one lease.</p>
+                  <ul>
+                    <li>Confirm landlord coverage, liability limits, flood coverage where relevant, and any insurer requirements.</li>
+                    <li>Make the home clean, secure, functional, and ready for required safety devices and repairs.</li>
+                    <li>Decide who handles utilities, lawn care, pest service, filters, and routine maintenance.</li>
+                    <li>Prepare written screening criteria, the lease, deposits, move-in condition records, and a repair process.</li>
+                    <li>Set aside reserves and identify vendors before the first urgent call.</li>
+                  </ul>
+                  <a href="/contact#management">Ask about long-term preparation →</a>
+                </div>
+              </details>
+              <details>
+                <summary>Prepare a short-term or furnished rental</summary>
+                <div className={styles.ownerGuideBody}>
+                  <p>A furnished stay operates more like hospitality: shorter commitments, more frequent access, and more items under the owner&rsquo;s care.</p>
+                  <ul>
+                    <li>Verify city, HOA, deed, lease, lender, and insurance rules before advertising short stays.</li>
+                    <li>Price commercial or short-term-rental coverage, taxes, platform fees, cleaning, and slower periods.</li>
+                    <li>Plan durable furniture, linens, kitchen basics, locks, safety equipment, Wi-Fi, and a documented inventory.</li>
+                    <li>Keep electricity, water, internet, and usually other utilities active in the owner&rsquo;s name.</li>
+                    <li>Build cleaning, laundry, restocking, inspection, guest messaging, maintenance, and emergency plans.</li>
+                  </ul>
+                  <a href="/contact#management">Ask about furnished-rental preparation →</a>
+                </div>
+              </details>
+            </div>
             <div className={styles.laneCtas}>
               <a href={smartMoveLink('rent')} className="btn btn--primary" rel="noopener">
-                <span className="tick">▸</span> Start the rental route
+                <span className="tick">▸</span> Tell me what you need
               </a>
               <a href="/listings/rentals" className="btn btn--ghost">See current rentals</a>
             </div>
           </div>
 
           <div ref={laneB} className={`${styles.lane} reveal`}>
-            <span className="mono-label mono-label--red">LANE B</span>
+            <span className="mono-label mono-label--red">FOR OWNERS</span>
             <h3 className={styles.laneTitle}>Own a rental (or about to)</h3>
             <p className={styles.laneBody}>
               Leasing, management, maintenance follow-up, turnovers, and owner
