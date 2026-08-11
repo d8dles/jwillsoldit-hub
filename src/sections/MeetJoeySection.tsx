@@ -1,4 +1,5 @@
 import { useReveal } from '../utils/motion';
+import { smartMoveLink } from '../utils/links';
 import styles from './MeetJoeySection.module.css';
 
 const PILLARS = [
@@ -8,15 +9,15 @@ const PILLARS = [
   },
   {
     title: 'Rentals',
-    line: 'I will help you narrow the search.',
+    line: 'Help narrowing the search.',
   },
   {
     title: 'Property Management',
-    line: 'You will know what is happening.',
+    line: 'Clear updates and real follow-through.',
   },
   {
     title: 'Investing',
-    line: 'The numbers have to work in real life.',
+    line: 'Numbers that work beyond the spreadsheet.',
   },
 ];
 
@@ -45,38 +46,43 @@ export function MeetJoeySection() {
               Joey Williams<span className={styles.period}>.</span>
             </h2>
             <p className={styles.lede}>
-              Inside the Loop, out past the Grand Parkway, and everywhere in
-              between. I help people rent, buy, sell, and hold property
-              across Houston.
+              I&rsquo;m a Texas REALTOR® based in Houston. I can help with moves
+              across the state, but Houston is the market I know from the
+              inside&mdash;Inside the Loop, beyond the Grand Parkway, and all
+              the very different places in between.
             </p>
             <p className={styles.body}>
-              Most people have a feel for what they want&mdash;the commute,
-              the pace, the kind of neighborhood, maybe a little more room
-              to breathe. They just don&rsquo;t know where in Houston to find
-              it yet. That&rsquo;s the part I&rsquo;m good at.
+              Most people can describe how they want life to feel, even if
+              they cannot name the neighborhood yet. Maybe it is a shorter
+              commute, somewhere they can walk to dinner, more room outside,
+              or a rental that gives them time to learn the city. I help turn
+              those preferences into actual places and honest options.
             </p>
             <p className={styles.body}>
-              And there is plenty a listing will not explain. Taxes, flood
-              history, utility districts, commute times&mdash;I write about
-              it so you can understand what you are getting into before it
-              becomes an expensive surprise.
+              That also means talking about what listing photos leave out:
+              flood history, property taxes, utility districts, insurance,
+              and what the drive really feels like on a weekday. I explain
+              those details plainly, put the useful parts in writing, and
+              make sure you understand the tradeoffs before you commit to an
+              address.
             </p>
             <div className={styles.guideLinks}>
-              <a href="/houston/guides/no-zoning-explained">No zoning</a>
+              <a href="/houston/guides/flood-risk-and-insurance">Flood history</a>
               <a href="/houston/guides/property-taxes">Property taxes</a>
               <a href="/houston/guides/muds-pids-and-utility-districts">
                 Utility districts
               </a>
-              <a href="/houston/guides/flood-risk-and-insurance">
-                Flood maps
-              </a>
-              <a href="/houston/guides/traffic-and-commutes">Commutes</a>
+              <a href="/houston/guides/traffic-and-commutes">Houston commutes</a>
+              <a href="/houston/guides/first-time-homebuyer">First-time buying</a>
             </div>
             <div className={styles.actions}>
-              <a href="/houston/guides" className="text-link">
-                Read Houston, Handled
+              <a href={smartMoveLink()} className="btn btn--primary" rel="noopener">
+                <span className="tick">▸</span> Tell me about your move
               </a>
-              <a href="/about" className="text-link">More about me</a>
+              <a href="/houston/guides" className="text-link">
+                Explore the Houston guides
+              </a>
+              <a href="/about" className="text-link">Get to know me</a>
             </div>
           </div>
 
