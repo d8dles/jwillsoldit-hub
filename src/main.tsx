@@ -1,5 +1,5 @@
 import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import { Analytics } from '@vercel/analytics/react';
 import App from './App';
 
@@ -10,9 +10,12 @@ import './styles/layout.css';
 const rootEl = document.getElementById('root');
 if (!rootEl) throw new Error('Root element #root not found');
 
-createRoot(rootEl).render(
+const app = (
   <StrictMode>
     <App />
     <Analytics />
   </StrictMode>
 );
+
+if (rootEl.hasChildNodes()) hydrateRoot(rootEl, app);
+else createRoot(rootEl).render(app);

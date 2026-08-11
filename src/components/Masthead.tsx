@@ -1,5 +1,6 @@
 import { BrandLockup } from './BrandLockup';
 import { smartMoveLink, telLink, smsLink } from '../utils/links';
+import { usePathname } from '../routing';
 import styles from './Masthead.module.css';
 
 const NAV = [
@@ -16,13 +17,14 @@ const NAV = [
   { label: 'Contact', href: '#contact', external: false },
 ];
 
-function sectionHref(href: string): string {
-  const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+function sectionHref(href: string, pathname: string): string {
   if (href === '#rentals' && pathname !== '/') return '/rentals';
   return pathname === '/' ? href : `/${href}`;
 }
 
 export function Masthead() {
+  const pathname = usePathname();
+
   return (
     <header className={styles.masthead}>
       <div className={styles.inner}>
@@ -33,7 +35,7 @@ export function Masthead() {
           {NAV.map((item) => (
             <a
               key={item.label}
-              href={item.href.startsWith('#') ? sectionHref(item.href) : item.href}
+              href={item.href.startsWith('#') ? sectionHref(item.href, pathname) : item.href}
               className={styles.navLink}
               {...(item.external ? { rel: 'noopener' } : {})}
             >
