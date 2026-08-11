@@ -73,9 +73,6 @@ export function StaysSection() {
             {String(STAY_COUNT).padStart(2, '0')} STAYS · SHORT-TERM TO MONTHLY · SWIPE TO BROWSE
           </p>
           <div className={styles.ctas}>
-            <a href={CONTACT.airbnbHostUrl} className="btn btn--primary" target="_blank" rel="noopener noreferrer">
-              <span className="tick">▸</span> View stays on Airbnb
-            </a>
             <a href={CONTACT.airbnbHostUrl} className="btn btn--ghost" target="_blank" rel="noopener noreferrer">
               Open Airbnb profile
             </a>

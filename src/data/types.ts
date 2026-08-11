@@ -70,6 +70,7 @@ export interface Service {
   href: string;
   featured: boolean;
   status: 'active' | 'expanding';
+  starterChecklist?: string[];
 }
 
 export interface ProofTile {

@@ -33,6 +33,36 @@ export function RentalsSection() {
               needs to have. I will help narrow the search before you spend
               every weekend touring the wrong places.
             </p>
+            <div className={styles.ownerGuides}>
+              <details>
+                <summary>Prepare a long-term rental</summary>
+                <div className={styles.ownerGuideBody}>
+                  <p>A year-long lease usually means fewer turnovers, but more responsibility tied to one resident and one lease.</p>
+                  <ul>
+                    <li>Confirm landlord coverage, liability limits, flood coverage where relevant, and any insurer requirements.</li>
+                    <li>Make the home clean, secure, functional, and ready for required safety devices and repairs.</li>
+                    <li>Decide who handles utilities, lawn care, pest service, filters, and routine maintenance.</li>
+                    <li>Prepare written screening criteria, the lease, deposits, move-in condition records, and a repair process.</li>
+                    <li>Set aside reserves and identify vendors before the first urgent call.</li>
+                  </ul>
+                  <a href="/contact#management">Ask about long-term preparation →</a>
+                </div>
+              </details>
+              <details>
+                <summary>Prepare a short-term or furnished rental</summary>
+                <div className={styles.ownerGuideBody}>
+                  <p>A furnished stay operates more like hospitality: shorter commitments, more frequent access, and more items under the owner&rsquo;s care.</p>
+                  <ul>
+                    <li>Verify city, HOA, deed, lease, lender, and insurance rules before advertising short stays.</li>
+                    <li>Price commercial or short-term-rental coverage, taxes, platform fees, cleaning, and slower periods.</li>
+                    <li>Plan durable furniture, linens, kitchen basics, locks, safety equipment, Wi-Fi, and a documented inventory.</li>
+                    <li>Keep electricity, water, internet, and usually other utilities active in the owner&rsquo;s name.</li>
+                    <li>Build cleaning, laundry, restocking, inspection, guest messaging, maintenance, and emergency plans.</li>
+                  </ul>
+                  <a href="/contact#management">Ask about furnished-rental preparation →</a>
+                </div>
+              </details>
+            </div>
             <div className={styles.laneCtas}>
               <a href={smartMoveLink('rent')} className="btn btn--primary" rel="noopener">
                 <span className="tick">▸</span> Tell me what you need

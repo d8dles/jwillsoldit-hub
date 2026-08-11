@@ -38,6 +38,49 @@
   flex-wrap: wrap;
 }
 
+.ownerGuides {
+  display: grid;
+  width: 100%;
+  border-top: 1px solid var(--trace);
+}
+
+.ownerGuides details {
+  border-bottom: 1px solid var(--trace);
+}
+
+.ownerGuides summary {
+  padding: 14px 0;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.ownerGuideBody {
+  padding: 0 0 20px;
+  color: var(--mid);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.ownerGuideBody ul {
+  display: grid;
+  gap: 7px;
+  margin: 12px 0;
+  padding-left: 20px;
+}
+
+.ownerGuideBody li::marker {
+  color: var(--red-text);
+}
+
+.ownerGuideBody a {
+  color: var(--red-text);
+  text-underline-offset: 4px;
+}
+
 @media (min-width: 860px) {
   .lanes {
     grid-template-columns: 1fr 1fr;
