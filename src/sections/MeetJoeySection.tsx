@@ -72,6 +72,10 @@ export function MeetJoeySection() {
               <a href="/houston/guides/muds-pids-and-utility-districts">
                 Utility districts
               </a>
+              <a href="/houston/guides/no-zoning-explained">No zoning</a>
+              <a href="/houston/guides/electricity-choice-and-utilities">
+                Utilities
+              </a>
               <a href="/houston/guides/traffic-and-commutes">Houston commutes</a>
               <a href="/houston/guides/first-time-homebuyer">First-time buying</a>
             </div>

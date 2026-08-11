@@ -1,4 +1,31 @@
 {
+  "redirects": [
+    {
+      "source": "/houston/",
+      "destination": "/houston",
+      "permanent": true
+    },
+    {
+      "source": "/houston/guides/",
+      "destination": "/houston/guides",
+      "permanent": true
+    },
+    {
+      "source": "/houston/guides/:slug/",
+      "destination": "/houston/guides/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/houston/areas/:slug/",
+      "destination": "/houston/areas/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/houston/regions/:slug/",
+      "destination": "/houston/regions/:slug",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/about",
