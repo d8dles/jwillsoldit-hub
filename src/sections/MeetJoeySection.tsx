@@ -50,11 +50,6 @@ export function MeetJoeySection() {
               it.
             </p>
             <p className={styles.body}>
-              I started as a broker&rsquo;s assistant and learned this
-              business from the paperwork up. That is why I catch what other
-              agents miss, and why your deal never goes quiet on you.
-            </p>
-            <p className={styles.body}>
               Most people already know what they are drawn to. They just do
               not know where in Houston it lives yet. Finding that is the
               part I am good at.

@@ -69,9 +69,8 @@ export function AboutPage() {
                 <a href="/houston/areas/the-heights">the Heights</a>, or an
                 engineer who would rather be near{' '}
                 <a href="/houston/areas/clear-lake">NASA out in Clear Lake</a>.
-                Most people already know what they are drawn to. They just
-                do not know where in Houston it lives yet. Finding that is
-                the part I am good at.
+                Same city, four completely different answers. Sorting out
+                which one is yours is the whole job.
               </p>
 
               <p className={styles.body}>
