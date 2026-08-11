@@ -79,7 +79,7 @@ export const PROPERTIES: Property[] = [
     availabilityStatus: 'Details being finalized',
     inquirySubject: `${SUBJECTS.stays} — Stay Unit 05`,
     featured: false,
-    publicVisible: true,
+    publicVisible: false,
   },
   {
     ...STAY_DEFAULTS,
@@ -89,7 +89,7 @@ export const PROPERTIES: Property[] = [
     availabilityStatus: 'Details being finalized',
     inquirySubject: `${SUBJECTS.stays} — Stay Unit 06`,
     featured: false,
-    publicVisible: true,
+    publicVisible: false,
   },
   {
     ...STAY_DEFAULTS,
@@ -99,7 +99,7 @@ export const PROPERTIES: Property[] = [
     availabilityStatus: 'Details being finalized',
     inquirySubject: `${SUBJECTS.stays} — Stay Unit 07`,
     featured: false,
-    publicVisible: true,
+    publicVisible: false,
   },
   {
     ...STAY_DEFAULTS,
@@ -109,7 +109,7 @@ export const PROPERTIES: Property[] = [
     availabilityStatus: 'Details being finalized',
     inquirySubject: `${SUBJECTS.stays} — Stay Unit 08`,
     featured: false,
-    publicVisible: true,
+    publicVisible: false,
   },
 
   // Non-stay categories exist in the model from day one so the future
