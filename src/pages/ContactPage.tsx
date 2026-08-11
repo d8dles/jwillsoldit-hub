@@ -15,9 +15,9 @@ const inquiries = [
   },
   {
     id: 'owner-intro',
-    label: 'OWNER INTRO',
-    title: 'Request an owner introduction',
-    prompt: 'Tell Joey a little about the property and the conversation you would like to have.',
+    label: 'PROPERTY OWNER',
+    title: 'Talk about a property you own',
+    prompt: 'Tell Joey about the property and what you would like help with.',
   },
   {
     id: 'investor',
@@ -108,7 +108,7 @@ export function ContactPage() {
       <header className={styles.hero}>
         <div className="container">
           <p className="mono-label mono-label--red">CONTACT / JWILLSOLDIT</p>
-          <h1>Start with the right conversation.</h1>
+          <h1>Tell me what you are working on.</h1>
           <p>Choose what you want to talk about, leave the question, and Joey will follow up directly.</p>
           <div className={styles.directActions} aria-label="Direct contact">
             <a className="btn btn--ghost" href={telLink()}>Call {CONTACT.phoneDisplay}</a>
@@ -167,7 +167,7 @@ export function ContactPage() {
             {submitState === 'sending' ? 'Sending…' : 'Send my question'}
           </button>
           <p className={styles.status} role="status" aria-live="polite">
-            {submitState === 'sent' && 'Thank you. Your question is in, and Joey will follow up directly.'}
+            {submitState === 'sent' && 'Thank you. Joey received your question and will follow up directly.'}
             {submitState === 'error' && 'That did not send. Please try again, or use the call or text links above.'}
           </p>
         </form>

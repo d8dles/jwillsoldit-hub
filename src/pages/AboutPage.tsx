@@ -131,7 +131,7 @@ export function AboutPage() {
 
               <div className={styles.actions}>
                 <a href={smartMoveLink()} className="btn btn--primary" rel="noopener">
-                  <span className="tick">▸</span> Start a Smart Move
+                  <span className="tick">▸</span> Tell me about your move
                 </a>
                 <a href={telLink()} className="btn btn--ghost">Call</a>
                 <a href={smsLink()} className="btn btn--ghost">Text</a>

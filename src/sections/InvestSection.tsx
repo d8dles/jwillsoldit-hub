@@ -20,14 +20,14 @@ export function InvestSection() {
           kicker="INVEST"
           title={
             <>
-              Buy what you can <em>actually operate.</em>
+              Buy a property that <em>works in real life.</em>
             </>
           }
           lede="A property can look good on paper and still be difficult or expensive to run. Because I manage rentals and furnished stays, I can help you look past the purchase price and understand what ownership may actually involve."
         />
 
         <div ref={ref} className={`${styles.body} reveal`}>
-          <div className={styles.comparison} aria-label="Rental strategy comparison">
+          <div className={styles.comparison} aria-label="Long-term and furnished rental comparison">
             <article>
               <p className="mono-label mono-label--red">LONG-TERM RENTAL</p>
               <h3>Fewer turnovers, a longer relationship.</h3>
@@ -59,8 +59,8 @@ export function InvestSection() {
           <div className={styles.points}>
             <p className={styles.point}>
               <span className={styles.pointIndex}>A</span>
-              I help you look at a property through the eyes of someone who
-              may have to run it, not just buy it.
+              I look at the property as both an agent and someone who
+              understands what managing it takes.
             </p>
             <p className={styles.point}>
               <span className={styles.pointIndex}>B</span>
@@ -81,7 +81,7 @@ export function InvestSection() {
               <span className="tick">▸</span> Talk through a property
             </a>
             <a href="/contact#investor" className="btn btn--ghost">
-              {service ? service.ctaLabel : 'Ask an operations question'}
+              {service ? service.ctaLabel : 'Ask about an investment property'}
             </a>
           </div>
         </div>

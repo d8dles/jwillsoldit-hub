@@ -16,10 +16,10 @@ const FIELD_NOTES = [
   },
   {
     number: '02',
-    title: 'Rental application readiness',
-    line: 'Walk in with everything a landlord actually asks for.',
+    title: 'Getting ready to apply',
+    line: 'Have the usual documents and move-in funds organized before you tour.',
     detail:
-      'Have income documentation, rental history, ID, pet details, move-in funds, and honest context ready before touring. Clean paperwork can matter as much as speed.',
+      'Have your ID, income documents, rental history, pet information, and move-in funds organized before you tour. A complete application can matter as much as speed.',
     href: '/houston/guides/houston-renter-checklist',
     ctaLabel: 'Open the Houston renter checklist',
   },
@@ -28,16 +28,16 @@ const FIELD_NOTES = [
     title: 'Buyer prep',
     line: 'From first search to a serious offer, without the guesswork.',
     detail:
-      'Get clear on payment comfort, loan type, cash needed, commute, repairs, insurance, taxes, and resale logic before falling in love with a listing.',
+      'Know the monthly payment you are comfortable with, the loan and cash you may need, and how the commute, repairs, insurance, taxes, and future plans affect the decision.',
     href: '/houston/guides/first-time-homebuyer',
     ctaLabel: 'Open the first-time buyer guide',
   },
   {
     number: '04',
     title: 'Seller prep',
-    line: 'The prep that moves your number, and the prep that wastes your money.',
+    line: 'The work worth doing before you list, and what may not pay you back.',
     detail:
-      'Focus on pricing, condition, access, photos, repair optics, and buyer objections. Not every upgrade pays you back, but every weak point affects confidence.',
+      'Focus on pricing, condition, access, photos, repairs, and the questions buyers are likely to have. Not every upgrade pays you back, so compare the cost with the likely benefit before you approve the work.',
     checklist: [
       'Gather mortgage, survey, title, repair, permit, warranty, and insurance records.',
       'Walk the property for deferred maintenance, odors, lighting, clutter, and obvious buyer objections.',
@@ -118,7 +118,7 @@ export function GuidesSection() {
             Don&rsquo;t see your situation here? Tell me what is going on and I will help you make sense of it.
           </p>
           <a href={smartMoveLink()} className="btn btn--ghost" rel="noopener">
-            Get a plan
+            Tell me what you are working on
           </a>
         </div>
       </div>

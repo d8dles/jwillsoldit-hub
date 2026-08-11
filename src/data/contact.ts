@@ -31,8 +31,8 @@ export interface ContactAction {
 export const CONTACT_ACTIONS: ContactAction[] = [
   {
     id: 'smart-move',
-    label: 'Start a Smart Move',
-    detail: 'The fastest way to start renting, buying, selling, or relocating',
+    label: 'Tell me about your move',
+    detail: 'Share the details of your rental, purchase, sale, or move',
     kind: 'smart_move',
   },
   {
@@ -44,7 +44,7 @@ export const CONTACT_ACTIONS: ContactAction[] = [
   {
     id: 'text',
     label: 'Text',
-    detail: 'Fastest for stay availability',
+    detail: 'Text Joey directly',
     kind: 'text',
   },
   {

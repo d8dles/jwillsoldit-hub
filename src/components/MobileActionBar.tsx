@@ -27,7 +27,7 @@ export function MobileActionBar({ intent }: MobileActionBarProps) {
         Text
       </a>
       <a href={smartMoveLink(intent)} className={`${styles.item} ${styles.primary}`} rel="noopener">
-        Smart Move <span aria-hidden="true">→</span>
+        Tell me about your move <span aria-hidden="true">→</span>
       </a>
     </nav>
   );

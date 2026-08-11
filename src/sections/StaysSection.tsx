@@ -1,24 +1,8 @@
-import { useRef } from 'react';
 import { SectionHeader } from '../components/SectionHeader';
-import { PropertyPreviewCard } from '../components/PropertyPreviewCard';
-import { PUBLIC_STAYS, STAY_COUNT } from '../data/properties';
 import { CONTACT } from '../data/contact';
 import styles from './StaysSection.module.css';
 
-// Furnished stays as a swipeable carousel. Renders every public stay from
-// properties.ts, so adding/removing a stay later is a data edit only.
-
 export function StaysSection() {
-  const trackRef = useRef<HTMLDivElement | null>(null);
-
-  const scrollByCards = (dir: 1 | -1) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const first = track.firstElementChild as HTMLElement | null;
-    const step = first ? first.getBoundingClientRect().width + 20 : track.clientWidth * 0.8;
-    track.scrollBy({ left: dir * step, behavior: 'smooth' });
-  };
-
   return (
     <section id="stays" className="section section--hairline-top" aria-label="Furnished stays">
       <div className="container">
@@ -27,56 +11,21 @@ export function StaysSection() {
           kicker="STAYS"
           title={
             <>
-              Furnished stays, <em>run like hospitality.</em>
+              Furnished stays that feel <em>looked after.</em>
             </>
           }
-          lede="Short-term, corporate, and monthly furnished stays around Houston. Every one is prepared and looked after locally, terms bend to your timeline, and a real person confirms availability when you ask."
+          lede="I offer short-term, corporate, and monthly furnished stays around Houston. Tell me the dates you need, and I will confirm what is available, what is included, and whether the terms fit your stay."
         />
 
-        <div className={styles.carousel}>
-          <div
-            className={styles.track}
-            ref={trackRef}
-            role="list"
-            aria-label="Furnished stays"
-            tabIndex={0}
-          >
-            {PUBLIC_STAYS.map((property, i) => (
-              <div className={styles.slide} role="listitem" key={property.id}>
-                <PropertyPreviewCard property={property} index={i} />
-              </div>
-            ))}
-          </div>
-
-          <div className={styles.controls}>
-            <button
-              type="button"
-              className={styles.arrow}
-              onClick={() => scrollByCards(-1)}
-              aria-label="Previous stays"
-            >
-              ←
-            </button>
-            <button
-              type="button"
-              className={styles.arrow}
-              onClick={() => scrollByCards(1)}
-              aria-label="Next stays"
-            >
-              →
-            </button>
-          </div>
-        </div>
-
-        <div className={styles.footerRow}>
-          <p className={`mono-label ${styles.indexNote}`}>
-            {String(STAY_COUNT).padStart(2, '0')} STAYS · SHORT-TERM TO MONTHLY · SWIPE TO BROWSE
+        <div className={styles.intro}>
+          <p>
+            The available homes and their current details live on my Airbnb
+            profile. That is the best place to see what is open now and ask
+            about dates before making plans.
           </p>
-          <div className={styles.ctas}>
-            <a href={CONTACT.airbnbHostUrl} className="btn btn--ghost" target="_blank" rel="noopener noreferrer">
-              Open Airbnb profile
-            </a>
-          </div>
+          <a href={CONTACT.airbnbHostUrl} className="btn btn--primary" target="_blank" rel="noopener noreferrer">
+            <span className="tick">▸</span> See furnished stays on Airbnb
+          </a>
         </div>
       </div>
     </section>

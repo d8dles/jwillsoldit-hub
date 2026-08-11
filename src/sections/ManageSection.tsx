@@ -15,7 +15,7 @@ export function ManageSection() {
           onDark
           title={
             <>
-              The part most agents <em>don&rsquo;t do.</em>
+              Help with the work <em>that comes after.</em>
             </>
           }
           lede="Owning a rental comes with a long list: leasing, maintenance, guests, vendors, paperwork, and follow-up. I help keep those pieces moving while making sure you still know what is happening with your property."
@@ -25,11 +25,11 @@ export function ManageSection() {
 
         <div className={styles.panelFooter}>
           <p className={styles.footerNote}>
-            Every engagement starts with a straight conversation about the
-            property, the numbers, and whether we&rsquo;re a fit.
+            Let&rsquo;s start with the property, what it needs, and what you want
+            off your plate.
           </p>
           <a href="/contact#owner-intro" className="btn btn--on-dark">
-            <span className="tick">▸</span> Request an owner intro
+            <span className="tick">▸</span> Talk to me about your property
           </a>
         </div>
       </div>
