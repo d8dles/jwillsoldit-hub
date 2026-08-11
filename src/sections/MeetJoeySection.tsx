@@ -45,9 +45,9 @@ export function MeetJoeySection() {
               Joey Williams<span className={styles.period}>.</span>
             </h2>
             <p className={styles.lede}>
-              Buying, selling, renting, or holding property anywhere in
-              Houston. I handle the whole thing, and you always know where
-              you stand.
+              Inside the Loop, out past the Grand Parkway, and everything in
+              between. Rent it, buy it, sell it, or hold it. I work all of
+              it.
             </p>
             <p className={styles.body}>
               I started as a broker&rsquo;s assistant and learned this
@@ -55,30 +55,25 @@ export function MeetJoeySection() {
               agents miss, and why your deal never goes quiet on you.
             </p>
             <p className={styles.body}>
-              I work the whole city, not one pocket of it. Most people
-              already know what they are drawn to. They just do not know
-              where in Houston it lives yet. Finding that is the part I am
-              good at.
+              Most people already know what they are drawn to. They just do
+              not know where in Houston it lives yet. Finding that is the
+              part I am good at.
             </p>
             <p className={styles.body}>
-              So I wrote it all down, sources and all:{' '}
-              <a href="/houston/guides/no-zoning-explained">
-                what no zoning actually means
-              </a>
-              , how your{' '}
-              <a href="/houston/guides/property-taxes">tax bill</a> gets
-              built, which{' '}
-              <a href="/houston/guides/muds-pids-and-utility-districts">
-                utility districts
-              </a>{' '}
-              you land in,{' '}
-              <a href="/houston/guides/flood-risk-and-insurance">
-                how to read a flood map
-              </a>
-              , and the{' '}
-              <a href="/houston/guides/traffic-and-commutes">commute</a>{' '}
-              you are actually signing up for.
+              Nobody hands you any of this. You find out at closing, when
+              it is expensive to care. So I put it in writing.
             </p>
+            <div className={styles.guideLinks}>
+              <a href="/houston/guides/no-zoning-explained">No zoning</a>
+              <a href="/houston/guides/property-taxes">Property taxes</a>
+              <a href="/houston/guides/muds-pids-and-utility-districts">
+                Utility districts
+              </a>
+              <a href="/houston/guides/flood-risk-and-insurance">
+                Flood maps
+              </a>
+              <a href="/houston/guides/traffic-and-commutes">Commutes</a>
+            </div>
             <div className={styles.actions}>
               <a href="/houston/guides" className="text-link">
                 Read Houston, Handled
