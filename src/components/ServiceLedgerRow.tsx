@@ -38,7 +38,7 @@ export function ServiceLedgerRow({ service, index, onDark = false }: ServiceLedg
         <a
           href={s.href}
           className={styles.cta}
-          {...(s.href.startsWith('http') ? { rel: 'noopener' } : {})}
+          {...(s.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
         >
           {s.ctaLabel} <span aria-hidden="true">→</span>
         </a>

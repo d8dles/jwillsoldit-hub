@@ -172,10 +172,27 @@ export const RENTAL_SERVICES_SEO: PageSeo = {
   },
 };
 
+export const CONTACT_SEO: PageSeo = {
+  outputPath: 'contact/index.html',
+  title: 'Contact Joey Williams | JWILLSOLDIT',
+  description: 'Contact Joey Williams about Houston rental management, owner services, or investment-property operations.',
+  canonical: `${SITE_ORIGIN}/contact`,
+  image: `${SITE_ORIGIN}/assets/jwillsoldit-texas-handled-v2.png`,
+  jsonLdId: 'page-jsonld',
+  jsonLd: {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact Joey Williams',
+    url: `${SITE_ORIGIN}/contact`,
+    description: 'Contact Joey Williams about Houston rental management, owner services, or investment-property operations.',
+  },
+};
+
 export const LISTING_SEO_PAGES = [
   RENTAL_SERVICES_SEO,
   LISTINGS_INDEX_SEO,
   RENTAL_INDEX_SEO,
   getListingSeo(TULIP_OAK_LISTING),
   ABOUT_SEO,
+  CONTACT_SEO,
 ];

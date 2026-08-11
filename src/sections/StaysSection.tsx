@@ -2,8 +2,7 @@ import { useRef } from 'react';
 import { SectionHeader } from '../components/SectionHeader';
 import { PropertyPreviewCard } from '../components/PropertyPreviewCard';
 import { PUBLIC_STAYS, STAY_COUNT } from '../data/properties';
-import { SUBJECTS } from '../data/contact';
-import { smsLink, mailtoLink } from '../utils/links';
+import { CONTACT } from '../data/contact';
 import styles from './StaysSection.module.css';
 
 // Furnished stays as a swipeable carousel. Renders every public stay from
@@ -74,11 +73,11 @@ export function StaysSection() {
             {String(STAY_COUNT).padStart(2, '0')} STAYS · SHORT-TERM TO MONTHLY · SWIPE TO BROWSE
           </p>
           <div className={styles.ctas}>
-            <a href={smsLink(`${SUBJECTS.stays}: dates and unit type?`)} className="btn btn--primary">
-              <span className="tick">▸</span> Request availability
+            <a href={CONTACT.airbnbHostUrl} className="btn btn--primary" target="_blank" rel="noopener noreferrer">
+              <span className="tick">▸</span> View stays on Airbnb
             </a>
-            <a href={mailtoLink(SUBJECTS.stays)} className="btn btn--ghost">
-              Email a stay inquiry
+            <a href={CONTACT.airbnbHostUrl} className="btn btn--ghost" target="_blank" rel="noopener noreferrer">
+              Open Airbnb profile
             </a>
           </div>
         </div>

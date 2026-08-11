@@ -14,7 +14,7 @@ const NAV = [
   { label: 'Guides', href: '#guides', external: false },
   { label: 'Houston, Handled.', href: '/houston', external: false },
   { label: 'Joey', href: '#joey', external: false },
-  { label: 'Contact', href: '#contact', external: false },
+  { label: 'Contact', href: '/contact', external: false },
 ];
 
 function sectionHref(href: string, pathname: string): string {

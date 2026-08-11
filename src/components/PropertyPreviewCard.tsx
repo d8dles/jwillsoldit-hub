@@ -1,6 +1,6 @@
 import type { Property } from '../data/types';
 import { useReveal } from '../utils/motion';
-import { smsLink, mailtoLink } from '../utils/links';
+import { CONTACT } from '../data/contact';
 import styles from './PropertyPreviewCard.module.css';
 
 // Typographic property card. Works with zero images by design —
@@ -54,13 +54,15 @@ export function PropertyPreviewCard({ property, index }: PropertyPreviewCardProp
 
         <div className={styles.actions}>
           <a
-            href={smsLink(`${p.inquirySubject}: current availability?`)}
+            href={CONTACT.airbnbHostUrl}
             className={styles.actionPrimary}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Request availability
+            View on Airbnb
           </a>
-          <a href={mailtoLink(p.inquirySubject)} className={styles.actionSecondary}>
-            Email instead
+          <a href={CONTACT.airbnbHostUrl} className={styles.actionSecondary} target="_blank" rel="noopener noreferrer">
+            Open host profile
           </a>
         </div>
       </div>

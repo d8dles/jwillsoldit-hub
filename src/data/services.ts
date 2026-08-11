@@ -1,6 +1,6 @@
 import type { Service } from './types';
-import { smartMoveLink, mailtoLink } from '../utils/links';
-import { SUBJECTS } from './contact';
+import { smartMoveLink } from '../utils/links';
+import { CONTACT } from './contact';
 
 // Service ledger. Deliverables must stay concrete and TRUE — if a deliverable
 // changes operationally, change it here. Fair housing: audiences are defined
@@ -18,7 +18,7 @@ export const SERVICES: Service[] = [
       'Full-service management coordination: marketing, tenant screening coordination, lease handling, rent collection, and responsive issue follow-up.',
     outcome: 'Your rental performs without living in your inbox.',
     ctaLabel: 'Request an owner intro',
-    href: mailtoLink(SUBJECTS.ownerIntro),
+    href: '/contact#owner-intro',
     featured: true,
     status: 'active',
   },
@@ -31,8 +31,8 @@ export const SERVICES: Service[] = [
     deliverable:
       'End-to-end coordination: listing oversight, guest communication, and scheduled cleaning and restocking through trusted service partners.',
     outcome: 'A rental that runs like hospitality. Consistent, prepared, looked after.',
-    ctaLabel: 'Talk short-term rentals',
-    href: mailtoLink(SUBJECTS.ownerIntro),
+    ctaLabel: 'View on Airbnb',
+    href: CONTACT.airbnbHostUrl,
     featured: true,
     status: 'active',
   },
@@ -46,7 +46,7 @@ export const SERVICES: Service[] = [
       'Vendor coordination and property follow-up. Quotes, scheduling, completion checks, and documentation, so nothing is left hanging.',
     outcome: 'Problems get fixed once, on record.',
     ctaLabel: 'Ask about coverage',
-    href: mailtoLink(SUBJECTS.rentalManagement),
+    href: '/contact#management',
     featured: true,
     status: 'active',
   },
@@ -60,7 +60,7 @@ export const SERVICES: Service[] = [
       'Move-out to move-in execution: punch list, cleaning, repairs, staging-level reset, and re-list readiness.',
     outcome: 'Shorter vacancy, better first impression.',
     ctaLabel: 'Plan a turnover',
-    href: mailtoLink(SUBJECTS.rentalManagement),
+    href: '/contact#management',
     featured: true,
     status: 'active',
   },
@@ -74,7 +74,7 @@ export const SERVICES: Service[] = [
       'Clear owner updates that keep performance, expenses, and next steps easy to understand.',
     outcome: 'You always know where your property stands.',
     ctaLabel: 'See what reporting covers',
-    href: mailtoLink(SUBJECTS.ownerIntro),
+    href: '/contact#owner-intro',
     featured: true,
     status: 'active',
   },
@@ -89,8 +89,8 @@ export const SERVICES: Service[] = [
     deliverable:
       'Operated furnished units with flexible terms. Ask and I will confirm what is available.',
     outcome: 'A real place to live, on your timeline.',
-    ctaLabel: 'Request availability',
-    href: mailtoLink(SUBJECTS.stays),
+    ctaLabel: 'View furnished stays',
+    href: CONTACT.airbnbHostUrl,
     featured: true,
     status: 'active',
   },
@@ -166,7 +166,7 @@ export const SERVICES: Service[] = [
       'Acquisition guidance connected to real operating experience: what a property takes to run, before you buy it.',
     outcome: 'You buy what you can actually operate.',
     ctaLabel: 'Ask an operations question',
-    href: mailtoLink(SUBJECTS.investor),
+    href: '/contact#investor',
     featured: true,
     status: 'active',
   },

@@ -1,7 +1,6 @@
 import { SectionHeader } from '../components/SectionHeader';
 import { useReveal } from '../utils/motion';
-import { smartMoveLink, mailtoLink } from '../utils/links';
-import { SUBJECTS } from '../data/contact';
+import { smartMoveLink } from '../utils/links';
 import styles from './RentalsSection.module.css';
 
 // Two lanes, one section: renters route to Smart Move,
@@ -52,7 +51,7 @@ export function RentalsSection() {
               conversation.
             </p>
             <div className={styles.laneCtas}>
-              <a href={mailtoLink(SUBJECTS.rentalManagement)} className="btn btn--ghost">
+              <a href="/contact#management" className="btn btn--ghost">
                 Ask a management question
               </a>
             </div>

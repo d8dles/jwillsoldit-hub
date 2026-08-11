@@ -10,6 +10,7 @@ const { render } = await import(pathToFileURL(serverEntry).href);
 const routes = [
   { pathname: '/', outputPath: 'index.html' },
   { pathname: '/about', outputPath: 'about/index.html' },
+  { pathname: '/contact', outputPath: 'contact/index.html' },
   { pathname: '/rentals', outputPath: 'rentals/index.html' },
   { pathname: '/listings', outputPath: 'listings/index.html' },
   { pathname: '/listings/rentals', outputPath: 'listings/rentals/index.html' },
