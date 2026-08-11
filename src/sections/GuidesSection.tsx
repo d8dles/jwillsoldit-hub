@@ -57,7 +57,7 @@ export function GuidesSection() {
               What I&rsquo;d tell <em>a friend.</em>
             </>
           }
-          lede="Straight answers to the questions that come up on every move. Open whichever one fits, then start the intake when you want a real plan."
+          lede="Start with the question that brought you here. When you are ready to talk through your own move, send me the details and we will take it from there."
         />
 
         <div ref={ref} className={`${styles.list} reveal`}>
@@ -85,7 +85,7 @@ export function GuidesSection() {
 
         <div className={styles.footerRow}>
           <p className={styles.footerNote}>
-            Have a situation that does not fit neatly into a guide? Start with the intake and I will point it the right way.
+            Don&rsquo;t see your situation here? Tell me what is going on and I will help you make sense of it.
           </p>
           <a href={smartMoveLink()} className="btn btn--ghost" rel="noopener">
             Get a plan

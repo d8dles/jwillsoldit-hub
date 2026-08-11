@@ -16,13 +16,13 @@ export function RentalServicesPage() {
           <span className="mono-label mono-label--red">RENTALS / SERVICES</span>
           <h1 className={styles.title}>Rentals, from <em>both sides of the lease.</em></h1>
           <p className={styles.lede}>
-            Find the right rental route as a renter, or get organized support
-            for the home you own. Current homes live in the listings lane;
-            service questions start here.
+            Looking for a rental? I will help you narrow the search before
+            you spend every weekend touring. Already own one? I can help with
+            leasing, upkeep, turnovers, and the day-to-day follow-through.
           </p>
           <div className={styles.actions}>
             <a href={smartMoveLink('rent')} className="btn btn--primary" rel="noopener">
-              <span className="tick">▸</span> Start the rental route
+              <span className="tick">▸</span> Tell me what you need
             </a>
             <a href="/listings/rentals" className="btn btn--on-dark">See current rentals</a>
           </div>

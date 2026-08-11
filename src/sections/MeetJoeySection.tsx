@@ -4,19 +4,19 @@ import styles from './MeetJoeySection.module.css';
 const PILLARS = [
   {
     title: 'Buying & Selling',
-    line: 'Straight read. No pitch.',
+    line: 'A clear plan and an honest read.',
   },
   {
     title: 'Rentals',
-    line: 'I know the inventory.',
+    line: 'I will help you narrow the search.',
   },
   {
     title: 'Property Management',
-    line: 'I answer the phone.',
+    line: 'You will know what is happening.',
   },
   {
     title: 'Investing',
-    line: 'I run them. I know the numbers.',
+    line: 'The numbers have to work in real life.',
   },
 ];
 
@@ -45,18 +45,21 @@ export function MeetJoeySection() {
               Joey Williams<span className={styles.period}>.</span>
             </h2>
             <p className={styles.lede}>
-              Inside the Loop, out past the Grand Parkway, and everything in
-              between. Rent it, buy it, sell it, or hold it. I work all of
-              it.
+              Inside the Loop, out past the Grand Parkway, and everywhere in
+              between. I help people rent, buy, sell, and hold property
+              across Houston.
             </p>
             <p className={styles.body}>
-              Most people already know what they are drawn to. They just do
-              not know where in Houston it lives yet. Finding that is the
-              part I am good at.
+              Most people have a feel for what they want&mdash;the commute,
+              the pace, the kind of neighborhood, maybe a little more room
+              to breathe. They just don&rsquo;t know where in Houston to find
+              it yet. That&rsquo;s the part I&rsquo;m good at.
             </p>
             <p className={styles.body}>
-              Nobody hands you any of this. You find out at closing, when
-              it is expensive to care. So I put it in writing.
+              And there is plenty a listing will not explain. Taxes, flood
+              history, utility districts, commute times&mdash;I write about
+              it so you can understand what you are getting into before it
+              becomes an expensive surprise.
             </p>
             <div className={styles.guideLinks}>
               <a href="/houston/guides/no-zoning-explained">No zoning</a>

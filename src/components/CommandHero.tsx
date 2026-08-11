@@ -23,9 +23,11 @@ export function CommandHero() {
             </h1>
 
             <p className={styles.thesis}>
-              No zoning. Flood lines that change block to block. Utility
-              districts nobody mentions until closing. Houston takes
-              explaining, and that&rsquo;s where I start.
+              I&rsquo;m licensed across Texas, so I can help wherever your move
+              takes you in the state. Houston is home, and it&rsquo;s where my
+              knowledge gets especially specific&mdash;the streets, the
+              commutes, the flood history, the utility districts, and the
+              details that change from one address to the next.
             </p>
 
             <div className={styles.ctas}>
