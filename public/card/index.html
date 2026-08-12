@@ -102,7 +102,7 @@ button,a{font:inherit}button{color:inherit}a{color:inherit;text-decoration:none}
 .holding .progress{opacity:1;animation:charge 1.25s linear forwards}@keyframes charge{to{--progress:100%}}
 @property --progress{syntax:"<percentage>";inherits:false;initial-value:0%}
 .hold-copy{text-align:center;margin-top:auto}
-.hold-copy strong{display:block;font:700 11px var(--mono);letter-spacing:.16em;text-transform:uppercase}
+.hold-copy strong{display:block;font:700 14px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase}
 .hold-copy span{display:block;margin-top:7px;font:400 8px var(--mono);letter-spacing:.08em;color:rgba(243,240,232,.52)}
 .threshold{position:absolute;z-index:-1;left:50%;top:0;width:4px;height:100%;background:var(--red);box-shadow:0 0 28px 5px rgba(227,58,35,.5);opacity:0;transform:translateX(-50%) scaleY(0);transform-origin:center;transition:transform .3s var(--ease),opacity .12s ease;will-change:transform,opacity}
 .door-left,.door-right{position:absolute;z-index:11;top:0;width:50.1%;height:100%;background:var(--forest);pointer-events:none;transition:transform .68s var(--ease);will-change:transform}.door-left{left:0;transform:translateX(-102%)}.door-right{right:0;transform:translateX(102%)}
@@ -158,7 +158,7 @@ button,a{font:inherit}button{color:inherit}a{color:inherit;text-decoration:none}
       </svg>
       </button>
     </div>
-    <div class="hold-copy"><strong id="holdLabel">Press & hold to enter</strong></div>
+    <div class="hold-copy"><strong id="holdLabel">Press & hold the key</strong></div>
   </section>
   <div class="threshold"></div><div class="door-left"></div><div class="door-right"></div>
 </main>
@@ -179,7 +179,7 @@ var CONFIG={first:"Joey",last:"Williams",phone:"+15616856566",email:"joey@jwills
 var stage=document.getElementById("stage"),key=document.getElementById("key"),keyScene=document.getElementById("keyScene"),holdLabel=document.getElementById("holdLabel");
 var timer=null,opened=false;
 function startHold(e){if(opened)return;if(e)e.preventDefault();key.classList.add("holding");holdLabel.textContent="Keep holding…";timer=setTimeout(unlock,1250)}
-function cancelHold(){if(opened)return;clearTimeout(timer);timer=null;key.classList.remove("holding");holdLabel.textContent="Press & hold to enter"}
+function cancelHold(){if(opened)return;clearTimeout(timer);timer=null;key.classList.remove("holding");holdLabel.textContent="Press & hold the key"}
 function unlock(){if(opened)return;opened=true;clearTimeout(timer);holdLabel.textContent="Turning key…";key.classList.remove("holding");key.classList.add("turning");if(navigator.vibrate)navigator.vibrate([22,65,38]);setTimeout(function(){keyScene.classList.add("unlocked");holdLabel.textContent="Access granted";if(navigator.vibrate)navigator.vibrate([55,35,24])},430);setTimeout(function(){stage.classList.add("is-opening")},560);setTimeout(function(){stage.classList.add("is-open")},940);setTimeout(function(){stage.classList.remove("is-opening")},1750)}
 key.addEventListener("pointerdown",startHold);window.addEventListener("pointerup",cancelHold);window.addEventListener("pointercancel",cancelHold);
 key.addEventListener("selectstart",function(e){e.preventDefault()});key.addEventListener("contextmenu",function(e){e.preventDefault()});
