@@ -23,6 +23,7 @@ button,a{font:inherit}button{color:inherit}a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--red);outline-offset:4px}
 
 .stage{position:relative;width:100%;max-width:480px;height:100dvh;min-height:580px;margin:auto;background:var(--forest);overflow:hidden;isolation:isolate}
+.portal,.portal *{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 .stage:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:20;opacity:.18;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.26'/%3E%3C/svg%3E")}
 
@@ -181,6 +182,7 @@ function startHold(e){if(opened)return;if(e)e.preventDefault();key.classList.add
 function cancelHold(){if(opened)return;clearTimeout(timer);timer=null;key.classList.remove("holding");holdLabel.textContent="Press & hold to enter"}
 function unlock(){if(opened)return;opened=true;clearTimeout(timer);holdLabel.textContent="Turning key…";key.classList.remove("holding");key.classList.add("turning");if(navigator.vibrate)navigator.vibrate([22,65,38]);setTimeout(function(){keyScene.classList.add("unlocked");holdLabel.textContent="Access granted";if(navigator.vibrate)navigator.vibrate([55,35,24])},430);setTimeout(function(){stage.classList.add("is-opening")},560);setTimeout(function(){stage.classList.add("is-open")},940);setTimeout(function(){stage.classList.remove("is-opening")},1750)}
 key.addEventListener("pointerdown",startHold);window.addEventListener("pointerup",cancelHold);window.addEventListener("pointercancel",cancelHold);
+key.addEventListener("selectstart",function(e){e.preventDefault()});key.addEventListener("contextmenu",function(e){e.preventDefault()});
 key.addEventListener("keydown",function(e){if((e.key===" "||e.key==="Enter")&&!e.repeat)startHold(e)});key.addEventListener("keyup",function(e){if(e.key===" "||e.key==="Enter")cancelHold()});
 
 var drawer=document.getElementById("drawer"),scrim=document.getElementById("scrim");
