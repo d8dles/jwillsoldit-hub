@@ -28,6 +28,14 @@
   ],
   "rewrites": [
     {
+      "source": "/card",
+      "destination": "/card/index.html"
+    },
+    {
+      "source": "/card/",
+      "destination": "/card/index.html"
+    },
+    {
       "source": "/about",
       "destination": "/about/index.html"
     },
