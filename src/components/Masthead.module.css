@@ -5,10 +5,10 @@
   right: 0;
   z-index: 100;
   height: var(--masthead-h);
-  background: rgba(250, 247, 242, 0.92);
+  background: rgba(18, 18, 16, 0.88);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
-  border-bottom: 1px solid var(--trace);
+  border-bottom: 1px solid rgba(255,255,255,.14);
 }
 
 .inner {
@@ -33,7 +33,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--ink);
+  color: var(--off-white);
   padding: 6px 0;
   border-bottom: 1px solid transparent;
   transition: border-color var(--dur-fast) ease, color var(--dur-fast) ease;
@@ -55,7 +55,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--forest);
+  color: var(--off-white);
   padding: 8px 2px;
 }
 
