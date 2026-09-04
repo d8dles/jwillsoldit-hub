@@ -36,6 +36,14 @@
       "destination": "/card/index.html"
     },
     {
+      "source": "/ned",
+      "destination": "/ned/index.html"
+    },
+    {
+      "source": "/ned/",
+      "destination": "/ned/index.html"
+    },
+    {
       "source": "/about",
       "destination": "/about/index.html"
     },
