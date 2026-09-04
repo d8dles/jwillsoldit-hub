@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#10271e">
 <meta name="robots" content="noindex,nofollow">
-<title>Ned, your townhome search is ready — JWILLSOLDIT</title>
-<meta name="description" content="A private townhome search prepared for Ned by Joey Williams, REALTOR®.">
-<meta property="og:title" content="Ned, your townhome search is ready.">
-<meta property="og:description" content="Your live townhome list from Joey Williams · JWILLSOLDIT.">
+<title>Ned, your preliminary townhome list is ready — JWILLSOLDIT</title>
+<meta name="description" content="A preliminary townhome property list prepared for Ned by Joey Williams, REALTOR®.">
+<meta property="og:title" content="Ned, your preliminary townhome list is ready.">
+<meta property="og:description" content="A preliminary townhome property list from Joey Williams · JWILLSOLDIT.">
 <meta property="og:image" content="https://www.jwillsoldit.com/assets/og-hub-v1.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.jwillsoldit.com/ned">
@@ -33,21 +33,21 @@
   <header class="top">
     <div class="brandline"><a class="brand" href="https://www.jwillsoldit.com">JWILLSOLDIT<b>.</b></a><div class="private">Prepared for Ned<br>Houston, Texas</div></div>
     <div class="hero">
-      <div><p class="eyebrow">Lance connected us</p><h1>Ned,<span>your list is ready.</span></h1><p>I pulled your townhome search into one place so you can browse without the noise. When something catches your eye, send me the address and I’ll help you pressure-test the details before you move on it.</p></div>
+      <div><p class="eyebrow">Preliminary property search</p><h1>Ned,<span>your list is ready.</span></h1><p>I put together an initial townhome list so you can get a feel for what’s currently available. Browse through it, and if something catches your eye, send me the address and I’ll help you take a closer look at the details.</p></div>
       <img class="portrait" src="/assets/editorial/joey-williams-headshot.png" alt="Joey Williams, REALTOR®" width="1122" height="1402">
     </div>
   </header>
 
   <main class="main">
     <section class="card" aria-labelledby="list-title">
-      <div class="cardhead"><div><div class="tag">Your townhome search</div><h2 id="list-title">Live property list</h2></div><div class="live"><i></i> HAR live link</div></div>
-      <p class="cardcopy">This link opens the current list prepared for you on HAR. Listing status, pricing, availability and property details can change, so think of this as the starting point. I’ll verify the important pieces on any property you want to pursue.</p>
+      <div class="cardhead"><div><div class="tag">Preliminary townhome list</div><h2 id="list-title">Current property options</h2></div><div class="live"><i></i> HAR live link</div></div>
+      <p class="cardcopy">This link opens the preliminary list prepared for you on HAR. Listing status, pricing, availability and property details can change, so think of this as a starting point for narrowing down what you like. I can verify the important pieces on any property you want to explore further.</p>
       <a class="primary" href="https://s.hartech.io/Jua2JefUa4q" target="_blank" rel="noopener"><span>Open Ned’s townhome list</span><span>↗</span></a>
-      <p class="note">See one you like? Text me the address or screenshot. I can help you look past the photos at things like taxes, HOA details, property condition, insurance considerations and the actual offer strategy.</p>
+      <p class="note">See one you like? Text me the address or screenshot. I can help you look past the photos at things like taxes, HOA details, property condition, insurance considerations and other details worth knowing before you decide whether it deserves a closer look.</p>
       <div class="steps">
         <div class="step"><div class="num">01</div><b>Browse</b><small>Save the few that actually feel worth a closer look.</small></div>
         <div class="step"><div class="num">02</div><b>Send</b><small>Text me the addresses you want me to dig into.</small></div>
-        <div class="step"><div class="num">03</div><b>Move</b><small>We verify the details, line up access and decide the next step.</small></div>
+        <div class="step"><div class="num">03</div><b>Review</b><small>We verify the details and decide which ones are worth exploring further.</small></div>
       </div>
     </section>
 
@@ -62,7 +62,7 @@
 
     <section class="legal" aria-label="Required notices and disclosures">
       <div class="legallinks"><a href="/assets/iabs.pdf" target="_blank" rel="noopener">Information About Brokerage Services (IABS)</a><a href="/assets/cpn.pdf" target="_blank" rel="noopener">Consumer Protection Notice</a><a href="https://www.jwillsoldit.com/privacy.html" target="_blank" rel="noopener">Privacy</a></div>
-      <div>Equal Housing Opportunity. Property information is provided through the linked HAR search and is subject to change and independent verification. This page provides property-search information and access to required notices; it is not a representation agreement, contract, guarantee of availability, or offer to sell any property.</div>
+      <div>Equal Housing Opportunity. Property information is provided through the linked HAR search and is subject to change and independent verification. This page and preliminary property list are informational only and do not constitute a representation agreement, contract, guarantee of availability, or offer to sell any property.</div>
     </section>
   </main>
 
@@ -73,7 +73,7 @@
   <div class="modal">
     <div class="mini">One quick thing</div>
     <h2 id="receiptTitle">Ned, let Joey know the list made it.</h2>
-    <p>I’ve pre-written the text for you. Tap below and your phone will open a message to Joey confirming you received the townhome list.</p>
+    <p>I’ve pre-written the text for you. Tap below and your phone will open a message to Joey confirming you received the preliminary townhome list.</p>
     <button class="confirm" id="confirmBtn">I got it — open the text</button>
     <button class="later" id="laterBtn">Browse first</button>
   </div>
@@ -84,7 +84,7 @@
   var modal=document.getElementById('receiptModal');
   var confirm=document.getElementById('confirmBtn');
   var later=document.getElementById('laterBtn');
-  var msg="Hey Joey, it's Ned. I received the townhome list Lance connected us on. Thanks!";
+  var msg="Hey Joey, it's Ned. I received the preliminary townhome list you sent over. Thanks!";
   function smsLink(){var ios=/iPad|iPhone|iPod/.test(navigator.userAgent);return 'sms:+15616856566'+(ios?'&':'?')+'body='+encodeURIComponent(msg)}
   function openModal(){modal.classList.add('on')}
   function closeModal(){modal.classList.remove('on')}
