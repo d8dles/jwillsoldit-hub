@@ -28,7 +28,7 @@ export function Masthead() {
   return (
     <header className={styles.masthead}>
       <div className={styles.inner}>
-        <BrandLockup href="/" />
+        <BrandLockup href="/" onDark />
 
         {/* Desktop nav */}
         <nav className={styles.nav} aria-label="Primary">

@@ -10,6 +10,7 @@ import { ManageSection } from './sections/ManageSection';
 import { InvestSection } from './sections/InvestSection';
 import { GuidesSection } from './sections/GuidesSection';
 import { ContactSection } from './sections/ContactSection';
+import { HoustonLensesSection, PropertyEditorialSection, SmartMoveEditorialSection } from './sections/HomeEditorialSections';
 import { AboutPage } from './pages/AboutPage';
 import { ListingsIndexPage } from './pages/ListingsIndexPage';
 import { RentalListingsPage } from './pages/RentalListingsPage';
@@ -25,12 +26,15 @@ function HomePage() {
       <Masthead />
       <main>
         <HeroSection />
-        <MeetJoeySection />
+        <PropertyEditorialSection />
+        <HoustonLensesSection />
         <RouteBoardSection />
+        <SmartMoveEditorialSection />
         <StaysSection />
         <RentalsSection />
         <ManageSection />
         <InvestSection />
+        <MeetJoeySection />
         <GuidesSection />
       </main>
       <ContactSection />

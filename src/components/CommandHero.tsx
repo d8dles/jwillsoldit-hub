@@ -1,68 +1,24 @@
-import { PROOF } from '../data/proof';
-import { smartMoveLink, smsLink, telLink } from '../utils/links';
-import { RouteLine } from './RouteLine';
-import { TexasHeroMap } from './TexasHeroMap';
+import { smartMoveLink } from '../utils/links';
 import styles from './CommandHero.module.css';
 
 export function CommandHero() {
   return (
     <div className={styles.hero}>
-      <div className={`container ${styles.inner}`}>
-        <p className={`mono-label ${styles.coords}`}>
-          29.7604° N / 95.3698° W&ensp;·&ensp;HOUSTON, TX
-          <span className={styles.coordsTail}>&ensp;·&ensp;SERVING TEXAS</span>
-        </p>
-
-        <div className={styles.grid}>
-          <div className={styles.left}>
-            <h1 className={styles.headline}>
-              <span className={styles.line1}>Texas,</span>
-              <span className={styles.line2}>
-                handled<span className={styles.period}>.</span>
-              </span>
-            </h1>
-
-            <p className={styles.thesis}>
-              I&rsquo;m licensed across Texas, so I can help wherever your move
-              takes you in the state. Houston is home, and it&rsquo;s where my
-              knowledge gets especially specific&mdash;the streets, the
-              commutes, the flood history, the utility districts, and the
-              details that change from one address to the next.
-            </p>
-
-            <div className={styles.ctas}>
-              <a href={smartMoveLink()} className="btn btn--primary" rel="noopener">
-                <span className="tick">▸</span> Tell me about your move
-              </a>
-              <a href="#routes" className="btn btn--ghost">
-                See how I can help
-              </a>
-            </div>
-          </div>
-
-          <div className={styles.right}>
-            <TexasHeroMap />
-          </div>
-        </div>
-
-        <div className={styles.statusRow}>
-          {PROOF.map((tile) => (
-            <div key={tile.id} className={styles.status}>
-              <span className={`mono-label ${styles.statusLabel}`}>{tile.label}</span>
-              {tile.id === 'line' ? (
-                <span className={styles.statusValue}>
-                  <a href={telLink()}>Call</a> or <a href={smsLink()}>text</a>
-                </span>
-              ) : (
-                <span className={styles.statusValue}>{tile.value}</span>
-              )}
-              {tile.detail && <span className={styles.statusDetail}>{tile.detail}</span>}
-            </div>
-          ))}
+      <img className={styles.image} src="/listings/4231-tulip-oak-dr/optimized/TP-001.jpg" alt="Houston-area home at dusk" width={1600} height={1066} />
+      <div className={styles.scrim} aria-hidden="true" />
+      <div className={styles.content}>
+        <p className={styles.location}>29.7604° N · 95.3698° W · HOUSTON, TEXAS</p>
+        <h1 className={styles.headline}>Texas, <em>handled.</em></h1>
+        <p className={styles.thesis}>Houston real estate, seen clearly—from the home itself to the street, the commute, the flood history, and the details that change by address.</p>
+        <div className={styles.actions}>
+          <a href={smartMoveLink()} className={styles.primary} rel="noopener">Start your Smart Move</a>
+          <a href="/listings" className={styles.secondary}>Explore real estate</a>
         </div>
       </div>
-
-      <RouteLine />
+      <div className={styles.rail} aria-label="Services">
+        <a href="/listings">Buy</a><a href="#rentals">Rent</a><a href="#manage">Sell &amp; manage</a><a href="#joey">Relocate</a>
+      </div>
+      <p className={styles.caption}>A Houston move is more than a listing. Let&rsquo;s read the whole picture.</p>
     </div>
   );
 }
